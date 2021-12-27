@@ -1,0 +1,12 @@
+.bmi-info{
+  display: grid;
+  justify-content: left;
+  grid-template-columns: 3cm 3cm 5cm;
+
+  &>b::after{
+    content: "::";
+    color: greenyellow;
+    margin-left: 1em;
+  }
+
+}
