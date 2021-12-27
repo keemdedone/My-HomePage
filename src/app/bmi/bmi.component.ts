@@ -10,6 +10,10 @@ export class BmiComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    return;
   }
 
+  calculate(): void{
+
+  }
 }
