@@ -7,13 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BmiComponent implements OnInit {
 
-  constructor() { }
+  result = 0;
 
   ngOnInit(): void {
     return;
   }
 
-  calculate(): void{
-
+  getresult(weight:string,height:string): void{
+    this.result = parseInt(weight)/((parseInt(height)/100)^2); //เปลี่ยน str เป็น int
   }
 }
