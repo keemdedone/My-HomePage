@@ -14,6 +14,6 @@ export class BmiComponent implements OnInit {
   }
 
   getresult(weight:string,height:string): void{
-    this.result = parseInt(weight)/((parseInt(height)/100)^2); //เปลี่ยน str เป็น int
+    this.result = Math.round(parseInt(weight)/((parseInt(height)/100)^2)); //เปลี่ยน str เป็น int
   }
 }
