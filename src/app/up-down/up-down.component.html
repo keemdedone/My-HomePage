@@ -1,0 +1,7 @@
+<ng-container>
+  <div *ngFor="let txt of ary; let i = index" class="upDown">
+    <span> {{ txt }} </span>
+    <button type="button" [disabled]="checkUp(i)" (click)="up(i)">UP</button>
+    <button type="button" [disabled]="checkDown(i)" (click)="down(i)">Down</button>
+  </div>
+</ng-container>

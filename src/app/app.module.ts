@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BmiComponent } from './bmi/bmi.component';
 import { ButtonComponent } from './button/button.component';
+import { UpDownComponent } from './up-down/up-down.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BmiComponent,
-    ButtonComponent
+    ButtonComponent,
+    UpDownComponent
   ],
   imports: [
     BrowserModule,
