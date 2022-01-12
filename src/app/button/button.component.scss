@@ -1,3 +1,18 @@
 .button{
   padding: 1em 0em 0em 0em;
 }
+
+.info-condition{
+  &>h3{
+    margin-right: 80%;
+  }
+  &>p{
+    text-align: justify;
+    padding-left: 1em;
+  }
+  &>p::before{
+    content: ">>";
+  }
+  border: inset;
+  margin: 1em 12cm 0em 12cm;
+}
