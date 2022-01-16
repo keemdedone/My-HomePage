@@ -2,6 +2,12 @@
   <div *ngFor="let txt of ary; let i = index" class="upDown">
     <span> {{ txt }} </span>
     <button type="button" [disabled]="checkUp(i)" (click)="up(i)">UP</button>
-    <button type="button" [disabled]="checkDown(i)" (click)="down(i)">Down</button>
+    <button type="button" [disabled]="checkDown(i)" (click)="down(i)">DOWN</button>
+  </div>
+</ng-container>
+<ng-container>
+  <div class="info-condition">
+      <h3>Condition!!!</h3>
+      <p>First UP and Last DOWN can't click.</p>
   </div>
 </ng-container>

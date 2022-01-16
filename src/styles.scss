@@ -9,3 +9,18 @@ input[type="number"]{
   font-size: 1.25em;
   text-align: right;
 }
+
+.info-condition{
+  &>h3{
+    margin-right: 80%;
+  }
+  &>p{
+    text-align: justify;
+    padding-left: 1em;
+  }
+  &>p::before{
+    content: ">>";
+  }
+  border: inset;
+  margin: 1em 12cm 0em 12cm;
+}
