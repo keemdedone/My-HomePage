@@ -3,8 +3,14 @@
       <b>Your Height (cm.)</b><input #elem2 type="number" #height>
       <b>Your Weight (kg.)</b><input #elem1 type="number" #weight>
   </div>
-  <button class="cmd-button-ok" type="button" (click)="getresult(weight.value,height.value)" >OK</button><br> <!-- ส่งค่าเป็น stirng -->
-  <output class="cmp-outPut" #outPut><b>Your BMI is {{ result }}.</b></output>
+  <div class="button">
+    <button type="button" (click)="getresult(weight.value,height.value)">OK</button> <!-- ส่งค่าเป็น stirng -->
+  </div>
+  <div class="display">
+    <output>
+      <b>Your BMI is</b><code>{{ result }}</code>
+    </output>
+  </div>
 </ng-container>
 
 <ng-container>

@@ -1,8 +1,24 @@
-<div class="homepage">
-  <h1>Hello HomePage</h1>
-      <li><a routerLink="./bmi" routerLinkActive="st-active">BMI</a></li>
-      <li><a routerLink="./button" routerLinkActive="st-active">Button</a></li>
-      <li><a routerLink="./up-down" routerLinkActive="st-active">Up-Down</a></li>
-      <li><a routerLink="" routerLinkActive="st-active">About This Site</a></li>
-  <router-outlet></router-outlet>
-</div>
+<mat-toolbar color="primary">
+  <button
+  mat-icon-button
+  *ngIf="isSmallScreen$ | async"
+  (click)="sidenav.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>My-Angular</span>
+  <nav>
+    <a mat-button routerLink="midterm">Midterm</a>
+  </nav>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav
+    [opened]="(isSmallScreen$ | async) === false"
+    [mode]="(isSmallScreen$ | async) ? 'over' : 'side'"
+  >
+  <ng-template [cdkPortalOutlet]="portal$ | async"></ng-template>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

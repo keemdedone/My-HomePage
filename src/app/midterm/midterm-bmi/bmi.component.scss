@@ -1,0 +1,33 @@
+.info-container{
+  width: 500px;
+  margin: auto;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 15ch 0.75fr;
+  padding-top: 1em;
+}
+
+.button{
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  &>button{
+    width: 200px;
+  }
+}
+
+.display{
+  text-align: center;
+  font-size: 20px;
+  &>output{
+    &>b{
+      padding-right: 10px;
+      font-family: 'Courier New', Courier, monospace;
+    }
+    &>code::after{
+      content: " Unit";
+      font-family: 'Courier New', Courier, monospace;
+      font-weight: bold;
+    }
+  }
+}

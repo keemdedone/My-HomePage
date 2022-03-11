@@ -1,21 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BmiComponent } from './bmi/bmi.component';
-import { ButtonComponent } from './button/button.component';
-import { UpDownComponent } from './up-down/up-down.component';
+import { MidtermModule } from './midterm/midterm.module';
 
 const routes: Routes = [
   {
-    path:'bmi',
-    component:BmiComponent,
+    path: '',
+    redirectTo: 'midterm',
+    pathMatch: 'full'
   },
   {
-    path:'button',
-    component:ButtonComponent,
-  },
-  {
-    path:'up-down',
-    component:UpDownComponent
+    path: 'midterm',
+    loadChildren: () => import('./midterm/midterm.module').then((m) => m.MidtermModule)
   }
 ];
 

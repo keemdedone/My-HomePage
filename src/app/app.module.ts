@@ -3,22 +3,38 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BmiComponent } from './bmi/bmi.component';
-import { ButtonComponent } from './button/button.component';
-import { UpDownComponent } from './up-down/up-down.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+//material PART
+import {PortalModule} from '@angular/cdk/portal';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatListModule} from '@angular/material/list';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+/*
+import {MatInput, MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatTabsModule} from '@angular/material/tabs';
+*/
 
 @NgModule({
   declarations: [
     AppComponent,
-    BmiComponent,
-    ButtonComponent,
-    UpDownComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    PortalModule,
+    MatToolbarModule,
+    MatListModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

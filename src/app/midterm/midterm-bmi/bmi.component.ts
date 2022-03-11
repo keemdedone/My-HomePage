@@ -14,6 +14,10 @@ export class BmiComponent implements OnInit {
   }
 
   getresult(weight:string,height:string): void{
+    if(isNaN(parseInt(weight) || parseInt(height))){
+      alert('Please input your heigth and weigth')
+      return
+    }
     this.result = Math.round(parseInt(weight)/((parseInt(height)/100)^2)); //เปลี่ยน str เป็น int
   }
 }
