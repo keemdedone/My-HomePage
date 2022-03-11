@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BmiComponent } from './bmi/bmi.component';
 import { ButtonComponent } from './button/button.component';
 import { UpDownComponent } from './up-down/up-down.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { UpDownComponent } from './up-down/up-down.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
