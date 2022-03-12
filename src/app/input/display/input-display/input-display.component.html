@@ -1,0 +1,34 @@
+<mat-toolbar color="primary">
+  Input
+</mat-toolbar>
+<div>
+  <button mat-raised-button color="primary" (click)="inputService.addSection()">
+    <mat-icon>
+      add_cricle
+    </mat-icon>
+  </button>
+</div>
+<div *ngFor="let item of inputService.getData() as Section ; let i = index;" class="main">
+  <!-- as Section use to instend inputService.getData() -->
+  <div class="section">
+    <button
+    mat-stroked-button
+    color="warn"
+    (click)="inputService.removeSection(i)"
+    [disabled]="Section.length === 1"
+    class="remove-section">
+      <mat-icon>
+        delete_forever
+      </mat-icon>
+    </button>
+  </div>
+  <app-input-container-section
+  [sections]="item"
+  (update)="inputService.updateItem(i,$event.index,$event.value)"
+  (add)="inputService.addItem(i)"
+  (delete)="inputService.removeItem(i,$event)"
+  ></app-input-container-section>
+  <div>
+    <b>Total <code>{{totalInput(item)}}</code></b>
+  </div>
+</div>

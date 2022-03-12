@@ -11,6 +11,10 @@ const routes: Routes = [
   {
     path: 'midterm',
     loadChildren: () => import('./midterm/midterm.module').then((m) => m.MidtermModule)
+  },
+  {
+    path: 'input',
+    loadChildren: () => import('./input/input.module').then((i) => i.InputModule)
   }
 ];
 

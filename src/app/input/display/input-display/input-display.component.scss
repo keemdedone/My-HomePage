@@ -1,0 +1,15 @@
+.main{
+  margin-top: 20px;
+  text-align: center;
+  width: 600px;
+  margin: auto;
+  &>.section{
+    text-align: right;
+    &>button:disabled{
+      border-color: rgb(233, 232, 232);
+    }
+    &>button{
+      border-color: red;
+    }
+  }
+}

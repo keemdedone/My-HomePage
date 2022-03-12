@@ -1,0 +1,16 @@
+<div class="add-input">
+  <button mat-stroked-button color="primary" type="button" (click)="addInput()">
+    <mat-icon>
+      add
+    </mat-icon>
+  </button>
+</div>
+<div *ngFor="let section of sections as Input; let i = index">
+  <!-- as Input use to instend sections -->
+  <app-input-container
+  [value]="section.value"
+  (update)="onUpdate(i,$event)"></app-input-container>
+  <button mat-raised-button color="warn" type="button" (click)="delInput(i)" [disabled]="Input?.length === 1" class="remove-input">
+    <mat-icon>delete</mat-icon>
+  </button>
+</div>

@@ -1,0 +1,12 @@
+.add-input{
+  text-align: left;
+  margin-top: -36px;
+  &>button{
+    border-color: blue;
+  }
+}
+
+.remove-input{
+  margin-bottom: 20px;
+  margin-left: 10px;
+}

@@ -11,6 +11,11 @@ const routes: Routes = [
     component: MidtermComponent,
     children: [
       {
+        path:'',
+        redirectTo:'bmi',
+        pathMatch:'full'
+      },
+      {
         path:'bmi',
         component: BmiComponent,
       },
