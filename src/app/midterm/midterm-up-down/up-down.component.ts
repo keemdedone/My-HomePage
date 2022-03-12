@@ -11,8 +11,8 @@ export class UpDownComponent implements OnInit {
 
   ary = ["A","B","C","D","E","F"] ;
 
-  // eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method
   ngOnInit(): void {
+    return
   }
 
   up(n:number): void{

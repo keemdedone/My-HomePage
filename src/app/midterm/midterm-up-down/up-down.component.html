@@ -1,7 +1,10 @@
+<mat-toolbar color="primary">
+  Up-Down Button
+</mat-toolbar>
 <ng-container>
   <div *ngFor="let txt of ary; let i = index" class="upDown">
-    <span> {{ txt }} </span>
-    <button type="button" [disabled]="checkUp(i)" (click)="up(i)">UP</button>
-    <button type="button" [disabled]="checkDown(i)" (click)="down(i)">DOWN</button>
+    <span>{{ txt }}</span>
+    <button mat-raised-button color="primary" type="button" [disabled]="checkUp(i)" (click)="up(i)">UP</button>
+    <button mat-raised-button color="warn" type="button" [disabled]="checkDown(i)" (click)="down(i)">DOWN</button>
   </div>
 </ng-container>

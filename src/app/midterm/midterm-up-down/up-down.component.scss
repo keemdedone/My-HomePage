@@ -1,3 +1,11 @@
 .upDown{
   margin-top: 1em;
+  text-align: center;
+  row-gap: 10px;
+  &>span{
+    padding: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 20px;
+  }
 }
