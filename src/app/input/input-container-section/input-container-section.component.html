@@ -1,5 +1,10 @@
 <div class="add-input">
-  <button mat-stroked-button color="primary" type="button" (click)="addInput()">
+  <button
+  matTooltip="Add New Input Box"
+  mat-stroked-button
+  color="primary"
+  type="button"
+  (click)="addInput()">
     <mat-icon>
       add
     </mat-icon>
@@ -10,7 +15,13 @@
   <app-input-container
   [value]="section.value"
   (update)="onUpdate(i,$event)"></app-input-container>
-  <button mat-raised-button color="warn" type="button" (click)="delInput(i)" [disabled]="Input?.length === 1" class="remove-input">
+  <button
+  mat-raised-button
+  color="warn"
+  type="button"
+  (click)="delInput(i)"
+  [disabled]="Input?.length === 1"
+  class="remove-input">
     <mat-icon>delete</mat-icon>
   </button>
 </div>

@@ -15,7 +15,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { InputDisplayComponent } from './display/input-display/input-display.component';
 import { InputContainerSectionComponent } from './input-container-section/input-container-section.component';
-
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -35,6 +35,7 @@ import { InputContainerSectionComponent } from './input-container-section/input-
     MatButtonModule,
     MatInputModule,
     MatFormFieldModule,
-  ]
+    MatTooltipModule,
+  ],
 })
-export class InputModule { }
+export class InputModule {}

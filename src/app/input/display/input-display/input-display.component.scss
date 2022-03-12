@@ -13,3 +13,33 @@
     }
   }
 }
+
+.add-section{
+  padding: 20px 0px 0px 20px ;
+}
+
+hr{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.section-total{
+  &>b{
+    font-size: 24px;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  &>b::after{
+    font-family: "Font Awesome 5 Free";
+    content: "\f101"; // Unicode
+    display: inline-block;
+    padding-right: 3px;
+    vertical-align: -2px;
+    font-weight: 900;
+    color: greenyellow;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  &>code{
+    font-size: 26px;
+  }
+}
