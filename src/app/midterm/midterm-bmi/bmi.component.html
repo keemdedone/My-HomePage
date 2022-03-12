@@ -1,21 +1,32 @@
+<mat-toolbar color="primary">
+  BMI
+</mat-toolbar>
+
+<form [formGroup]="formGroup" class="input">
+  <mat-form-field appearance="outline">
+    <mat-label>Height</mat-label>
+    <mat-icon matPrefix>height</mat-icon>
+    <mat-hint>cm.</mat-hint>
+    <input matInput #elem2 type="number" #height formControlName="height">
+    <mat-error *ngIf="formGroup.get('height')?.errors?.['required']">Plase input your height</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Weight</mat-label>
+    <mat-icon matPrefix>monitor_weight</mat-icon>
+    <mat-hint>kg.</mat-hint>
+    <input matInput #elem1 type="number" #weight formControlName="weight">
+    <mat-error *ngIf="formGroup.get('weight')?.errors?.['required']">Plase input your weight</mat-error>
+  </mat-form-field>
+</form>
+
 <ng-container>
-  <div class="info-container" >
-      <b>Your Height (cm.)</b><input #elem2 type="number" #height>
-      <b>Your Weight (kg.)</b><input #elem1 type="number" #weight>
-  </div>
   <div class="button">
-    <button type="button" (click)="getresult(weight.value,height.value)">OK</button> <!-- ส่งค่าเป็น stirng -->
+    <button mat-raised-button color="primary" type="button" (click)="getresult(weight.value,height.value)">Calculate</button> <!-- ส่งค่าเป็น stirng -->
   </div>
   <div class="display">
     <output>
       <b>Your BMI is</b><code>{{ result }}</code>
     </output>
-  </div>
-</ng-container>
-
-<ng-container>
-  <div class="info-condition">
-      <h3>Condition!!!</h3>
-      <p>This question is my free style.</p>
   </div>
 </ng-container>
