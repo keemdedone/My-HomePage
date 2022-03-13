@@ -1,6 +1,9 @@
 <mat-toolbar color="primary">
   Each input value
 </mat-toolbar>
+<div class="section-text">
+  <label>Section</label><code>{{getSectionIndex()+1}}</code>
+</div>
 <div class="input-container">
   <div *ngFor="let item of getItems(); let i = index">
     <div class="input-show">

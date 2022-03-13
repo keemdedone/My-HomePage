@@ -19,7 +19,7 @@ export class InputTotalSectionDisplayComponent implements OnInit {
   }
 
   getSectionIndex(): number{
-    return parseInt(this.activateRoute.snapshot.paramMap.get('sectionIndex') || '0',
+    return parseInt(this.activateRoute.snapshot.paramMap.get('sectionIndex') || '0', // sectionIndex
     );
   }
 
