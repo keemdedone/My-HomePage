@@ -7,7 +7,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class InputContainerSectionComponent implements OnInit {
   @Input() sections:{value:number}[] | null = null; // get from input-display
-  @Output() update = new EventEmitter<{index:number,value:number}>(); // to input-display.ts
+  @Output() update = new EventEmitter<{index:number,value:number}>(); //output to input-display.ts
   @Output() add = new EventEmitter<any>(); //output to input-display.ts
   @Output() delete = new EventEmitter<number>(); //output to input-display.ts
 

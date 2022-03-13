@@ -33,7 +33,7 @@
     </button>
   </div>
   <app-input-container-section
-  [sections]="item"
+  [sections]="item" 
   (update)="inputService.updateItem(i,$event.index,$event.value)"
   (add)="inputService.addItem(i)"
   (delete)="inputService.removeItem(i,$event)"

@@ -19,12 +19,12 @@ export class InputTotalSectionDisplayComponent implements OnInit {
   }
 
   getSectionIndex(): number{
-    return parseInt(this.activateRoute.snapshot.paramMap.get('sectionIndex') || '0', // sectionIndex
+    return parseInt(this.activateRoute.snapshot.paramMap.get('sectionIndex') || '0', // sectionIndex for
     );
   }
 
   getItems() {
-    return this.dataSerive.getData()[this.getSectionIndex()];
+    return this.dataSerive.getData()[this.getSectionIndex()]; // array of each this getSectionIndex() section and in this section is *input* value
   }
 
 }

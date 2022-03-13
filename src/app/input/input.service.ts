@@ -26,7 +26,7 @@ export class InputService {
   }
 
   updateItem(sectionIndex:number,index:number,value:number): void{
-    this.data[sectionIndex][index].value = value;
+    this.data[sectionIndex][index].value = value; //update section[inputbox]
     this.updateStorage();
   }
 
