@@ -1,0 +1,10 @@
+<mat-toolbar color="primary">
+  Each input value
+</mat-toolbar>
+<div class="input-container">
+  <div *ngFor="let item of getItems(); let i = index">
+    <div class="input-show">
+      <label>Input</label><b>{{i+1}}</b><span>{{item.value}}</span>
+    </div>
+  </div>
+</div>

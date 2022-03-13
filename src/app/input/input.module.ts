@@ -16,6 +16,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { InputDisplayComponent } from './display/input-display/input-display.component';
 import { InputContainerSectionComponent } from './input-container-section/input-container-section.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { InputTotalDisplayComponent } from './display/input-total-display/input-total-display.component';
+import { InputTotalSectionDisplayComponent } from './display/input-total-section-display/input-total-section-display.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     InputContainerComponent,
     InputDisplayComponent,
     InputContainerSectionComponent,
+    InputTotalDisplayComponent,
+    InputTotalSectionDisplayComponent,
   ],
   imports: [
     CommonModule,

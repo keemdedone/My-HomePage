@@ -16,6 +16,9 @@
 
 <div *ngFor="let item of inputService.getData() as Section ; let i = index;" class="main">
   <!-- as Section use to instend inputService.getData() -->
+  <div class="section-text">
+    <label>Section {{i+1}}</label>
+  </div>
   <div class="section">
     <button
     mat-stroked-button

@@ -1,0 +1,13 @@
+<mat-toolbar color="primary">
+  Total results
+</mat-toolbar>
+<div class="section-container">
+  <div class="result-label">
+    <label>All results of each section</label>
+  </div>
+  <div *ngFor="let items of dataService.getData(); let i = index">
+    <div class="section-input">
+      <a [routerLink]="[i]">Section {{i+1}}</a><span>{{display(items)}}</span>
+    </div>
+  </div>
+</div>
