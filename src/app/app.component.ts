@@ -33,4 +33,12 @@ export class AppComponent implements OnInit {
 
       this.portal$ = this.sidenavPortalService.portal$;
   }
+
+  play():void{
+    let audio = new Audio();
+    audio.src = '../assets/music/15-OnOurway.m4a'
+    audio.load();
+    audio.play();
+  }
+  
 }

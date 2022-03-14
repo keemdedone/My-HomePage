@@ -47,3 +47,10 @@ mat-toolbar{
   z-index: 2;
   box-shadow: 0px 0px 8px 0px  black;
 }
+
+.playMusic{
+  margin-left: 10px;
+  &>mat-icon{
+    margin-left: 10px;
+  }
+}
