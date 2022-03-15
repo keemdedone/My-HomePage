@@ -15,6 +15,10 @@ const routes: Routes = [
   {
     path: 'input',
     loadChildren: () => import('./input/input.module').then((i) => i.InputModule)
+  },
+  {
+    path: 'my-form',
+    loadChildren: () => import('./my-form/my-form.module').then((f) => f.MyFormModule)
   }
 ];
 

@@ -1,0 +1,7 @@
+<mat-toolbar color="primary">
+  My-Form
+</mat-toolbar>
+
+<app-my-form-page
+[data]="dataService.getData()"
+(update)="dataService.update($event)"></app-my-form-page>
