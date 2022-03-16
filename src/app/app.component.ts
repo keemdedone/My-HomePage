@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
   isSmallScreen$!: Observable<boolean>;
   portal$!: Observable<Portal<unknown> | null>
   count: number = 0
-  show: boolean = false;
+  show: boolean = true;
 
   constructor(
     private readonly breakpointObservable: BreakpointObserver,

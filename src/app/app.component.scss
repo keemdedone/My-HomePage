@@ -49,18 +49,16 @@ mat-toolbar{
 }
 
 audio{
-  vertical-align: -5px;
+  vertical-align: -7px;
   width: 300px;
   height: 25px;
-  margin-left: 30px;
+  margin-left: 10px;
 
   //audio control BG color
   &::-webkit-media-controls-enclosure {
     border-radius: 10px;
   }
 }
-
-
 
 .showAudioControl{
   margin-left: 10px;
