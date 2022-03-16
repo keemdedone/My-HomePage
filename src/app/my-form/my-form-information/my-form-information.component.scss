@@ -1,0 +1,39 @@
+.infomation{
+  font-family: 'Courier New', Courier, monospace;
+  margin-left: 40px;
+  margin-top: 20px;
+  div{
+    padding-bottom: 20px;
+    display: grid;
+    grid-template-columns: 0.25fr 1fr;
+    &>b{
+      font-size: 18px;
+      text-align: right;
+    }
+    &>b::after{
+      font-family: "Font Awesome 5 Free";
+      content: "\f054"; // Unicode
+      display: inline-block;
+      padding-right: 3px;
+      vertical-align: -2px;
+      font-weight: 900;
+      color: greenyellow;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    &>label{
+      font-size: 20px;
+    }
+  }
+}
+
+.noData{
+  font-size: 30px;
+  &>mat-icon{
+    padding-left: 20px;
+    font-size: 30px;
+    vertical-align: -5px;
+  }
+  text-align: center;
+  margin-top: 25%;
+}

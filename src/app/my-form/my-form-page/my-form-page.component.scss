@@ -1,0 +1,14 @@
+form{
+  margin-top: 30px;
+  margin-left: 30px;
+  &>.name{
+    &>mat-form-field{
+      padding-right: 15px;
+    }
+  }
+  &>.family{
+    &>mat-form-field{
+      padding-right: 15px;
+    }
+  }
+}

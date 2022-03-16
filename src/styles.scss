@@ -36,7 +36,7 @@ $my-homepage-theme: mat.define-light-theme((
 /* You can add global styles to this file, and also import other style files */
 
 html{
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: 'Courier New', Courier, monospace !important;
 }
 
 input[type="number"]{
@@ -60,5 +60,5 @@ input[type="number"]{
   margin: 1em 12cm 0em 12cm;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body { height: 100%;}
+body { margin: 0;}

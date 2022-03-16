@@ -1,0 +1,31 @@
+<mat-toolbar color="primary">
+  My infomation
+</mat-toolbar>
+
+<mat-list *ngIf="data;else noData">
+  <mat-list-item class="infomation">
+    <div matLine>
+      <b>Name</b><label>{{data.fname}} {{data.lname}}</label>
+    </div>
+    <div matLine>
+      <b>Family Name</b><label>{{data.fatherName}} - {{data.motherName}} - {{data.siterName}}</label>
+    </div>
+    <div matLine>
+      <b>Age</b><label>{{data.age}}</label>
+    </div>
+    <div matLine>
+      <b>Gender</b><label>{{data.gender}}</label>
+    </div>
+    <div matLine>
+      <b>Adderss</b><label>{{data.address}}</label>
+    </div>
+  </mat-list-item>
+</mat-list>
+
+<ng-template #noData>
+  <div class="noData">
+    <b>No Data</b>
+    <mat-icon>folder_off</mat-icon>
+  </div>
+</ng-template>
+

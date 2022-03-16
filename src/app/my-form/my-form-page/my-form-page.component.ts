@@ -14,7 +14,7 @@ export class MyFormPageComponent implements OnInit {
   @Output() update = new EventEmitter<myFormData>();
 
   formGroup!: FormGroup;
-  value: any | null = null;
+  value: any | null = null; //for check console.log()
 
   constructor(
     private readonly fb: FormBuilder,
@@ -51,7 +51,7 @@ export class MyFormPageComponent implements OnInit {
     if(this.formGroup.invalid){
       this.formGroup.markAllAsTouched();
     } else {
-      this.value = this.formGroup.value
+      this.value = this.formGroup.value //for check console.log()
       this.update.emit(this.value)
     }
   }

@@ -1,6 +1,6 @@
 <form [formGroup]="formGroup">
 
-  <div>
+  <div class="name">
     <mat-form-field appearance="outline">
       <mat-label>First Name</mat-label>
       <mat-icon matPrefix>person</mat-icon>
@@ -17,26 +17,26 @@
     </mat-form-field>
   </div>
 
-  <div>
+  <div class="family">
     <mat-form-field appearance="outline">
       <mat-label>Father Name</mat-label>
-      <mat-icon matPrefix>people</mat-icon>
+      <mat-icon matPrefix>person</mat-icon>
       <input type="text" matInput formControlName="fatherName">
       <mat-error *ngIf="formGroup.get('fatherName')?.errors?.['required']">Required</mat-error>
       <mat-hint>Your father name</mat-hint>
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>mother Name</mat-label>
-      <mat-icon matPrefix>people</mat-icon>
+      <mat-icon matPrefix>person</mat-icon>
       <input type="text" matInput formControlName="motherName">
       <mat-error *ngIf="formGroup.get('motherName')?.errors?.['required']">Required</mat-error>
       <mat-hint>Your mother name</mat-hint>
     </mat-form-field>
     <mat-form-field appearance="outline">
-      <mat-label>siter Name</mat-label>
+      <mat-label>sister Name</mat-label>
       <mat-icon matPrefix>people</mat-icon>
       <input type="text" matInput formControlName="siterName">
-      <mat-hint>Your siter name</mat-hint>
+      <mat-hint>Your sister name</mat-hint>
     </mat-form-field>
   </div>
 
@@ -83,5 +83,3 @@
     Save
   </button>
 </form>
-
-<pre *ngIf="value">{{ value | json }}</pre>

@@ -15,9 +15,17 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { TextFieldModule } from '@angular/cdk/text-field';
 import { MyformPageDisplayComponent } from './display/myform-page-display/myform-page-display.component';
+import { MyFormInformationComponent } from './my-form-information/my-form-information.component';
+import { MyFormInformationDisplayComponent } from './display/my-form-information-display/my-form-information-display.component';
 
 @NgModule({
-  declarations: [MyFormComponent, MyFormPageComponent, MyformPageDisplayComponent],
+  declarations: [
+    MyFormComponent,
+    MyFormPageComponent,
+    MyformPageDisplayComponent,
+    MyFormInformationComponent,
+    MyFormInformationDisplayComponent,
+  ],
   imports: [
     CommonModule,
     MyFormRoutingModule,
