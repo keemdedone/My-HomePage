@@ -19,6 +19,8 @@ export class AppComponent implements OnInit {
   //for $ my teacher say "it's tradition"
   isSmallScreen$!: Observable<boolean>;
   portal$!: Observable<Portal<unknown> | null>
+  count: number = 0
+  show: boolean = false;
 
   constructor(
     private readonly breakpointObservable: BreakpointObserver,
@@ -34,11 +36,7 @@ export class AppComponent implements OnInit {
       this.portal$ = this.sidenavPortalService.portal$;
   }
 
-  play():void{
-    let audio = new Audio();
-    audio.src = '../assets/music/15-OnOurway.m4a'
-    audio.load();
-    audio.play();
+  showAudioControl(): void{
+    this.show = ! this.show;
   }
-  
 }

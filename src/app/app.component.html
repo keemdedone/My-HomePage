@@ -6,11 +6,21 @@
     <mat-icon>menu</mat-icon>
   </button>
   <span>My-Angular</span>
-  <button (click)="play()" class="playMusic" mat-raised-button>
-    <mat-icon>
-      music_note
-    </mat-icon>
+
+<div class="showAudioControl">
+  <button type="submit" (click)="showAudioControl()" mat-raised-button color="primary">
+    <mat-icon>music_note</mat-icon>
   </button>
+</div>
+
+<div *ngIf="show">
+    <audio controls>
+      <source src="../assets/music/15-OnOurway.m4a" type="audio/ogg">
+      <source src="../assets/music/15-OnOurway.m4a" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+</div>
+
   <nav>
     <a mat-button routerLink="midterm">Midterm</a>
     <a mat-button routerLink="input">Input</a>
