@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { MyFormRoutingModule } from './my-form-routing.module';
 import { MyFormComponent } from './my-form/my-form.component';
@@ -37,8 +38,9 @@ import { MyFormInformationDisplayComponent } from './display/my-form-information
     MatButtonModule,
     MatInputModule,
     MatFormFieldModule,
-    MatSelectModule,
-    TextFieldModule,
+    MatSelectModule, // select option
+    TextFieldModule, // text area
+    FormsModule, // i use for fiexd form value that make user don't re-write again
   ],
 })
 export class MyFormModule {}

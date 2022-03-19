@@ -1,0 +1,8 @@
+<mat-toolbar color="primary">
+  StarWar people name list
+</mat-toolbar>
+<app-star-war-people
+[data]=" data$ | async "
+[search]="search"
+(searchChange)="onSearch($event)"
+(itemSelect)="onItemSelect($event)"></app-star-war-people>

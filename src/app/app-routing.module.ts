@@ -19,6 +19,10 @@ const routes: Routes = [
   {
     path: 'my-form',
     loadChildren: () => import('./my-form/my-form.module').then((f) => f.MyFormModule)
+  },
+  {
+    path: 'star-war',
+    loadChildren: () => import('./star-war/star-war.module').then((s) => s.StarWarModule)
   }
 ];
 

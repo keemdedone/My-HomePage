@@ -4,14 +4,14 @@
     <mat-form-field appearance="outline">
       <mat-label>First Name</mat-label>
       <mat-icon matPrefix>person</mat-icon>
-      <input type="text" matInput formControlName="fname">
+      <input type="text" matInput formControlName="fname" [(ngModel)]="data.fname">
       <mat-error *ngIf="formGroup.get('fname')?.errors?.['required']">Required</mat-error>
       <mat-hint>Your first name</mat-hint>
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>Last Name</mat-label>
       <mat-icon matPrefix>person</mat-icon>
-      <input type="text" matInput formControlName="lname">
+      <input type="text" matInput formControlName="lname" [(ngModel)]="data.lname">
       <mat-error *ngIf="formGroup.get('lname')?.errors?.['required']">Required</mat-error>
       <mat-hint>Your last name</mat-hint>
     </mat-form-field>
@@ -21,21 +21,22 @@
     <mat-form-field appearance="outline">
       <mat-label>Father Name</mat-label>
       <mat-icon matPrefix>person</mat-icon>
-      <input type="text" matInput formControlName="fatherName">
+      <input type="text" matInput formControlName="fatherName" [(ngModel)]="data.fatherName">
       <mat-error *ngIf="formGroup.get('fatherName')?.errors?.['required']">Required</mat-error>
       <mat-hint>Your father name</mat-hint>
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>mother Name</mat-label>
       <mat-icon matPrefix>person</mat-icon>
-      <input type="text" matInput formControlName="motherName">
+      <input type="text" matInput formControlName="motherName" [(ngModel)]="data.motherName">
       <mat-error *ngIf="formGroup.get('motherName')?.errors?.['required']">Required</mat-error>
       <mat-hint>Your mother name</mat-hint>
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>sister Name</mat-label>
       <mat-icon matPrefix>people</mat-icon>
-      <input type="text" matInput formControlName="siterName">
+      <input type="text" matInput formControlName="siterName" [(ngModel)]="data.siterName">
+      <mat-error *ngIf="formGroup.get('siterName')?.errors?.['required']">Required</mat-error>
       <mat-hint>Your sister name</mat-hint>
     </mat-form-field>
   </div>
@@ -44,7 +45,7 @@
     <mat-form-field appearance="outline">
       <mat-label>Age</mat-label>
       <mat-icon matPrefix>filter_frames</mat-icon>
-      <input type="number" matInput formControlName="age">
+      <input type="number" matInput formControlName="age" [(ngModel)]="data.age">
       <mat-hint>Your age</mat-hint>
     </mat-form-field>
   </div>
@@ -53,7 +54,7 @@
     <mat-form-field appearance="outline">
       <mat-label>Gender</mat-label>
       <mat-icon matPrefix>transgender</mat-icon>
-      <mat-select formControlName="gender">
+      <mat-select formControlName="gender" [(ngModel)]="data.gender">
         <mat-option [value]="null">-- Please select --</mat-option>
         <mat-option [value]="'Male'">Male</mat-option>
         <mat-option [value]="'Female'">Female</mat-option>
@@ -72,7 +73,8 @@
         cdkTextareaAutosize
         #autosize="cdkTextareaAutosize"
         cdkAutosizeMinRows="1"
-        cdkAutosizeMaxRows="5"></textarea>
+        cdkAutosizeMaxRows="5"
+        [(ngModel)]="data.address"></textarea>
       <mat-hint>Your address</mat-hint>
       <mat-error *ngIf="formGroup.get('address')?.errors?.['required']">Required</mat-error>
     </mat-form-field>

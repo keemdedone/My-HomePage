@@ -28,12 +28,10 @@ export class MyFormService {
 
   private updateStorage(): void{
     localStorage.setItem('keem-form',JSON.stringify(this.data)); // display in F12->application->localStorage
-    console.log(this.data);
   }
 
   update(data: myFormData): void {
     this.data = data;
-    console.log(data)
     this.updateStorage();
   }
 
