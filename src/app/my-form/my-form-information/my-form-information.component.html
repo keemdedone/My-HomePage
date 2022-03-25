@@ -8,9 +8,6 @@
       <b>Name</b><label>{{data.fname}} {{data.lname}}</label>
     </div>
     <div matLine>
-      <b>Family Name</b><label>{{data.fatherName}} - {{data.motherName}} - {{data.siterName}}</label>
-    </div>
-    <div matLine>
       <b>Age</b><label>{{data.age}}</label>
     </div>
     <div matLine>
@@ -18,6 +15,16 @@
     </div>
     <div matLine>
       <b>Adderss</b><label>{{data.address}}</label>
+    </div>
+  </mat-list-item>
+  <mat-list-item class="information-music">
+    <div matLine class="music-container">
+      <b>Music</b>
+      <div class="music">
+        <div *ngFor="let item of data.music ; let i = index" class="music-list">
+          {{item.name}} <b>[ {{item.artist}} ]</b> , {{item.nationality}}
+        </div>
+      </div>
     </div>
   </mat-list-item>
 </mat-list>

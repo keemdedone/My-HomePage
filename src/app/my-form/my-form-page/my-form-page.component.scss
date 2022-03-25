@@ -1,6 +1,7 @@
 form{
   margin-top: 30px;
   margin-left: 30px;
+  text-align: center;
   &>.name{
     &>mat-form-field{
       padding-right: 15px;
@@ -10,5 +11,48 @@ form{
     &>mat-form-field{
       padding-right: 15px;
     }
+  }
+  &>.AgeGender{
+    &>mat-form-field{
+      padding-right: 15px;
+    }
+  }
+  &>.address{
+    &>mat-form-field{
+      width: 400px;
+    }
+  }
+  &>.form-insert{
+    width: 850px;
+    margin: auto;
+    text-align: center;
+    &>ul{
+      list-style-type: upper-roman;
+    }
+    &>b{
+      padding-right: 15px;
+    }
+    &>.add{
+      border-color: #303f9f;
+    }
+    &>.music-details{
+      margin-top: 10px;
+    }
+  }
+  &>.save{
+    margin-bottom: 20px;
+  }
+}
+
+.del{
+  margin-left: 10px;
+  border: 2px solid red;
+  vertical-align: 3px;
+  height: 52px;
+}
+
+li{
+  &>mat-form-field{
+    margin-right: 10px;
   }
 }

@@ -27,6 +27,41 @@
   }
 }
 
+.information-music{
+  font-family: 'Courier New', Courier, monospace;
+  margin-left: 40px;
+  .music-container{
+    display: grid;
+    grid-template-columns: 0.25fr 1fr;
+    &>b{
+      font-size: 18px;
+      text-align: right;
+    }
+    &>b::after{
+      font-family: "Font Awesome 5 Free";
+      content: "\f054"; // Unicode
+      display: inline-block;
+      padding-right: 3px;
+      vertical-align: -2px;
+      font-weight: 900;
+      color: greenyellow;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    .music{
+      display: grid;
+      grid-template-columns: 1fr;
+      .music-list{
+        margin-bottom: 10px;
+        font-size: 20px;
+        &>b{
+          font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+      }
+    }
+  }
+}
+
 .noData{
   font-size: 30px;
   &>mat-icon{

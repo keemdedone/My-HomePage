@@ -1,14 +1,18 @@
 import { Injectable } from '@angular/core';
 
 export type myFormData = {
-  fname?: string,
-  lname?: string,
-  fatherName?: string,
-  motherName?: string,
-  siterName?: string,
-  age?: number,
-  gender?: 'male' | 'female',
-  address?: string,
+  fname?: string | null,
+  lname?: string | null,
+  age?: number | null,
+  gender?: 'male' | 'female'| null,
+  address?: string | null,
+  music?: song[],
+}
+
+export type song = {
+  artist: string,
+  name: string,
+  nationality: string,
 }
 
 @Injectable({

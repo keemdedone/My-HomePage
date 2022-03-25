@@ -1,7 +1,6 @@
-import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
-import { AbstractControl, ControlValueAccessor, FormBuilder, FormGroup, NG_VALIDATORS, NG_VALUE_ACCESSOR, ValidationErrors, Validator, Validators } from '@angular/forms';
-import { Subscription } from 'rxjs';
-import { myFormData } from '../my-form.service';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { myFormData, song } from '../my-form.service';
 
 @Component({
   selector: 'app-my-form-page',
@@ -15,6 +14,13 @@ export class MyFormPageComponent implements OnInit {
   formGroup!: FormGroup;
   value: any | null = null; //for check console.log()
 
+  private readonly createSong = (song: song | null) =>
+  this.fb.group({
+    artist: [song?.artist || null,[Validators.required]],
+    name: [song?.name || null,[Validators.required]],
+    nationality: [song?.nationality || null,[Validators.required]],
+  })
+
   constructor(
     private readonly fb: FormBuilder,
   ) { }
@@ -23,18 +29,27 @@ export class MyFormPageComponent implements OnInit {
     this.formGroup = this.fb.group({
       fname: [null,[Validators.required]],
       lname:  [null,[Validators.required]],
-      fatherName: [null,[Validators.required]],
-      motherName:[null,[Validators.required]],
-      siterName: [null,[Validators.required]],
       age: [null,[Validators.required]],
       gender: [null,[Validators.required]],
       address: [null,[Validators.required]],
-    });
+      music: this.fb.array((this.data?.music || []).map(this.createSong))
+    })
+  }
+
+  get music(): FormArray {
+    return this.formGroup.get('music') as FormArray;
+  }
+
+  addMusic(): void{
+    this.music.push(this.createSong(null))
+  }
+
+  deleteMusic(index:number): void{
+    this.music.removeAt(index)
   }
 
   onSubmit(): void{
     this.formGroup.updateValueAndValidity();
-
     if(this.formGroup.invalid){
       this.formGroup.markAllAsTouched();
     } else {

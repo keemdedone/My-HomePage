@@ -18,6 +18,7 @@ import { TextFieldModule } from '@angular/cdk/text-field';
 import { MyformPageDisplayComponent } from './display/myform-page-display/myform-page-display.component';
 import { MyFormInformationComponent } from './my-form-information/my-form-information.component';
 import { MyFormInformationDisplayComponent } from './display/my-form-information-display/my-form-information-display.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { MyFormInformationDisplayComponent } from './display/my-form-information
     MatButtonModule,
     MatInputModule,
     MatFormFieldModule,
+    MatTooltipModule,
     MatSelectModule, // select option
     TextFieldModule, // text area
     FormsModule, // i use for fiexd form value that make user don't re-write again

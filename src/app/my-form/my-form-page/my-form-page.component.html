@@ -17,40 +17,13 @@
     </mat-form-field>
   </div>
 
-  <div class="family">
-    <mat-form-field appearance="outline">
-      <mat-label>Father Name</mat-label>
-      <mat-icon matPrefix>person</mat-icon>
-      <input type="text" matInput formControlName="fatherName" [(ngModel)]="data.fatherName">
-      <mat-error *ngIf="formGroup.get('fatherName')?.errors?.['required']">Required</mat-error>
-      <mat-hint>Your father name</mat-hint>
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-      <mat-label>mother Name</mat-label>
-      <mat-icon matPrefix>person</mat-icon>
-      <input type="text" matInput formControlName="motherName" [(ngModel)]="data.motherName">
-      <mat-error *ngIf="formGroup.get('motherName')?.errors?.['required']">Required</mat-error>
-      <mat-hint>Your mother name</mat-hint>
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-      <mat-label>sister Name</mat-label>
-      <mat-icon matPrefix>people</mat-icon>
-      <input type="text" matInput formControlName="siterName" [(ngModel)]="data.siterName">
-      <mat-error *ngIf="formGroup.get('siterName')?.errors?.['required']">Required</mat-error>
-      <mat-hint>Your sister name</mat-hint>
-    </mat-form-field>
-  </div>
-
-  <div>
+  <div class="AgeGender">
     <mat-form-field appearance="outline">
       <mat-label>Age</mat-label>
       <mat-icon matPrefix>filter_frames</mat-icon>
       <input type="number" matInput formControlName="age" [(ngModel)]="data.age">
       <mat-hint>Your age</mat-hint>
     </mat-form-field>
-  </div>
-
-  <div>
     <mat-form-field appearance="outline">
       <mat-label>Gender</mat-label>
       <mat-icon matPrefix>transgender</mat-icon>
@@ -64,7 +37,7 @@
     </mat-form-field>
   </div>
 
-  <div>
+  <div class="address">
     <mat-form-field appearance="outline">
       <mat-label>Address</mat-label>
       <mat-icon matPrefix>home</mat-icon>
@@ -80,8 +53,57 @@
     </mat-form-field>
   </div>
 
-  <button mat-flat-button color="primary" type="submit" (click)="onSubmit()">
+  <div formArrayName="music" class="form-insert">
+    <b>Music</b>
+    <button
+    matTooltip="Add new music"
+    mat-stroked-button
+    color="primary"
+    type="button"
+    (click)="addMusic()"
+    class="add">
+      <mat-icon>add</mat-icon>
+    </button>
+    <!-- this ul just for make this loop below show roman number style in each section -->
+    <ul>
+      <div *ngFor="let control of music.controls ; let j = index " [formGroupName]="j" class="music-details">
+        <li>
+        <mat-form-field appearance="outline">
+          <mat-label>Artist</mat-label>
+          <mat-icon matPrefix>account_box</mat-icon>
+          <input matInput type="text" formControlName="artist">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Name</mat-label>
+          <mat-icon matPrefix>graphic_eq</mat-icon>
+          <input matInput type="text" formControlName="name">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Nationality</mat-label>
+          <mat-icon matPrefix>assistant_photo</mat-icon>
+          <input matInput type="text" formControlName="nationality">
+        </mat-form-field>
+        <button
+        mat-stroked-button
+        color="warn"
+        type="button"
+        (click)="deleteMusic(j)"
+        class="del">
+          <mat-icon>delete_forever</mat-icon>
+        </button>
+        </li>
+      </div>
+    </ul>
+  </div>
+
+  <button
+  mat-flat-button
+  color="primary"
+  type="submit"
+  (click)="onSubmit()"
+  class="save">
     <mat-icon>save</mat-icon>
     Save
   </button>
+
 </form>
