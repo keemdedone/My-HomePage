@@ -62,3 +62,32 @@ input[type="number"]{
 
 html, body { height: 100%;}
 body { margin: 0;}
+
+//star-war-CSS
+.star-war-list-cmp{
+  &>.star-war-data-list{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    &>label{
+      font-size: 20px;
+      font-family: 'Courier New', Courier, monospace;
+    }
+  }
+  &>.star-war-data-list:hover{
+    background-color: silver;
+    cursor: pointer;
+    &>label{
+      cursor: pointer;
+    }
+  }
+}
+
+.star-war-search-box{
+  margin-top: 10px;
+  &>mat-form-field{
+    text-align: center;
+    mat-icon:hover{
+      cursor: pointer;
+    }
+  }
+}

@@ -1,9 +1,5 @@
 <div *ngIf="data; else loading" class="list"> <!-- check data null or not -->
 
-  <div *ngIf="pageEvent">
-    {{pageEvent.pageIndex}}
-  </div>
-
   <mat-paginator
     [length]="data.count"
     [pageSize]="10"
@@ -12,11 +8,20 @@
     aria-label="Select page">
   </mat-paginator>
 
-  <form [formGroup]="formGroup" (ngSubmit)="onSearch()">
-      <input type="search" formControlName="search" placeholder=" Search Here ">
+  <form [formGroup]="formGroup" (ngSubmit)="onSearch()" class="star-war-search-box">
+    <mat-form-field appearance="outline">
+      <mat-label>Search</mat-label>
+      <mat-icon (click)="onSearch()" matSuffix>search</mat-icon>
+      <input matInput type="search" formControlName="search">
+    </mat-form-field>
   </form>
-  <div class="">
-    <div  class="" *ngFor="let item of data.results; let i = index" (click)="onItemClick(item.url)">
+
+  <div *ngIf="data.count === 0">
+    <h1>No Results</h1>
+  </div>
+
+  <div class="star-war-list-cmp">
+    <div  class="star-war-data-list" *ngFor="let item of data.results; let i = index" (click)="onItemClick(item.url)">
       <label>{{ item.name }}</label>
     </div>
     <!-- // this is manaul function //
