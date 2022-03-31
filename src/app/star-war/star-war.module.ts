@@ -16,12 +16,16 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { StarWarPeopleViewPageComponent } from './star-war-view-page/star-war-people-view-page/star-war-people-view-page.component';
+import { StarWarPersonComponent } from './star-war-view/star-war-person/star-war-person.component';
 
 @NgModule({
   declarations: [
     StarWarComponent,
     StarWarPeopleComponent,
     StarWarPeopleListPageComponent,
+    StarWarPersonComponent,
+    StarWarPeopleViewPageComponent,
   ],
   imports: [
     CommonModule,

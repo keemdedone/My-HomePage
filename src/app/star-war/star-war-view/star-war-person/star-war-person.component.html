@@ -1,0 +1,65 @@
+<div *ngIf="data; else loading">
+
+  <mat-toolbar color="primary">
+    {{data?.name}} infomation
+  </mat-toolbar>
+
+  <mat-list class="people-infomation">
+
+    <div *ngIf="data.name.length !== 0 && data.name !== 'n/a' ">
+      <mat-list-item>
+        <mat-icon>person</mat-icon>
+        <b>Name</b><label>{{data.name}}</label>
+      </mat-list-item>
+    </div>
+
+    <div *ngIf="data.height.toString().length !== 0">
+      <mat-list-item>
+        <mat-icon>height</mat-icon>
+        <b>Height</b><label>{{data.height}} Cm.</label>
+      </mat-list-item>
+    </div>
+
+    <div *ngIf="data.mass.toString().length !== 0">
+      <mat-list-item>
+        <mat-icon>monitor_weight</mat-icon>
+        <b>Mass</b><label>{{data.mass}} Kg.</label>
+      </mat-list-item>
+    </div>
+
+    <div *ngIf="data.gender.length !== 0 && data.gender !== 'n/a' ">
+      <mat-list-item>
+        <mat-icon>transgender</mat-icon>
+        <b>Gender</b><label>{{data.gender}}</label>
+      </mat-list-item>
+    </div>
+
+    <div *ngIf="data.homeworld.length !== 0 && data.homeworld !== 'n/a' ">
+      <mat-list-item>
+        <mat-icon>home</mat-icon>
+        <b>HomeWorld</b><label>{{data.homeworld}}</label>
+      </mat-list-item>
+    </div>
+
+    <div *ngIf="data.species.length !== 0 ">
+      <mat-list-item>
+        <mat-icon>people</mat-icon>
+        <b>Species</b><label>{{data.species}}</label>
+      </mat-list-item>
+    </div>
+
+    <div *ngIf="data.starships.length !== 0">
+      <mat-list-item>
+        <mat-icon>sports_motorsports</mat-icon>
+        <b>StarShips</b><label>{{data.starships}}</label>
+      </mat-list-item>
+    </div>
+
+  </mat-list>
+</div>
+
+<ng-template #loading>
+  <svg class="loading-spinner" viewBox="0 0 50 50">
+    <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="7.5"></circle>
+  </svg>
+</ng-template>
