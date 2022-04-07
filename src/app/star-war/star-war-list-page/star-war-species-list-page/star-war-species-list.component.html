@@ -1,8 +1,8 @@
 <mat-toolbar color="primary">
-  People name list
+  Species name list
 </mat-toolbar>
-<app-star-war-people
+<app-star-war-species
 [data]=" data$ | async "
 [search]="search"
 (searchChange)="onSearch($event)"
-(itemSelect)="onItemSelect($event)"></app-star-war-people>
+(itemSelect)="onItemSelect($event)"></app-star-war-species>
