@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { planet } from '../../models/models';
 
 @Component({
   selector: 'app-star-war-planet',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./star-war-planet.component.scss']
 })
 export class StarWarPlanetComponent implements OnInit {
+  @Input() data: planet | null = null;
 
   constructor() { }
 
   ngOnInit(): void {
+    return
   }
 
 }

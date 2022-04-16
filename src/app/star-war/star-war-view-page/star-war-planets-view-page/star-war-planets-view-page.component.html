@@ -1,1 +1,5 @@
-<p>star-war-planets-view-page works!</p>
+<app-star-war-planet [data]="data$ | async"></app-star-war-planet>
+<div class="arrow" (click)="goBack()">
+  <div class="arrow-top"></div>
+  <div class="arrow-bottom"></div>
+</div>
