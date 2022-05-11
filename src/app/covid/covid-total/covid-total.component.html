@@ -1,0 +1,48 @@
+<div *ngIf="data; else loading">
+
+    <div class="static-main-container" *ngFor="let file of data.results">
+        <div class="normal-text-container">
+            <h1>Number of infected people</h1>
+            <label>COVID-19</label>
+            <h1>All in thailand</h1>
+        </div>
+        <div class="static-container">
+            <div class="Infected-box">
+              <label>Total Infected</label>
+              <code>{{ file.total_case.toLocaleString() }}</code>
+            </div>
+            <div class="revoered-box">
+              <label>Total Recovery</label>
+              <code>{{ file.total_recovered.toLocaleString() }}</code>
+            </div>
+            <div class="death-box">
+              <label>Total Death</label>
+              <code>{{ file.total_death.toLocaleString() }}</code>
+            </div>
+        </div>
+    </div>
+
+</div>
+  
+<div *ngIf="news; else loading">
+    <div class="news-topic">
+        <b>News abount COVID-19</b>
+    </div>
+    <div class="main-container">
+        <div *ngFor="let item of news" class="news-main-continer">
+            <img src="{{ item.urlToImage }}" alt="{{ item.title }}" />
+            <div class="news-details">
+                <h2>{{ item.title }}</h2>
+                <label>
+                    {{ item.description }}
+                    <a href="{{ item.url }}" target="_blank">more..Click</a>
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+  
+<ng-template #loading>
+  <div class="spinner-border text-dark mt-3" role="status"></div>
+  <span class="sr-only">Data Loading...</span>
+</ng-template>

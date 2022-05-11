@@ -9,10 +9,15 @@ import { myFormData } from '../my-form.service';
 export class MyFormInformationComponent implements OnInit {
 
   @Input() data: myFormData | null = null;
-
+  
   constructor() { }
-
+  
   ngOnInit(): void {
+
+    if (this.data){
+      console.log('NOT NULL')
+    }
+
     return
   }
 

@@ -1,4 +1,4 @@
-<form [formGroup]="formGroup">
+<form [formGroup]="formGroup" >
 
   <div class="name">
     <mat-form-field appearance="outline">
@@ -64,7 +64,8 @@
     class="add">
       <mat-icon>add</mat-icon>
     </button>
-    <!-- this ul just for make this loop below show roman number style in each section -->
+
+    <!-- this ul tag just for make this loop below show roman number style in each section -->
     <ul>
       <div *ngFor="let control of music.controls ; let j = index " [formGroupName]="j" class="music-details">
         <li>
@@ -94,6 +95,7 @@
         </li>
       </div>
     </ul>
+    
   </div>
 
   <button
@@ -104,6 +106,16 @@
   class="save">
     <mat-icon>save</mat-icon>
     Save
+  </button>
+
+  <button 
+  mat-flat-button
+  color="warn"
+  type="button"
+  (click)="onReset()"
+  class="reset">
+    <mat-icon>refresh</mat-icon>
+    Reset
   </button>
 
 </form>

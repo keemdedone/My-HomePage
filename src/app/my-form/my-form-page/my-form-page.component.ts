@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { myFormData, song } from '../my-form.service';
 
@@ -57,6 +57,10 @@ export class MyFormPageComponent implements OnInit {
       console.log(this.value)
       this.update.emit(this.value)
     }
+  }
+
+  onReset(): void{
+    this.formGroup.reset();
   }
 
 }

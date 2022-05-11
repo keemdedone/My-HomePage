@@ -1,0 +1,128 @@
+.static-main-container{
+    padding: 30px;
+    padding-top: 50px;
+    display: flex;
+    margin: auto;
+    width: 1000px;
+    
+  
+    &>.normal-text-container{
+      width: fit-content;
+      text-align: center;
+  
+      &>h1{
+        padding-top: 30px;
+        padding-bottom: 30px;
+        font-size: 3em;
+      }
+      &>label{
+        font-size: 6em;
+        color: red;
+  
+      }
+    }
+  
+    &>.static-container{
+      border: 1px solid black; /* เอาไว้เช็คพื้นที่ว่ากว้างขนาดไหน */
+      margin-left: 40px;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 30px;
+      grid-template-areas:
+      'a a'
+      'b c';
+  
+      &>.Infected-box,.revoered-box,.death-box {
+        padding: 15px;
+        border-radius: 8px;
+        display: grid;
+        grid-template-columns: 1fr;
+        text-align: center;
+  
+        &>label{
+          font-size: 1.7em;
+        }
+        &>code{
+          margin-top: 5px;
+          font-size: 2.0em;
+          letter-spacing: 2px;
+          color: aliceblue;
+          text-align: center;
+        }
+      }
+  
+      &>.Infected-box{
+        background-color: rgb(245, 77, 77);
+        grid-area: a;
+        &>code{
+          font-size: 3em;
+        }
+      }
+      &>.revoered-box{
+        background-color: rgb(34, 177, 69);
+        grid-area: b;
+      }
+      &>.death-box{
+        background-color: grey;
+        grid-area: c;
+      }
+  
+    }
+  }
+  
+  .news-topic{
+    padding-top: 50px;
+    width: 500px;
+    text-align: center;
+    margin: auto;
+
+    &>b{
+      font-size: 10mm;
+      font-style: oblique;
+    }
+  }
+  
+  .main-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 100px;
+  
+    &>.news-main-continer{
+      text-align: center;
+      margin: auto;
+  
+      &>img{
+        width: 628px;
+        height: 350px;
+        opacity: 0.8;
+      }
+      &>img:hover{
+        opacity: 1;
+      }
+      &>.news-details{
+        width: 628px;
+        visibility: hidden;
+        padding-bottom: 20px;
+        background-color: #fff;
+  
+        &>label{
+          &>a{
+            text-decoration: none;
+          }
+        }
+      }
+    }
+    &>.news-main-continer:hover{
+      // border: 1px black solid;
+      &>.news-details{
+        text-align: center;
+        position: absolute;
+        margin-top: -128px;
+        background-color: #fff;
+        padding: 1em 20px 2em 20px;
+        visibility: visible;
+        transition: visibility 0.1s ease-in 0.1s, opacity 300ms;
+      }
+    }
+}  

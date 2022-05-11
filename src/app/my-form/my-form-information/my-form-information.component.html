@@ -2,23 +2,23 @@
   My infomation
 </mat-toolbar>
 
-<mat-list *ngIf="data;else noData">
+<mat-list *ngIf="data ; else noData">
   <mat-list-item class="infomation">
-    <div matLine>
+    <div *ngIf="data.fname && data.lname" matLine>
       <b>Name</b><label>{{data.fname}} {{data.lname}}</label>
     </div>
-    <div matLine>
+    <div *ngIf="data.age" matLine>
       <b>Age</b><label>{{data.age}}</label>
     </div>
-    <div matLine>
+    <div *ngIf="data.gender" matLine>
       <b>Gender</b><label>{{data.gender}}</label>
     </div>
-    <div matLine>
+    <div *ngIf="data.address" matLine>
       <b>Adderss</b><label>{{data.address}}</label>
     </div>
   </mat-list-item>
   <mat-list-item class="information-music">
-    <div matLine class="music-container">
+    <div *ngIf="data.fname && data.lname && data.music" matLine class="music-container">
       <b>Music</b>
       <div class="music">
         <div *ngFor="let item of data.music ; let i = index" class="music-list">

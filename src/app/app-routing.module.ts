@@ -23,6 +23,10 @@ const routes: Routes = [
   {
     path: 'star-war',
     loadChildren: () => import('./star-war/star-war.module').then((s) => s.StarWarModule)
+  },
+  {
+    path: 'covid',
+    loadChildren: () => import('./covid/covid.module').then((c) => c.CovidModule)
   }
 ];
 
