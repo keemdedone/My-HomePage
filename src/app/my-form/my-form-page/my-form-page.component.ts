@@ -57,6 +57,7 @@ export class MyFormPageComponent implements OnInit {
       console.log(this.value)
       this.update.emit(this.value)
     }
+    alert('Data submited!!!')
   }
 
   onReset(): void{

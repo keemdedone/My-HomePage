@@ -6,11 +6,11 @@ import {
   CovidDay,
   Articles,
   parseNewsList,
-  parseCovidDayList,
   CovidProvince,
-  parseTimeLineCasesAll,
   parseProvinceList,
+  parseCovidDayList,
   CovidTimelineCasesAll,
+  parseTimeLineCasesAll,
 } from '../model/covid';
 
 const urlNews = 'https://newsapi.org/v2/everything?q=โควิด&apiKey=14d38d8d7fed4e52ac551060f40bbd16';
@@ -26,7 +26,9 @@ export class CovidService {
   ) { }
 
   getAllNews(): Observable<Array<Articles>> {
-    return this.http.get(urlNews).pipe(map((data) => parseNewsList(data)));
+    return this.http
+      .get(urlNews)
+      .pipe(map((data) => parseNewsList(data)));
   }
 
   getAllDay(): Observable<List<CovidDay>> {
@@ -34,4 +36,11 @@ export class CovidService {
       .get(urlAll)
       .pipe(map((data) => parseCovidDayList(data)));
   }
+
+  timelineCasesAll(): Observable<CovidTimelineCasesAll> {
+    return this.http
+      .get(urlAll)
+      .pipe(map((data) => parseTimeLineCasesAll(data)));
+  }
+
 }

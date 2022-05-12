@@ -35,6 +35,8 @@ $my-homepage-theme: mat.define-light-theme((
 
 /* You can add global styles to this file, and also import other style files */
 
+@import '~bootstrap/scss/bootstrap';
+
 html{
   font-family: 'Courier New', Courier, monospace !important;
 }
@@ -177,3 +179,6 @@ body { margin: 0;}
     }
   }
 }
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';

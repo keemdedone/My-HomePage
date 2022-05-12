@@ -39,4 +39,5 @@ export class AppComponent implements OnInit {
   showAudioControl(): void{
     this.show = ! this.show;
   }
+
 }
