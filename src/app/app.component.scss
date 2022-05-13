@@ -67,10 +67,14 @@ audio{
 .dark-mode{
   padding-left: 10px;
   &>mat-icon{
-    vertical-align: -6px;
+    padding-left: 5px;
+    vertical-align: -4px;
+  }
+  &>mat-slide-toggle{
+    padding-left: 5px;
   }
 }
 
 .flex-stretch{
-  flex: 1 0 auto
+  flex: 1 0 auto;
 }

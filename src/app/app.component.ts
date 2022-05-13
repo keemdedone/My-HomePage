@@ -50,6 +50,7 @@ export class AppComponent implements OnInit {
           this.overlay.getContainerElement().classList.remove(darkClassName);
         }
       });
+
     this.toggleControl.valueChanges.subscribe(val => {
       this.className = val ? 'darkMode' : '';
     });
