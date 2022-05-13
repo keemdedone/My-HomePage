@@ -1,12 +1,12 @@
 <div class="covid-day">
-  <p class="header-title mt-3">รายงานสถานการณ์ โควิด-19 รายวัน</p>
+  <p class="header-title mt-3">Daily COVID-19 situation report</p>
 
   <div class="container">
     <div *ngIf="timelineCasesAll; else loading">
       <div
         class="date-covid mt-3 d-flex align-items-center justify-content-end"
       >
-        <h3 style="margin: 0; margin-right: 12px">วันที่ต้องการดูข้อมูล :</h3>
+        <h3 style="margin: 0; margin-right: 12px">Date :</h3>
         <input
           type="date"
           (change)="onDateChange($event)"
@@ -15,19 +15,15 @@
         />
       </div>
       <div class="mt-3">
-        <h3>อัพเดตล่าสุด : {{ selectedDateCovidCases?.update_date }}</h3>
+        <h3>Latest update : {{ selectedDateCovidCases?.update_date }}</h3>
       </div>
 
       <div class="d-flex w-100 d-flex">
         <div class="alert alert-danger w-50">
-          <p class="head-detail">จำนวนผู้ป่วยรายใหม่</p>
+          <p class="head-detail">New case number</p>
           <div class="info-detail">
-            <h1>{{ selectedDateCovidCases?.new_case?.toLocaleString() }} คน</h1>
-            <span
-              >สะสม
-              {{ selectedDateCovidCases?.total_case?.toLocaleString() }}
-              คน</span
-            >
+            <h1>{{ selectedDateCovidCases?.new_case?.toLocaleString() }} people </h1>
+            <span> all {{ selectedDateCovidCases?.total_case?.toLocaleString() }} people </span>
           </div>
         </div>
 
@@ -40,13 +36,10 @@
 
       <div class="d-flex w-100 d-flex">
         <div class="alert alert-dark w-50">
-          <p class="head-detail">จำนวนเสียชีวิต</p>
+          <p class="head-detail">New death number</p>
           <div class="info-detail">
-            <h1>{{ selectedDateCovidCases?.new_death }} คน</h1>
-            <span
-              >สะสม
-              {{ selectedDateCovidCases?.total_death?.toLocaleString() }}</span
-            >
+            <h1> {{ selectedDateCovidCases?.new_death }} people </h1>
+            <span> all {{ selectedDateCovidCases?.total_death?.toLocaleString() }} people </span>
           </div>
         </div>
         <div class="w-50" id="chart" *ngIf="timelineCasesAll">
@@ -58,15 +51,10 @@
 
       <div class="d-flex w-100 d-flex">
         <div class="alert alert-success w-50">
-          <p class="head-detail">จำนวนผู้ป่วยรักษาหาย</p>
+          <p class="head-detail">New recovered case</p>
           <div class="info-detail">
-            <h1>
-              {{ selectedDateCovidCases?.new_recovered?.toLocaleString() }} คน
-            </h1>
-            <span>
-              สะสม
-              {{ selectedDateCovidCases?.total_recovered?.toLocaleString() }} คน
-            </span>
+            <h1> {{ selectedDateCovidCases?.new_recovered?.toLocaleString() }} people </h1>
+            <span> all {{ selectedDateCovidCases?.total_recovered?.toLocaleString() }} people </span>
           </div>
         </div>
         <div class="w-50" id="chart" *ngIf="timelineCasesAll">
@@ -79,7 +67,7 @@
 
     <ng-template #loading>
       <div class="spinner-border text-dark mt-3" role="status"></div>
-      <span class="sr-only">กำลังโหลดข้อมูล...</span>
+      <span class="sr-only">Data loading...</span>
     </ng-template>
   </div>
 </div>

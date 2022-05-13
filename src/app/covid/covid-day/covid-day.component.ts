@@ -50,11 +50,11 @@ export class CovidDayComponent implements OnInit, OnChanges {
       this.chartNewCasesCovidOptions = {
         series: [
           {
-            name: 'จำนวนผู้ป่วย',
+            name: 'Number of infected people',
             data: this.timelineCasesAll!.chartNewCases.data,
           },
         ],
-        titleText: 'จำนวนผู้ติดเชื้อสะสม',
+        titleText: 'Cumulative number of infected people',
         categories: this.timelineCasesAll!.chartNewCases.categories,
         colors: ['#f54d4d'],
       };
@@ -62,11 +62,11 @@ export class CovidDayComponent implements OnInit, OnChanges {
       this.chartNewDeathCovidOptions = {
         series: [
           {
-            name: 'จำนวนผู้เสียชีวิต',
+            name: 'Number of death people',
             data: this.timelineCasesAll!.chartNewDeath.data,
           },
         ],
-        titleText: 'จำนวนผู้เสียชีวิตสะสม',
+        titleText: 'Cumulative number of death people',
         categories: this.timelineCasesAll!.chartNewDeath.categories,
         colors: ['#808080'],
       };
@@ -74,11 +74,11 @@ export class CovidDayComponent implements OnInit, OnChanges {
       this.chartRecoverdCovidOptions = {
         series: [
           {
-            name: 'จำนวนผู้รักษาหาย',
+            name: 'Number of recovered people',
             data: this.timelineCasesAll!.chartRecovered.data,
           },
         ],
-        titleText: 'จำนวนผู้รักษาหายสะสม',
+        titleText: 'Cumulative number of recovered people',
         categories: this.timelineCasesAll!.chartRecovered.categories,
         colors: ['#22b145'],
       };
