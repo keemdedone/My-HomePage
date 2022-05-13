@@ -47,7 +47,7 @@ export class CovidLineChartComponent implements OnInit, OnChanges {
     this.chartOption = {
       series: this.option?.series,
       chart: {
-        fontFamily: 'Kanit',
+        fontFamily: 'monospace',
         width: '100%',
         height: 200,
         type: 'line',

@@ -4,12 +4,12 @@
     display: flex;
     margin: auto;
     width: 1000px;
-    
-  
+
+
     &>.normal-text-container{
       width: fit-content;
       text-align: center;
-  
+
       &>h1{
         padding-top: 30px;
         padding-bottom: 30px;
@@ -18,10 +18,10 @@
       &>label{
         font-size: 6em;
         color: red;
-  
+
       }
     }
-  
+
     &>.static-container{
       border: 1px solid black; /* เอาไว้เช็คพื้นที่ว่ากว้างขนาดไหน */
       margin-left: 40px;
@@ -32,14 +32,14 @@
       grid-template-areas:
       'a a'
       'b c';
-  
+
       &>.Infected-box,.revoered-box,.death-box {
         padding: 15px;
         border-radius: 8px;
         display: grid;
         grid-template-columns: 1fr;
         text-align: center;
-  
+
         &>label{
           font-size: 1.7em;
         }
@@ -51,7 +51,7 @@
           text-align: center;
         }
       }
-  
+
       &>.Infected-box{
         background-color: rgb(245, 77, 77);
         grid-area: a;
@@ -67,10 +67,10 @@
         background-color: grey;
         grid-area: c;
       }
-  
+
     }
   }
-  
+
   .news-topic{
     padding-top: 50px;
     width: 500px;
@@ -82,16 +82,16 @@
       font-style: oblique;
     }
   }
-  
+
   .main-container{
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin-top: 100px;
-  
+
     &>.news-main-continer{
       text-align: center;
-      margin: auto;
-  
+      margin: 0%;
+
       &>img{
         width: 628px;
         height: 350px;
@@ -101,11 +101,11 @@
         opacity: 1;
       }
       &>.news-details{
-        width: 628px;
+        text-align: center;
+        width: 630px;
         visibility: hidden;
         padding-bottom: 20px;
         background-color: #fff;
-  
         &>label{
           &>a{
             text-decoration: none;
@@ -116,13 +116,15 @@
     &>.news-main-continer:hover{
       // border: 1px black solid;
       &>.news-details{
-        text-align: center;
+        // border: 1px black solid;
         position: absolute;
         margin-top: -128px;
+        margin-left: 110px;
         background-color: #fff;
-        padding: 1em 20px 2em 20px;
+        padding-top: 1em;
+        padding-bottom: 2em;
         visibility: visible;
         transition: visibility 0.1s ease-in 0.1s, opacity 300ms;
       }
     }
-}  
+}

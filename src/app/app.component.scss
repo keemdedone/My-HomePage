@@ -63,3 +63,14 @@ audio{
 .showAudioControl{
   margin-left: 10px;
 }
+
+.dark-mode{
+  padding-left: 10px;
+  &>mat-icon{
+    vertical-align: -6px;
+  }
+}
+
+.flex-stretch{
+  flex: 1 0 auto
+}

@@ -1,9 +1,11 @@
 import { Portal } from '@angular/cdk/portal';
 import { BreakpointObserver } from '@angular/cdk/layout';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, HostBinding, OnInit, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { map, Observable } from 'rxjs';
 import { SidenavService } from './service/sidenav.service';
+import { FormControl } from '@angular/forms';
+import { OverlayContainer } from '@angular/cdk/overlay';
 
 const limitWidth = 800 ;
 const sizeLimitWidth = `(max-width:${limitWidth}px)`; // how to write CSS on component.ts for use to limit Sidenav
@@ -22,9 +24,13 @@ export class AppComponent implements OnInit {
   count: number = 0
   show: boolean = true;
 
+  @HostBinding('class') className = '';
+  toggleControl = new FormControl(false);
+
   constructor(
     private readonly breakpointObservable: BreakpointObserver,
     private readonly sidenavPortalService: SidenavService,
+    private overlay: OverlayContainer,
   ){}
 
   ngOnInit(): void {
@@ -34,6 +40,19 @@ export class AppComponent implements OnInit {
       );
 
       this.portal$ = this.sidenavPortalService.portal$;
+
+      this.toggleControl.valueChanges.subscribe((darkMode) => {
+        const darkClassName = 'darkMode';
+        this.className = darkMode ? darkClassName : '';
+        if (darkMode) {
+          this.overlay.getContainerElement().classList.add(darkClassName);
+        } else {
+          this.overlay.getContainerElement().classList.remove(darkClassName);
+        }
+      });
+    this.toggleControl.valueChanges.subscribe(val => {
+      this.className = val ? 'darkMode' : '';
+    });
   }
 
   showAudioControl(): void{
