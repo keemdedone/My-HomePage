@@ -5,7 +5,6 @@
     margin: auto;
     width: 1000px;
 
-
     &>.normal-text-container{
       width: fit-content;
       text-align: center;
@@ -23,7 +22,9 @@
     }
 
     &>.static-container{
-      border: 1px solid black; /* เอาไว้เช็คพื้นที่ว่ากว้างขนาดไหน */
+      border: 2px solid yellowgreen; /* เอาไว้เช็คพื้นที่ว่ากว้างขนาดไหน */
+      animation: myanimation 7s infinite;
+      border-radius: 4%;
       margin-left: 40px;
       padding: 20px;
       display: grid;
@@ -117,6 +118,7 @@
       // border: 1px black solid;
       &>.news-details{
         // border: 1px black solid;
+        color: black;
         position: absolute;
         margin-top: -128px;
         margin-left: 110px;
@@ -127,4 +129,13 @@
         transition: visibility 0.1s ease-in 0.1s, opacity 300ms;
       }
     }
+}
+
+//border color change
+@keyframes myanimation {
+  0% {border-color: red;}
+  25%{border-color:yellow;}
+  50%{border-color:green;}
+  75%{border-color:brown;}
+  100% {border-color: red;}
 }
