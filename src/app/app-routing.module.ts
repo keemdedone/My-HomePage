@@ -28,7 +28,7 @@ const routes: Routes = [
     loadChildren: () => import('./covid/covid.module').then((c) => c.CovidModule)
   },
   {
-    path: 'test-area',
+    path: 'test',
     loadChildren: () => import('./test-area/test-area.module').then((t) => t.TestAreaModule)
   }
 ];
