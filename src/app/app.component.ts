@@ -23,6 +23,7 @@ export class AppComponent implements OnInit {
   portal$!: Observable<Portal<unknown> | null>
   count: number = 0
   show: boolean = true;
+  active: boolean = true;
 
   @HostBinding('class') className = '';
   toggleControl = new FormControl(false);
@@ -57,7 +58,11 @@ export class AppComponent implements OnInit {
   }
 
   showAudioControl(): void{
-    this.show = ! this.show;
+    this.show = !this.show;
+  }
+
+  onActive(): void{
+    this.active = !this.active
   }
 
 }

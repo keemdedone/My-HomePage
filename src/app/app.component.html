@@ -26,8 +26,9 @@
 
   <div class="dark-mode">
     <div class="flex-stretch"></div>
-    <mat-slide-toggle [formControl]="toggleControl"></mat-slide-toggle>
-    <mat-icon>bedtime</mat-icon>
+    <mat-slide-toggle [formControl]="toggleControl" (click)="onActive()"></mat-slide-toggle>
+    <mat-icon *ngIf="active === true">light_mode</mat-icon>
+    <mat-icon *ngIf="active === false">bedtime</mat-icon>
   </div>
 
   <nav>
