@@ -52,6 +52,8 @@ export class MyFormPageComponent implements OnInit {
     this.formGroup.updateValueAndValidity();
     if(this.formGroup.invalid){
       this.formGroup.markAllAsTouched();
+      alert('Plase inert all box.')
+      return;
     } else {
       this.value = this.formGroup.value //for check console.log()
       console.log(this.value)

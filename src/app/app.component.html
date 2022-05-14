@@ -32,11 +32,11 @@
   </div>
 
   <nav>
-    <a mat-button routerLink="midterm">Midterm</a>
-    <a mat-button routerLink="input">Input</a>
-    <a mat-button routerLink="my-form">My-Form</a>
-    <a mat-button routerLink="star-war">StarWar</a>
-    <a mat-button routerLink="covid">Covid19</a>
+    <a mat-button routerLink="midterm" (click)="onLog('midterm')">Midterm</a>
+    <a mat-button routerLink="input"(click)="onLog('input')">Input</a>
+    <a mat-button routerLink="my-form" (click)="onLog('my-form')">My-Form</a>
+    <a mat-button routerLink="star-war" (click)="onLog('star-war')">StarWar</a>
+    <a mat-button routerLink="covid"(click)="onLog('covid')">Covid19</a>
   </nav>
 </mat-toolbar>
 

@@ -28,6 +28,8 @@ export class AppComponent implements OnInit {
   @HostBinding('class') className = '';
   toggleControl = new FormControl(false);
 
+  title: any;
+
   constructor(
     private readonly breakpointObservable: BreakpointObserver,
     private readonly sidenavPortalService: SidenavService,
@@ -62,7 +64,12 @@ export class AppComponent implements OnInit {
   }
 
   onActive(): void{
-    this.active = !this.active
+    this.active = !this.active;
+  }
+
+  onLog(event:string): void{
+    let time = new Date()
+    console.log('Click : '+ event + ' [ at ' + time + ' ]');
   }
 
 }
