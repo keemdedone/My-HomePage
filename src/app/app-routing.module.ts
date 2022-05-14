@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MidtermModule } from './midterm/midterm.module';
 
 const routes: Routes = [
   {
@@ -27,6 +26,10 @@ const routes: Routes = [
   {
     path: 'covid',
     loadChildren: () => import('./covid/covid.module').then((c) => c.CovidModule)
+  },
+  {
+    path: 'test-area',
+    loadChildren: () => import('./test-area/test-area.module').then((t) => t.TestAreaModule)
   }
 ];
 
