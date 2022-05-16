@@ -20,7 +20,6 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
-import { HomeComponent } from './auth/home/home.component';
 import { DashboardComponent } from './auth/dashboard/dashboard.component';
 /*
 import {MatInput, MatInputModule} from '@angular/material/input';
@@ -36,7 +35,6 @@ import {MatTabsModule} from '@angular/material/tabs';
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    HomeComponent,
     DashboardComponent,
   ],
   imports: [
