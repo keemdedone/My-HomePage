@@ -6,6 +6,7 @@ import { map, Observable } from 'rxjs';
 import { SidenavService } from './service/sidenav.service';
 import { FormControl } from '@angular/forms';
 import { OverlayContainer } from '@angular/cdk/overlay';
+import { ApiService } from './auth/api.service';
 
 const limitWidth = 800 ;
 const sizeLimitWidth = `(max-width:${limitWidth}px)`; // how to write CSS on component.ts for use to limit Sidenav
@@ -22,8 +23,11 @@ export class AppComponent implements OnInit {
   isSmallScreen$!: Observable<boolean>;
   portal$!: Observable<Portal<unknown> | null>
   count: number = 0
-  show: boolean = true;
-  active: boolean = true;
+  audioShow: boolean = true;
+  darkActive: boolean = true;
+  login: boolean = false;
+  loginbtn:boolean;
+  logoutbtn:boolean;
 
   @HostBinding('class') className = '';
   toggleControl = new FormControl(false);
@@ -34,7 +38,18 @@ export class AppComponent implements OnInit {
     private readonly breakpointObservable: BreakpointObserver,
     private readonly sidenavPortalService: SidenavService,
     private overlay: OverlayContainer,
-  ){}
+    private dataService: ApiService,
+  ){
+    dataService.getLoggedInName.subscribe(name => this.changeName(name));
+    if(this.dataService.isLoggedIn()){
+      console.log("loggedin");
+      this.loginbtn=false;
+      this.logoutbtn=true
+    } else {
+      this.loginbtn=true;
+      this.logoutbtn=false
+    }
+  }
 
   ngOnInit(): void {
     this.isSmallScreen$ = this.breakpointObservable
@@ -60,16 +75,26 @@ export class AppComponent implements OnInit {
   }
 
   showAudioControl(): void{
-    this.show = !this.show;
+    this.audioShow = !this.audioShow;
   }
 
   onActive(): void{
-    this.active = !this.active;
+    this.darkActive = !this.darkActive;
   }
 
   onLog(event:string): void{
     let time = new Date()
     console.log('Click : '+ event + ' [ at ' + time + ' ]');
+  }
+
+  private changeName(name: boolean): void {
+    this.logoutbtn = name;
+    this.loginbtn = !name;
+  }
+
+  logout(){
+    this.dataService.deleteToken();
+    window.location.href = window.location.href;
   }
 
 }

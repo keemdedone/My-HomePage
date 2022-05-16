@@ -1,7 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthguardGuard } from './auth/authguard.guard';
+import { DashboardComponent } from './auth/dashboard/dashboard.component';
+import { HomeComponent } from './auth/home/home.component';
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
 
 const routes: Routes = [
+  { path: '', component: LoginComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'registration', component: RegisterComponent },
+  { path: 'dashboard', component: DashboardComponent,canActivate: [AuthguardGuard] },
   {
     path: '',
     redirectTo: 'midterm',

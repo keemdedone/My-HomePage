@@ -1,53 +1,81 @@
-<mat-toolbar color="primary">
-  <button
-  mat-icon-button
-  *ngIf="isSmallScreen$ | async"
-  (click)="sidenav.toggle()">
-    <mat-icon>menu</mat-icon>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
+  <a class="navbar-brand" routerLink="home" routerLinkActive="active">Angular RegisterAndLogin</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample" aria-controls="navbarsExample" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
   </button>
-  <span>My-Angular</span>
+  <div class="collapse navbar-collapse" id="navbarsExample">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" *ngIf="loginbtn" routerLink="home" routerLinkActive="active">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" *ngIf="loginbtn" routerLink="login" routerLinkActive="active">Login</a>
+      </li>
+      <li class="nav-item">
+        <button type="button" *ngIf="logoutbtn" class="btn btn-block" (click)="logout()">logout</button>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" *ngIf="loginbtn" routerLink="registration" routerLinkActive="active">Registration</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<router-outlet></router-outlet>
 
-  <div class="showAudioControl">
-    <button type="submit"
-    (click)="showAudioControl()"
-    mat-raised-button
-    color="primary"
-    matTooltip="Click to hide/show music play box">
-      <mat-icon>music_note</mat-icon>
+<!-- homepage part -->
+<ng-container *ngIf="logoutbtn">
+  <mat-toolbar color="primary">
+    <button
+    mat-icon-button
+    *ngIf="isSmallScreen$ | async"
+    (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
     </button>
-  </div>
+    <span>My-Angular</span>
 
-  <div *ngIf="show">
-      <audio controls>
-        <source src="../assets/music/15-OnOurway.m4a" type="audio/ogg">
-        <source src="../assets/music/15-OnOurway.m4a" type="audio/mpeg">
-      </audio>
-  </div>
+    <div class="showAudioControl">
+      <button type="submit"
+      (click)="showAudioControl()"
+      mat-raised-button
+      color="primary"
+      matTooltip="Click to hide/show music play box">
+        <mat-icon>music_note</mat-icon>
+      </button>
+    </div>
 
-  <div class="dark-mode">
-    <div class="flex-stretch"></div>
-    <mat-slide-toggle [formControl]="toggleControl" (click)="onActive()"></mat-slide-toggle>
-    <mat-icon *ngIf="active === true">light_mode</mat-icon>
-    <mat-icon *ngIf="active === false">bedtime</mat-icon>
-  </div>
+    <div *ngIf="audioShow">
+        <audio controls>
+          <source src="../assets/music/15-OnOurway.m4a" type="audio/ogg">
+          <source src="../assets/music/15-OnOurway.m4a" type="audio/mpeg">
+        </audio>
+    </div>
 
-  <nav>
-    <a mat-button routerLink="midterm" (click)="onLog('midterm')">Midterm</a>
-    <a mat-button routerLink="input"(click)="onLog('input')">Input</a>
-    <a mat-button routerLink="my-form" (click)="onLog('my-form')">My-Form</a>
-    <a mat-button routerLink="star-war" (click)="onLog('star-war')">StarWar</a>
-    <a mat-button routerLink="covid"(click)="onLog('covid')">Covid19</a>
-  </nav>
-</mat-toolbar>
+    <div class="dark-mode">
+      <div class="flex-stretch"></div>
+      <mat-slide-toggle [formControl]="toggleControl" (click)="onActive()"></mat-slide-toggle>
+      <mat-icon *ngIf="darkActive === true">light_mode</mat-icon>
+      <mat-icon *ngIf="darkActive === false">bedtime</mat-icon>
+    </div>
 
-<mat-sidenav-container>
-  <mat-sidenav
-    [opened]="(isSmallScreen$ | async) === false"
-    [mode]="(isSmallScreen$ | async) ? 'over' : 'side'"
-  >
-  <ng-template [cdkPortalOutlet]="portal$ | async"></ng-template>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <router-outlet></router-outlet>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+    <nav>
+      <a mat-button routerLink="midterm" (click)="onLog('midterm')">Midterm</a>
+      <a mat-button routerLink="input"(click)="onLog('input')">Input</a>
+      <a mat-button routerLink="my-form" (click)="onLog('my-form')">My-Form</a>
+      <a mat-button routerLink="star-war" (click)="onLog('star-war')">StarWar</a>
+      <a mat-button routerLink="covid"(click)="onLog('covid')">Covid19</a>
+    </nav>
+  </mat-toolbar>
+
+  <mat-sidenav-container>
+    <mat-sidenav
+      [opened]="(isSmallScreen$ | async) === false"
+      [mode]="(isSmallScreen$ | async) ? 'over' : 'side'"
+    >
+    <ng-template [cdkPortalOutlet]="portal$ | async"></ng-template>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</ng-container>
