@@ -44,12 +44,12 @@ export class RegisterComponent implements OnInit {
       };
     }): void{
       if (!this.angForm.invalid) {
-
         this.dataService.userregistration(angForm1.value.name,angForm1.value.email,angForm1.value.password).pipe(first()).subscribe(
           data => {
             this.dialog.open(this.CompleteDialog);
             this.router.navigate(['login']);
-          }, error => {
+          },
+          error => {
             this.dialog.open(this.ServerDown);
             return;
           }

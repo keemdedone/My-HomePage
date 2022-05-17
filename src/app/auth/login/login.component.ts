@@ -21,8 +21,8 @@ export class LoginComponent implements OnInit {
     private dialog: MatDialog,
   ) {
     this.angForm = this.fb.group({
-      email: ['', [Validators.required,Validators.minLength(1), Validators.email]],
-      password: ['', Validators.required],
+      email: [null, [Validators.required,Validators.minLength(1), Validators.email]],
+      password: [null, Validators.required],
     });
   }
 
