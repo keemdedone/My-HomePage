@@ -10,30 +10,40 @@ templateUrl: './login.component.html',
 styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-angForm: FormGroup;
-constructor(private fb: FormBuilder,private dataService: ApiService,private router:Router) {
-this.angForm = this.fb.group({
-email: ['', [Validators.required,Validators.minLength(1), Validators.email]],
-password: ['', Validators.required]
-});
-}
+  angForm: FormGroup;
 
-ngOnInit() {
-  return;
-}
-postdata(angForm1: { value: { email: any; password: any; }; })
-{
-this.dataService.userlogin(angForm1.value.email,angForm1.value.password)
-.pipe(first())
-.subscribe(
-data => {
-const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/dashboard';
-this.router.navigate([redirect]);
-},
-error => {
-alert("User name or password is incorrect")
-});
-}
-get email() { return this.angForm.get('email'); }
-get password() { return this.angForm.get('password'); }
+  constructor(
+    private fb: FormBuilder,
+    private dataService: ApiService,
+    private router:Router,
+  ) {
+    this.angForm = this.fb.group({
+      email: ['', [Validators.required,Validators.minLength(1), Validators.email]],
+      password: ['', Validators.required],
+    });
+  }
+
+  ngOnInit() {
+    return;
+  }
+
+  postdata(angForm1: { value: { email: any; password: any; }; }) {
+    this.dataService.userlogin(angForm1.value.email,angForm1.value.password)
+    .pipe(first())
+    .subscribe(
+    data => {
+      const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/dashboard';
+      this.router.navigate([redirect]);
+    }, error => {
+      alert( "User name or password is incorrect OR forget to start XAMPP" )
+    });
+  }
+
+  get email() {
+    return this.angForm.get('email');
+  }
+  get password() {
+    return this.angForm.get('password');
+  }
+
 }

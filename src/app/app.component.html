@@ -7,9 +7,6 @@
           <a class="nav-link" *ngIf="loginbtn" routerLink="login" routerLinkActive="active">Login</a>
         </li>
         <li class="nav-item">
-          <button type="button" *ngIf="logoutbtn" class="btn btn-block" (click)="logout()">logout</button>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" *ngIf="loginbtn" routerLink="registration" routerLinkActive="active">Registration</a>
         </li>
       </ul>
@@ -53,11 +50,11 @@
       <mat-icon *ngIf="darkActive === false">bedtime</mat-icon>
     </div>
 
-    <div>
+    <div class="logout-btn">
       <button
-      type="button"
       *ngIf="logoutbtn"
-      mat-button
+      type="button"
+      mat-raised-button
       (click)="logout()">logout</button>
     </div>
 
