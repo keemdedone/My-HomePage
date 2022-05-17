@@ -1,4 +1,4 @@
-<h2 class="text-center">Registration</h2>
+<!-- <h2 class="text-center">Registration</h2>
 <div class="row">
   <div class="col-md-3"></div>
     <div class="col-md-6 col-md-offset-3">
@@ -21,4 +21,39 @@
       </div>
     </div>
   <div class="col-md-3"></div>
+</div> -->
+
+<div class="cmp-register-interface">
+  <h1 class="text-center">Register</h1>
+  <form [formGroup]="angForm" (ngSubmit)="postdata(angForm)" autocomplete="off" >
+
+    <div class="cmp-input-field">
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <mat-icon matPrefix>person</mat-icon>
+        <input type="text" matInput name="name" formControlName="name" autocomplete="off" placeholder="Your name">
+        <mat-hint>Your Name</mat-hint>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <mat-icon matPrefix>email</mat-icon>
+        <input type="email" matInput name="email" formControlName="email" placeholder="Email">
+        <mat-hint>Your Email</mat-hint>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <mat-icon matPrefix>password</mat-icon>
+        <input type="password" matInput name="Password" formControlName="password" autocomplete="off" placeholder="Password">
+        <mat-hint>Your Password</mat-hint>
+      </mat-form-field>
+    </div>
+
+    <button
+    mat-flat-button
+    type="submit"
+    color="primary"
+    class="cmd-register"
+    >Register</button>
+
+  </form>
 </div>

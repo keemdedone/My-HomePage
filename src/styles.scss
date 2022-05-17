@@ -220,3 +220,9 @@ $angular-dark-theme: mat.define-dark-theme(
 
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
+
+.mat-typography{
+  background-image: url("./assets/background-image/Dark-soul-III.gif");
+  background-repeat:no-repeat;
+  background-size:cover;
+}
