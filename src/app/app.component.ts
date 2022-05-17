@@ -72,6 +72,7 @@ export class AppComponent implements OnInit {
     this.toggleControl.valueChanges.subscribe(val => {
       this.className = val ? 'darkMode' : '';
     });
+
   }
 
   showAudioControl(): void{
