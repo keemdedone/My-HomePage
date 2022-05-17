@@ -26,3 +26,16 @@
 
   </form>
 </div>
+
+<ng-template #Dialog>
+  <div class="cmp-alert-box">
+    <h1 matDialogTitle>incorrect username or password !!!</h1>
+    <img src="./assets/illustration/Nazuko-run.gif" width="206" height="206">
+    <mat-dialog-actions align="center">
+      <button
+      color="warn"
+      mat-flat-button
+      matDialogClose>OK</button>
+    </mat-dialog-actions>
+  </div>
+</ng-template>

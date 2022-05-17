@@ -18,10 +18,9 @@ export class RegisterComponent implements OnInit {
     private router:Router,
   ) {
     this.angForm = this.fb.group({
-      email: ['', [Validators.required,Validators.minLength(1), Validators.email]],
-      password: ['', Validators.required],
-      name: ['', Validators.required],
-      mobile: ['', Validators.required]
+      email: [null, [Validators.required,Validators.minLength(1), Validators.email]],
+      password: [null, Validators.required],
+      name: [null, Validators.required],
     });
   }
 
@@ -29,23 +28,36 @@ export class RegisterComponent implements OnInit {
     return;
   }
 
-  postdata(angForm1: { value: { name: any; email: any; password: any; }; }) {
-    this.dataService.userregistration(angForm1.value.name,angForm1.value.email,angForm1.value.password)
-    .pipe(first())
-    .subscribe(
-      data => {
-        this.router.navigate(['login']);
-      }, error => {
-        alert("Error server down OR forget to start XAMPP")
-      });
-  }
+  postdata(angForm1:
+    { value:
+      {
+        name: string,
+        email: string,
+        password: number,
+      };
+    }) {
+      if (this.angForm.invalid) {
+        this.angForm.markAllAsTouched(); //this medtod will wacth all angForm(on the top line 20) in form where null value
+        alert('Plase inert all box.')
+        return;
+      } else {
+        this.dataService.userregistration(angForm1.value.name,angForm1.value.email,angForm1.value.password).pipe(first()).subscribe(
+          data => {
+            this.router.navigate(['login']);
+          }, error => {
+            alert("Error server down OR forget to start XAMPP")
+          });
+      }
+    }
 
   get email() {
     return this.angForm.get('email');
   }
+
   get password() {
     return this.angForm.get('password');
   }
+
   get name() {
     return this.angForm.get('name');
   }

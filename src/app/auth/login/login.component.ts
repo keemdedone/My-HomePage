@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, NgForm } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { ApiService } from '../api.service';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
 selector: 'app-login',
@@ -10,12 +11,14 @@ templateUrl: './login.component.html',
 styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  @ViewChild('Dialog') Dialog!: TemplateRef<any>;
   angForm: FormGroup;
 
   constructor(
     private fb: FormBuilder,
     private dataService: ApiService,
-    private router:Router,
+    private router: Router,
+    private dialog: MatDialog,
   ) {
     this.angForm = this.fb.group({
       email: ['', [Validators.required,Validators.minLength(1), Validators.email]],
@@ -35,13 +38,14 @@ export class LoginComponent implements OnInit {
       const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/dashboard';
       this.router.navigate([redirect]);
     }, error => {
-      alert( "User name or password is incorrect OR forget to start XAMPP" )
+      this.dialog.open(this.Dialog);
     });
   }
 
   get email() {
     return this.angForm.get('email');
   }
+
   get password() {
     return this.angForm.get('password');
   }

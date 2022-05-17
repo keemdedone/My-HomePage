@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { PortalModule } from '@angular/cdk/portal';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbAlertModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 //material PART
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -23,6 +23,7 @@ import { RegisterComponent } from './auth/register/register.component';
 import { DashboardComponent } from './auth/dashboard/dashboard.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatDialogModule } from '@angular/material/dialog';
 /*
 import {MatInput, MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -57,6 +58,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatFormFieldModule,
     MatInputModule,
     NgbModule,
+    NgbAlertModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

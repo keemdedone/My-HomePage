@@ -16,3 +16,18 @@
     margin-top: 30px;
   }
 }
+
+.cmp-alert-box{
+  color: red;
+  text-align: center;
+  font-size: 30px;
+  &>h1{
+    font-family: 'Times New Roman', Times, serif;
+  }
+  &>img{
+    border-radius: 50%;
+    overflow: hidden;
+    display:inline-block;
+    vertical-align:middle;
+  }
+}
