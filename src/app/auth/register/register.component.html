@@ -1,51 +1,26 @@
-<!-- <h2 class="text-center">Registration</h2>
-<div class="row">
-  <div class="col-md-3"></div>
-    <div class="col-md-6 col-md-offset-3">
-      <div class="jumbotron">
-        <form [formGroup]="angForm" (ngSubmit)="postdata(angForm)" autocomplete="off" >
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" name="name" formControlName="name" autocomplete="off" class="form-control input-sm" placeholder="Name">
-          </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" name="email" formControlName="email" autocomplete="off" class="form-control input-sm" placeholder="Email">
-          </div>
-          <div class="form-group">
-            <label for="Password">Password</label>
-            <input type="password" name="Password" formControlName="password" autocomplete="off" class="form-control input-sm" placeholder="Password">
-          </div>
-          <button type="submit" class="btn btn-success" >Register</button>
-        </form>
-      </div>
-    </div>
-  <div class="col-md-3"></div>
-</div> -->
-
 <div class="cmp-register-interface">
-  <h1 class="text-center">Register</h1>
-  <form [formGroup]="angForm" (ngSubmit)="postdata(angForm)" autocomplete="off" >
+  <h1 class="text-center">Registeration</h1>
+  <form [formGroup]="angForm" (ngSubmit)="postdata(angForm)">
 
     <div class="cmp-input-field">
       <mat-form-field appearance="outline">
         <mat-label>Name</mat-label>
         <mat-icon matPrefix>person</mat-icon>
-        <input type="text" matInput name="name" formControlName="name" autocomplete="off" placeholder="Your name">
+        <input type="text" matInput name="name" formControlName="name" autocomplete="doNotAutoComplete" placeholder="Your name">
         <mat-hint>Your Name</mat-hint>
         <mat-error *ngIf="angForm.get('name')?.errors?.['required']">Required</mat-error>
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>Email</mat-label>
         <mat-icon matPrefix>email</mat-icon>
-        <input type="email" matInput name="email" formControlName="email" placeholder="Email">
+        <input type="email" matInput name="email" formControlName="email" autocomplete="doNotAutoComplete" placeholder="Email">
         <mat-hint>Your Email</mat-hint>
         <mat-error *ngIf="angForm.get('email')?.errors?.['required']">Required</mat-error>
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>Password</mat-label>
         <mat-icon matPrefix>password</mat-icon>
-        <input type="password" matInput name="Password" formControlName="password" autocomplete="off" placeholder="Password">
+        <input type="password" matInput name="Password" formControlName="password" autocomplete="doNotAutoComplete" placeholder="Password">
         <mat-hint>Your Password</mat-hint>
         <mat-error *ngIf="angForm.get('password')?.errors?.['required']">Required</mat-error>
       </mat-form-field>
@@ -60,3 +35,42 @@
 
   </form>
 </div>
+
+<ng-template #CompleteDialog>
+  <div class="cmp-complete-alert-box">
+    <h1 matDialogTitle>Register Complete!!!</h1>
+    <img src="./assets/illustration/Dance-duck.gif" width="200" height="200">
+    <mat-dialog-actions align="center">
+      <button
+      color="primary"
+      mat-flat-button
+      matDialogClose>OK</button>
+    </mat-dialog-actions>
+  </div>
+</ng-template>
+
+<ng-template #IncompleteDialog>
+  <div class="cmp-incomplete-alert-box">
+    <h1 matDialogTitle>Register incomplete , check your data again </h1>
+    <img src="./assets/illustration/Cat-dead-chat.gif" width="200" height="200">
+    <mat-dialog-actions align="center">
+      <button
+      color="warn"
+      mat-flat-button
+      matDialogClose>Back</button>
+    </mat-dialog-actions>
+  </div>
+</ng-template>
+
+<ng-template #ServerDown>
+  <div class="cmp-serverDown-alert-box">
+    <h1 matDialogTitle>Sorry, Server down OR forget to start Server</h1>
+    <img src="./assets/illustration/Bongo-cat.gif" width="200" height="200">
+    <mat-dialog-actions align="center">
+      <button
+      color="warn"
+      mat-flat-button
+      matDialogClose>Back</button>
+    </mat-dialog-actions>
+  </div>
+</ng-template>

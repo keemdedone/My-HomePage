@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder, Validators, NgForm } from '@angular/forms';
+import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { ApiService } from '../api.service';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
 selector: 'app-register',
@@ -11,11 +12,17 @@ styleUrls: ['./register.component.scss']
 })
 
 export class RegisterComponent implements OnInit {
+  @ViewChild('CompleteDialog') CompleteDialog!: TemplateRef<any>;
+  @ViewChild('IncompleteDialog') IncompleteDialog!: TemplateRef<any>;
+  @ViewChild('ServerDown') ServerDown!: TemplateRef<any>;
+
   angForm: FormGroup;
+
   constructor(
     private fb: FormBuilder,
     private dataService: ApiService,
     private router:Router,
+    private dialog: MatDialog,
   ) {
     this.angForm = this.fb.group({
       email: [null, [Validators.required,Validators.minLength(1), Validators.email]],
@@ -35,18 +42,22 @@ export class RegisterComponent implements OnInit {
         email: string,
         password: number,
       };
-    }) {
-      if (this.angForm.invalid) {
-        this.angForm.markAllAsTouched(); //this medtod will wacth all angForm(on the top line 20) in form where null value
-        alert('Plase inert all box.')
-        return;
-      } else {
+    }): void{
+      if (!this.angForm.invalid) {
+
         this.dataService.userregistration(angForm1.value.name,angForm1.value.email,angForm1.value.password).pipe(first()).subscribe(
           data => {
+            this.dialog.open(this.CompleteDialog);
             this.router.navigate(['login']);
           }, error => {
-            alert("Error server down OR forget to start XAMPP")
-          });
+            this.dialog.open(this.ServerDown);
+            return;
+          }
+        );
+      } else {
+        this.angForm.markAllAsTouched(); //this medtod will wacth all angForm(on the top line 20) in form where null value
+        this.dialog.open(this.IncompleteDialog);
+        return;
       }
     }
 

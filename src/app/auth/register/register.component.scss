@@ -16,3 +16,17 @@
     margin-top: 30px;
   }
 }
+
+.cmp-complete-alert-box , .cmp-incomplete-alert-box, .cmp-serverDown-alert-box{
+  text-align: center;
+  font-size: 30px;
+  &>h1{
+    font-family: 'Times New Roman', Times, serif;
+  }
+  &>img{
+    border-radius: 50%;
+    overflow: hidden;
+    display:inline-block;
+    vertical-align:middle;
+  }
+}
