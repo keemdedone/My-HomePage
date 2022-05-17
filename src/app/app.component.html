@@ -39,7 +39,10 @@
 
     <div class="dark-mode">
       <div class="flex-stretch"></div>
-      <mat-slide-toggle [formControl]="toggleControl" (click)="onActive()"></mat-slide-toggle>
+      <mat-slide-toggle
+      matTooltip="Darkmode"
+      [formControl]="toggleControl"
+      (click)="onActive()"></mat-slide-toggle>
       <mat-icon *ngIf="darkActive === true">light_mode</mat-icon>
       <mat-icon *ngIf="darkActive === false">bedtime</mat-icon>
     </div>
@@ -49,7 +52,10 @@
       *ngIf="logoutbtn"
       type="button"
       mat-raised-button
-      (click)="logout()">logout</button>
+      (click)="logout()"
+      matTooltip="Click to Logout">
+        <mat-icon>logout</mat-icon>
+      </button>
     </div>
 
     <nav>

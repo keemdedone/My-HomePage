@@ -1,4 +1,4 @@
-import { Injectable, Output, EventEmitter } from '@angular/core';
+import { Injectable, Output, EventEmitter, ViewChild, TemplateRef } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { Users } from './users';
@@ -9,15 +9,15 @@ providedIn: 'root'
 
 export class ApiService {
   redirectUrl: string | undefined;
-  baseUrl:string = "http://localhost/my-homepage/php";
+  baseUrl: string = "http://localhost/my-homepage/php";
+
   @Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
 
   constructor(
     private httpClient : HttpClient,
   ) { }
 
-  public userlogin(username: any, password: any) {
-    alert(username)
+  public userlogin(username: string, password: number) {
     return this.httpClient.post<any>(this.baseUrl + '/login.php', { username, password })
     .pipe(map(Users => {
       this.setToken(Users[0].name);
@@ -37,7 +37,7 @@ export class ApiService {
   setToken(token: string) {
     localStorage.setItem('token', token);
   }
-  
+
   getToken() {
     return localStorage.getItem('token');
   }
