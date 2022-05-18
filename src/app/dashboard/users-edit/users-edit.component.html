@@ -1,5 +1,5 @@
 <div class="cmp-update-interface">
-  <h1 class="text-center">Update form</h1>
+  <h1 class="text-center">Update Information</h1>
   <form [formGroup]="updateForm" (ngSubmit)="postdata(updateForm)">
 
     <div class="cmp-input-field">
@@ -42,8 +42,20 @@
     mat-flat-button
     type="submit"
     color="primary"
-    class="cmd-register"
-    >Save</button>
+    >
+      <mat-icon>save</mat-icon>
+      <span>Save</span>
+    </button>
+
+    <button
+    mat-flat-button
+    type="button"
+    color="warn"
+    (click)="onBack()"
+    >
+      <mat-icon>cancel</mat-icon>
+      <span>Cancel</span>
+    </button>
 
   </form>
 </div>

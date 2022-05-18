@@ -68,4 +68,8 @@ export class UsersEditComponent implements OnInit {
     return this.updateForm.get('name');
   }
 
+  onBack(): void{
+    return history.back();
+  }
+
 }
