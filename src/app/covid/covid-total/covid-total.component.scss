@@ -22,7 +22,7 @@
     }
 
     &>.static-container{
-      border: 2px solid yellowgreen; /* เอาไว้เช็คพื้นที่ว่ากว้างขนาดไหน */
+      border: 2px solid yellowgreen;
       animation: myanimation 7s infinite;
       border-radius: 4%;
       margin-left: 40px;
@@ -48,7 +48,7 @@
           margin-top: 5px;
           font-size: 2.0em;
           letter-spacing: 2px;
-          color: aliceblue;
+          color: black;
           text-align: center;
         }
       }
@@ -58,15 +58,22 @@
         grid-area: a;
         &>code{
           font-size: 3em;
+          background-color: rgb(245, 77, 77);
         }
       }
       &>.revoered-box{
         background-color: rgb(34, 177, 69);
         grid-area: b;
+        &>code{
+         background-color: rgb(34, 177, 69);
+        }
       }
       &>.death-box{
         background-color: grey;
         grid-area: c;
+        &>code{
+          background-color: gray;
+        }
       }
 
     }
