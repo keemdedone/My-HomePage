@@ -1,0 +1,25 @@
+<div class="mt-5">
+  <table class="table table-bordered text-center">
+    <thead class="thead">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody class="tbody">
+      <tr *ngFor="let user of users">
+        <td>{{user.id}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.email}}</td>
+        <td class="cmd-action-menu">
+          <div *ngIf=" user.id !== '1' ">
+            <button mat-flat-button color="warn" (click)="delUserInfo(user.id)">del</button>
+            <button mat-flat-button color="primary" routerLink="{{user.id}}">edit</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

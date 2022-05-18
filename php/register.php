@@ -9,10 +9,10 @@
     $sql = "INSERT INTO users(name,password,email) VALUES ('$name','$pwd','$email')";
     if ($mysqli->query($sql) === TRUE) {
       $authdata = [
-      'name' => $name,
-      'pwd' => $pwd, // default = ''
-      'email' => $email,
-      'Id' => mysqli_insert_id($mysqli)
+        'name' => $name,
+        'pwd' => $pwd, // default = ''
+        'email' => $email,
+        'Id' => mysqli_insert_id($mysqli) //this id must last line
       ];
       echo json_encode($authdata);
     }
