@@ -46,7 +46,7 @@ export class ApiService {
   }
 
   public getUser(id:any): Observable<any> {
-    return this.httpClient.get("http://localhost/my-homepage/dashboard/users/" + id)
+    return this.httpClient.get('/dashboard/users/' + id)
       .pipe(map((res:any) => {
         return res || {}
     }));
@@ -72,7 +72,7 @@ export class ApiService {
   isLoggedIn() {
     const usertoken = this.getToken();
     if (usertoken != null) {
-      return true
+      return true;
     }
     return false;
   }
