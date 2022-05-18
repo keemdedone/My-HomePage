@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
   }
 
   postdata(angForm1: { value: { email: string; password: number; }; }) {
-    this.dataService.userlogin(angForm1.value.email,angForm1.value.password)
+    this.dataService.userLogin(angForm1.value.email,angForm1.value.password)
     .pipe(first()).subscribe(
     data => {
       const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/dashboard';

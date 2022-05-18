@@ -10,7 +10,7 @@
     if ($mysqli->query($sql) === TRUE) {
       $authdata = [
         'name' => $name,
-        'pwd' => $pwd, // default = ''
+        'pwd' => $pwd, // default = '' for protect password in f12->network
         'email' => $email,
         'Id' => mysqli_insert_id($mysqli) //this id must last line
       ];

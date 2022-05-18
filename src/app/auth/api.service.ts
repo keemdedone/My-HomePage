@@ -18,7 +18,7 @@ export class ApiService {
     private httpClient : HttpClient,
   ) { }
 
-  public userlogin(username:string, password:number) {
+  public userLogin(username:string, password:number) {
     return this.httpClient.post<any>(this.baseUrl + '/login.php', { username, password })
       .pipe(map(Users => {
         this.setToken(Users[0].name);
@@ -27,7 +27,7 @@ export class ApiService {
     }));
   }
 
-  public userregistration(name:any, email:any, pwd:any) {
+  public userRegistration(name:any, email:any, pwd:any) {
     return this.httpClient.post<any>(this.baseUrl + '/register.php', { name, email, pwd })
       .pipe(map(Users => {
         return Users;
