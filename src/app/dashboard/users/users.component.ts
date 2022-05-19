@@ -41,7 +41,7 @@ export class UsersComponent implements OnInit {
     });
   }
 
-  switchUser(id:any) {
+  switchUserAccount(id:any) {
     localStorage.setItem('token', id);
     this.tokenName = localStorage.getItem("token");
   }
