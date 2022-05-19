@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboradComponent } from './dashborad/dashborad.component';
+import { UserCreateComponent } from './user-create/user-create.component';
 import { UsersEditComponent } from './users-edit/users-edit.component';
 import { UsersComponent } from './users/users.component';
 
@@ -21,7 +22,11 @@ const routes: Routes = [
       {
         path:'users/:id',
         component: UsersEditComponent,
-      }
+      },
+      {
+        path:'create',
+        component: UserCreateComponent,
+      },
     ]
   }
 ];

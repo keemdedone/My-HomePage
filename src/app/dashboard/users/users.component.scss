@@ -31,3 +31,9 @@ table{
   border-color: green ;
   color: black;
 }
+
+.cmd-add-user{
+  &>button{
+    margin-left: 150px;
+  }
+}

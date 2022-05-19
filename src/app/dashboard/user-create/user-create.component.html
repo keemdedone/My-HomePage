@@ -1,0 +1,61 @@
+<div class="cmp-update-interface">
+  <h1 class="text-center">Update Information</h1>
+  <form [formGroup]="createForm" (ngSubmit)="postdata(createForm)">
+
+    <div class="cmp-input-field">
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <mat-icon matPrefix>person</mat-icon>
+        <input type="text"
+          matInput name="name"
+          formControlName="name"
+          autocomplete="doNotAutoComplete"
+          placeholder="Your name">
+        <mat-hint>Your Name</mat-hint>
+        <mat-error *ngIf="createForm.get('name')?.errors?.['required']">Required</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <mat-icon matPrefix>email</mat-icon>
+        <input type="email"
+          matInput name="email"
+          formControlName="email"
+          autocomplete="doNotAutoComplete"
+          placeholder="Email">
+        <mat-hint>Your Email</mat-hint>
+        <mat-error *ngIf="createForm.get('email')?.errors?.['required']">Required</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <mat-icon matPrefix>password</mat-icon>
+        <input type="password"
+          matInput name="Password"
+          formControlName="password"
+          autocomplete="doNotAutoComplete"
+          placeholder="Password">
+        <mat-hint>Your Password</mat-hint>
+        <mat-error *ngIf="createForm.get('password')?.errors?.['required']">Required</mat-error>
+      </mat-form-field>
+    </div>
+
+    <button
+    mat-flat-button
+    type="submit"
+    color="primary"
+    >
+      <mat-icon>save</mat-icon>
+      <span>Save</span>
+    </button>
+
+    <button
+    mat-flat-button
+    type="button"
+    color="warn"
+    (click)="onBack()"
+    >
+      <mat-icon>cancel</mat-icon>
+      <span>Cancel</span>
+    </button>
+
+  </form>
+</div>

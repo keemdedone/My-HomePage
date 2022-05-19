@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ApiService } from 'src/app/auth/api.service';
 
 @Component({
@@ -8,9 +9,11 @@ import { ApiService } from 'src/app/auth/api.service';
 })
 export class UsersComponent implements OnInit {
   users:any;
+  token = localStorage.getItem("token");
 
   constructor(
     private dataService: ApiService,
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
