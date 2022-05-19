@@ -16,8 +16,7 @@ export class UserCreateComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private dataService: ApiService,
-    private router:Router,
-    private dialog: MatDialog,
+    private router: Router,
   ) {
     this.createForm = this.fb.group({
       email: [null, [Validators.required,Validators.minLength(1), Validators.email]],
@@ -43,6 +42,7 @@ export class UserCreateComponent implements OnInit {
           data => {
             // this.dialog.open(this.CompleteDialog);
             console.log('complete!!')
+            this.router.navigate(['dashboard']);
           },
           error => {
             // this.dialog.open(this.ServerDown);
@@ -54,6 +54,18 @@ export class UserCreateComponent implements OnInit {
         // this.dialog.open(this.IncompleteDialog);
         return;
       }
+    }
+
+    get createEmail() {
+      return this.createForm.get('email');
+    }
+
+    get createPassword() {
+      return this.createForm.get('password');
+    }
+
+    get createName() {
+      return this.createForm.get('name');
     }
 
     onBack(): void{

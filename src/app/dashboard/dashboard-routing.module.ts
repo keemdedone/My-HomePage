@@ -20,12 +20,12 @@ const routes: Routes = [
         component: UsersComponent,
       },
       {
-        path:'users/:id',
-        component: UsersEditComponent,
+        path:'users/create',
+        component: UserCreateComponent,
       },
       {
-        path:'create',
-        component: UserCreateComponent,
+        path:'users/:id',
+        component: UsersEditComponent,
       },
     ]
   }
