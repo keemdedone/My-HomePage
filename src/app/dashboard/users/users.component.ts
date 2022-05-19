@@ -8,8 +8,9 @@ import { ApiService } from 'src/app/auth/api.service';
   styleUrls: ['./users.component.scss']
 })
 export class UsersComponent implements OnInit {
-  users:any;
-  token = localStorage.getItem("token");
+  users: any;
+  tokenName = localStorage.getItem("token");
+  idCheck: any;
 
   constructor(
     private dataService: ApiService,
@@ -28,7 +29,6 @@ export class UsersComponent implements OnInit {
   delUserInfo(id:number) {
     this.dataService.delUser(id).subscribe(() => {
       console.log("user deleted");
-
       //after delete must call getUsers function again for refresh result.
       this.dataService.getUsers().subscribe((result:any) => {
         this.users = result;

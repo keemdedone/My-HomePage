@@ -1,13 +1,13 @@
 <div class="mt-5">
-  <div class="cmd-add-user" *ngIf=" token === 'Admin' ">
+  <div class="cmd-add-user" *ngIf="tokenName === 'Admin' ">
     <button
     routerLink="create"
     mat-flat-button
     matTooltip="Add user account"
     color="primary">
-    <mat-icon>
-      add
-    </mat-icon>
+      <mat-icon>
+        add
+      </mat-icon>
     </button>
   </div>
   <h1 align="center">User Information</h1>
