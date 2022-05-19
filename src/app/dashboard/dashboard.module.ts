@@ -38,6 +38,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatFormFieldModule,
     MatTooltipModule,
     MatDialogModule,
+  ],
+  entryComponents: [
+    
   ]
 })
 export class DashboardModule { }

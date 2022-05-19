@@ -49,9 +49,12 @@ export class UsersComponent implements OnInit {
   switchAdminAccount(id:any): void{
     if(id = '1'){
       let password = prompt("password");
-      if (password = "1234"){
+      if(password == '1234'){
         localStorage.setItem('token', id);
         this.tokenName = localStorage.getItem("token");
+      } else {
+        alert('password incoorect try again');
+        return
       }
     }
   }
