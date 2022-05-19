@@ -1,0 +1,12 @@
+.cmp-about{
+  background-color: white;
+  border-radius: 10px;
+  width: 800px;
+  margin: auto;
+  margin-top: 50px;
+  &>p{
+    padding: 20px;
+    font-size: 18px;
+    font-family: 'Courier New', Courier, monospace;
+  }
+}

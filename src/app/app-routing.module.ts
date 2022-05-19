@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AboutComponent } from './auth/about/about.component';
 import { AuthguardGuard } from './auth/authguard.guard';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
@@ -12,6 +13,10 @@ const routes: Routes = [
   {
     path: 'registration',
     component: RegisterComponent
+  },
+  {
+    path: 'about',
+    component: AboutComponent,
   },
   {
     path: '',
