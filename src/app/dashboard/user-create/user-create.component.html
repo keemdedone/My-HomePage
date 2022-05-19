@@ -1,4 +1,4 @@
-<div class="cmp-create-interface">
+<div class="cmp-create-interface" *ngIf="authLevel === '0' ">
   <h1 class="text-center">Create user</h1>
   <form [formGroup]="createForm" (ngSubmit)="postdata(createForm)">
 

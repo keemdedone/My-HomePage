@@ -21,7 +21,7 @@ export class ApiService {
   public userLogin(username:string, password:number) {
     return this.httpClient.post<any>(this.baseUrl + '/login.php', { username, password })
       .pipe(map(Users => {
-        this.setToken(Users[0].name);
+        this.setToken(Users[0].level);
         this.getLoggedInName.emit(true);
         return Users;
     }));

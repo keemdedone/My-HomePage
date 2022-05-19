@@ -12,6 +12,7 @@ import { ApiService } from 'src/app/auth/api.service';
 export class UserCreateComponent implements OnInit {
 
   createForm: FormGroup;
+  authLevel = localStorage.getItem("token");
 
   constructor(
     private fb: FormBuilder,
@@ -26,7 +27,10 @@ export class UserCreateComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    return
+    if(this.authLevel !== "0"){
+      alert("you don't have permission to use this function!!!");
+      history.back();
+    }
   }
 
   postdata(createForm1:
