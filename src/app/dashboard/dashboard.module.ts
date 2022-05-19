@@ -15,6 +15,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { UsersEditComponent } from './users-edit/users-edit.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { UserCreateComponent } from './user-create/user-create.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { UserCreateComponent } from './user-create/user-create.component';
     MatInputModule,
     MatFormFieldModule,
     MatTooltipModule,
+    MatDialogModule,
   ]
 })
 export class DashboardModule { }

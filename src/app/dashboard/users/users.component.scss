@@ -17,10 +17,20 @@ tr{
 }
 
 .cmd-action-menu{
+  padding-left: 50px;
+  padding-right: 50px;
   div{
     &>button{
       margin-left: 5px;
       margin-right: 5px;
+    }
+    &>.switch{
+      color: white;
+      background-color: #303f9f;
+    }
+    &>.admin-switch{
+      color: white;
+      background-color: black;
     }
   }
 }

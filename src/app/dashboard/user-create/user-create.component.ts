@@ -10,7 +10,6 @@ import { ApiService } from 'src/app/auth/api.service';
   styleUrls: ['./user-create.component.scss']
 })
 export class UserCreateComponent implements OnInit {
-
   createForm: FormGroup;
   authLevel = localStorage.getItem("token");
 
@@ -27,7 +26,7 @@ export class UserCreateComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    if(this.authLevel !== "0"){
+    if(this.authLevel !== "1"){
       alert("you don't have permission to use this function!!!");
       history.back();
     }

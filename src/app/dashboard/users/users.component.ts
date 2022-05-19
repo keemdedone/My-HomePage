@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/auth/api.service';
 
@@ -8,6 +9,7 @@ import { ApiService } from 'src/app/auth/api.service';
   styleUrls: ['./users.component.scss']
 })
 export class UsersComponent implements OnInit {
+
   users: any;
   tokenName = localStorage.getItem("token");
   idCheck: any;
@@ -15,6 +17,7 @@ export class UsersComponent implements OnInit {
   constructor(
     private dataService: ApiService,
     private router: Router,
+    public dialog: MatDialog,
   ) { }
 
   ngOnInit(): void {
@@ -36,6 +39,21 @@ export class UsersComponent implements OnInit {
         console.log(err);
       })
     });
+  }
+
+  switchUser(id:any) {
+    localStorage.setItem('token', id);
+    this.tokenName = localStorage.getItem("token");
+  }
+
+  switchAdminAccount(id:any): void{
+    if(id = '1'){
+      let password = prompt("password");
+      if (password = "1234"){
+        localStorage.setItem('token', id);
+        this.tokenName = localStorage.getItem("token");
+      }
+    }
   }
 
 }

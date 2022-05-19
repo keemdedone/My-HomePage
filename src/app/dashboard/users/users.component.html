@@ -1,5 +1,5 @@
 <div class="mt-5">
-  <div class="cmd-add-user" *ngIf=" tokenName === '0' ">
+  <div class="cmd-add-user" *ngIf=" tokenName === '1' ">
     <button
     routerLink="create"
     mat-flat-button
@@ -26,7 +26,19 @@
         <td>{{user.name}}</td>
         <td>{{user.email}}</td>
         <td class="cmd-action-menu">
+          <div *ngIf=" tokenName !== '1' && user.level === '0' ">
+            <button mat-flat-button class="admin-switch" (click)="switchAdminAccount(user.id)">
+              <mat-icon>
+                autorenew
+              </mat-icon>
+            </button>
+          </div>
           <div *ngIf=" user.level !== '0' ">
+            <button mat-flat-button class="switch" (click)="switchUser(user.id)">
+              <mat-icon>
+                autorenew
+              </mat-icon>
+            </button>
             <button mat-flat-button color="warn" (click)="delUserInfo(user.id)">
               <mat-icon>
                 delete_forever
@@ -43,3 +55,9 @@
     </tbody>
   </table>
 </div>
+
+<ng-template #switchAdmin>
+  <div class="cmp-password-promt-box" mat-dialog-content>
+    <h1 matDialogTitle>Plase input admin password</h1>
+  </div>
+</ng-template>
