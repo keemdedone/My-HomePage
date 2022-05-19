@@ -26,7 +26,7 @@
         <td>{{user.name}}</td>
         <td>{{user.email}}</td>
         <td class="cmd-action-menu">
-          <div *ngIf=" user.id !== '1' ">
+          <div *ngIf=" user.level !== '0' ">
             <button mat-flat-button color="warn" (click)="delUserInfo(user.id)">
               <mat-icon>
                 delete_forever

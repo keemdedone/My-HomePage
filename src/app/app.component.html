@@ -38,16 +38,6 @@
         </audio>
     </div>
 
-    <div class="dark-mode">
-      <div class="flex-stretch"></div>
-      <mat-slide-toggle
-      matTooltip="Darkmode"
-      [formControl]="toggleControl"
-      (click)="onActive()"></mat-slide-toggle>
-      <mat-icon *ngIf="darkActive === true">light_mode</mat-icon>
-      <mat-icon *ngIf="darkActive === false">bedtime</mat-icon>
-    </div>
-
     <div class="logout-btn">
       <button
       *ngIf="logoutbtn"
@@ -57,6 +47,16 @@
       matTooltip="Click to Logout">
         <mat-icon>logout</mat-icon>
       </button>
+    </div>
+
+    <div class="dark-mode">
+      <div class="flex-stretch"></div>
+      <mat-slide-toggle
+      matTooltip="Darkmode"
+      [formControl]="toggleControl"
+      (click)="onActive()"></mat-slide-toggle>
+      <mat-icon *ngIf="darkActive === true">light_mode</mat-icon>
+      <mat-icon *ngIf="darkActive === false">bedtime</mat-icon>
     </div>
 
     <nav>
