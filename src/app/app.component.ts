@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
   isSmallScreen$!: Observable<boolean>;
   portal$!: Observable<Portal<unknown> | null>
   count: number = 0
-  audioShow: boolean = true;
+  audioShow: boolean = false;
   darkActive: boolean = true;
   login: boolean = false;
   loginbtn:boolean;
