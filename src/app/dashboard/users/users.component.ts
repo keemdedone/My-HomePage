@@ -1,6 +1,5 @@
-import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ApiService } from 'src/app/auth/api.service';
 import { UserCreateComponent } from '../user-create/user-create.component';
 
@@ -27,6 +26,17 @@ export class UsersComponent implements OnInit {
         console.log(err);
       }
     );
+  }
+
+  openCreateDialog(): void {
+    const dialogRef = this.dialog.open(UserCreateComponent, {});
+    dialogRef.afterClosed().subscribe(()=> {
+      this.dataService.getUsers().subscribe((res:any) => {
+        this.users = res;
+      }, (err) => {
+        console.log(err);
+      })
+    })
   }
 
   delUserInfo(id:number) {
@@ -57,14 +67,6 @@ export class UsersComponent implements OnInit {
         return
       }
     }
-  }
-
-  openDialog(): void {
-    const dialogRef = this.dialog.open(UserCreateComponent, {});
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-    });
   }
 
 }

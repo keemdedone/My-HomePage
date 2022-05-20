@@ -42,13 +42,12 @@ export class UserCreateComponent implements OnInit {
       };
     }): void{
       if (!this.createForm.invalid) {
-        const dialogRef = this.dialog.open(UserCreateComponent,{});
         this.dataService.userRegistration(createForm1.value.name,createForm1.value.email,createForm1.value.password).subscribe(
           data => {
             // this.dialog.open(this.CompleteDialog);
             console.log('complete!!')
-            dialogRef.close();
-            this.router.navigate(['dashboard']);
+            this.dialog.closeAll();
+            return
           },
           error => {
             // this.dialog.open(this.ServerDown);
