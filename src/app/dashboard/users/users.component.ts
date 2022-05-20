@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Pipe,Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ApiService } from 'src/app/auth/api.service';
 import { UserCreateComponent } from '../user-create/user-create.component';
@@ -10,9 +11,12 @@ import { UserCreateComponent } from '../user-create/user-create.component';
 })
 export class UsersComponent implements OnInit {
 
-  users: any;
   tokenName = localStorage.getItem("token");
+  users: any;
   idCheck: any;
+  name: any;
+
+  formGroup!: FormGroup;
 
   constructor(
     private dataService: ApiService,
@@ -67,6 +71,25 @@ export class UsersComponent implements OnInit {
         return
       }
     }
+  }
+
+  onSearch(): void{
+    if(this.name == ""){
+      this.ngOnInit();
+    } else {
+      this.users = this.users.filter((res:any) => {
+        let result = res.name.toLocaleLowerCase().match(this.name.toLocaleLowerCase());
+        return result
+      });
+    }
+  }
+
+  key: string = 'id';
+  reverse: boolean = false;
+
+  sort(key:any): void{
+    this.key = key;
+    this.reverse = !this.reverse;
   }
 
 }

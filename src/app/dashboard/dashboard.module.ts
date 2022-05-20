@@ -5,7 +5,7 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboradComponent } from './dashborad/dashborad.component';
 import { UsersComponent } from './users/users.component';
 import { PortalModule } from '@angular/cdk/portal';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
@@ -38,9 +38,10 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatFormFieldModule,
     MatTooltipModule,
     MatDialogModule,
+    FormsModule,
   ],
   entryComponents: [
-    
+
   ]
 })
 export class DashboardModule { }
