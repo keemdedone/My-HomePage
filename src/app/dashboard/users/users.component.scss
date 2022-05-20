@@ -67,3 +67,27 @@ table{
   margin-top: 10px;
   text-align: center;
 }
+
+.cmp-user-deleted-alert{
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  &>h1{
+    padding-top: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: bold;
+  }
+  &>img{
+    border-radius: 50%;
+    overflow: hidden;
+    display:inline-block;
+    vertical-align:middle;
+  }
+}
+
+.cmd-pagination{
+  width: 1200px;
+  padding-top: 30px;
+  text-align: right;
+  margin: auto;
+}

@@ -16,6 +16,7 @@ import { UsersEditComponent } from './users-edit/users-edit.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { UserCreateComponent } from './user-create/user-create.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatTooltipModule,
     MatDialogModule,
     FormsModule,
+    NgxPaginationModule,
   ],
   entryComponents: [
 

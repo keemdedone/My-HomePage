@@ -42,7 +42,7 @@ export class AppComponent implements OnInit {
   ){
     dataService.getLoggedInName.subscribe(name => this.changeName(name));
     if(this.dataService.isLoggedIn()){
-      console.log("loggedin");
+      console.log("user already login");
       this.loginBtn=false;
       this.logoutBtn=true;
     } else {

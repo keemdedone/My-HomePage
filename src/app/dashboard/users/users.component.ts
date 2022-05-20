@@ -1,6 +1,6 @@
-import { Pipe,Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { Component, OnInit, ViewChild, TemplateRef } from '@angular/core';
+import { FormGroup } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { ApiService } from 'src/app/auth/api.service';
 import { UserCreateComponent } from '../user-create/user-create.component';
 
@@ -10,11 +10,13 @@ import { UserCreateComponent } from '../user-create/user-create.component';
   styleUrls: ['./users.component.scss']
 })
 export class UsersComponent implements OnInit {
+  @ViewChild('userDeleted') userDeleted!: TemplateRef<any>;
 
   tokenName = localStorage.getItem("token");
   users: any;
   idCheck: any;
   name: any;
+  p: number = 1;
 
   formGroup!: FormGroup;
 
@@ -45,7 +47,7 @@ export class UsersComponent implements OnInit {
 
   delUserInfo(id:number) {
     this.dataService.delUser(id).subscribe(() => {
-      console.log("user deleted");
+      this.dialog.open(this.userDeleted);
       //after delete must call getUsers function again for refresh result.
       this.dataService.getUsers().subscribe((result:any) => {
         this.users = result;
@@ -82,14 +84,6 @@ export class UsersComponent implements OnInit {
         return result
       });
     }
-  }
-
-  key: string = 'id';
-  reverse: boolean = false;
-
-  sort(key:any): void{
-    this.key = key;
-    this.reverse = !this.reverse;
   }
 
 }

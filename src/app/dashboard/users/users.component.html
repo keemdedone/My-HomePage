@@ -29,7 +29,7 @@
       </tr>
     </thead>
     <tbody class="tbody">
-      <tr *ngFor="let user of users">
+      <tr *ngFor="let user of users | paginate:{itemsPerPage:5, currentPage:p}; ">
         <td>{{user.id}}</td>
         <td>{{user.name}}</td>
         <td>{{user.email}}</td>
@@ -64,11 +64,26 @@
       </tr>
     </tbody>
   </table>
-
+  <div class="cmd-pagination">
+    <pagination-controls (pageChange)="p = $event" ></pagination-controls>
+  </div>
 </div>
 
 <ng-template #switchAdmin>
   <div class="cmp-password-promt-box" mat-dialog-content>
     <h1 matDialogTitle>Plase input admin password</h1>
+  </div>
+</ng-template>
+
+<ng-template #userDeleted>
+  <div class="cmp-user-deleted-alert">
+    <h1 matDialogTitle>User deleted!!!</h1>
+    <img src="./assets/illustration/himer.gif">
+    <mat-dialog-actions align="center">
+      <button
+      color="primary"
+      mat-flat-button
+      matDialogClose>OK</button>
+    </mat-dialog-actions>
   </div>
 </ng-template>
