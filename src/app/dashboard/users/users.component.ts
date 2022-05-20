@@ -11,6 +11,7 @@ import { UserCreateComponent } from '../user-create/user-create.component';
 })
 export class UsersComponent implements OnInit {
   @ViewChild('userDeleted') userDeleted!: TemplateRef<any>;
+  @ViewChild('switchAdmin') switchAdmin!: TemplateRef<any>;
 
   tokenName = localStorage.getItem("token");
   users: any;
@@ -69,7 +70,7 @@ export class UsersComponent implements OnInit {
         localStorage.setItem('token', 'admin');
         this.tokenName = localStorage.getItem("token");
       } else {
-        alert('password incoorect try again');
+        this.dialog.open(this.switchAdmin);
         return
       }
     }

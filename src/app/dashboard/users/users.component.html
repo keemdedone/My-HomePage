@@ -65,13 +65,23 @@
     </tbody>
   </table>
   <div class="cmd-pagination">
-    <pagination-controls (pageChange)="p = $event" ></pagination-controls>
+    <pagination-controls
+    class="my-pagination"
+    (pageChange)="p = $event"
+    previousLabel=""
+    nextLabel=""></pagination-controls>
   </div>
 </div>
 
 <ng-template #switchAdmin>
   <div class="cmp-password-promt-box" mat-dialog-content>
-    <h1 matDialogTitle>Plase input admin password</h1>
+    <h1 matDialogTitle>Your don't have permission to use this function</h1>
+    <mat-dialog-actions align="center">
+      <button
+      color="warn"
+      mat-flat-button
+      matDialogClose>Back</button>
+    </mat-dialog-actions>
   </div>
 </ng-template>
 
