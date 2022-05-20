@@ -65,14 +65,18 @@ export class UsersComponent implements OnInit {
 
   switchAdminAccount(lv:any): void{
     if(lv == '0'){
-      let password = prompt("password");
-      if(password == '1234'){
-        localStorage.setItem('token', 'admin');
-        this.tokenName = localStorage.getItem("token");
-      } else {
-        this.dialog.open(this.switchAdmin);
-        return
-      }
+      this.users.forEach((e:any) => {
+        if(e.level == '0'){
+          let password = prompt("password");
+          if(password == e.password){
+            localStorage.setItem('token', 'admin');
+            this.tokenName = localStorage.getItem("token");
+          } else {
+            this.dialog.open(this.switchAdmin);
+            return
+          }
+        }
+      });
     }
   }
 

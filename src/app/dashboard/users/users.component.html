@@ -48,7 +48,7 @@
                   autorenew
                 </mat-icon>
               </button>
-              <button mat-flat-button color="warn" (click)="delUserInfo(user.id)">
+              <button mat-flat-button color="warn" (click)="delUserInfo(user.id)" *ngIf="tokenName === 'admin' ">
                 <mat-icon>
                   delete_forever
                 </mat-icon>
