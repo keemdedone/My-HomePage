@@ -17,8 +17,7 @@ tr{
 }
 
 .cmd-action-menu{
-  padding-left: 50px;
-  padding-right: 50px;
+  text-align: right;
   div{
     &>button{
       margin-left: 5px;
@@ -29,8 +28,21 @@ tr{
       background-color: #303f9f;
     }
     &>.admin-switch{
-      color: white;
-      background-color: black;
+      width: 230px;
+      text-align: center;
+      margin-left: 5px;
+      &>button{
+        color: white;
+        background-color: black;
+      }
+    }
+  }
+  .cmp-action-control{
+    display: flex;
+    justify-content: center;
+    .cmd-user-action-menu{
+      width: 230px;
+      text-align: right;
     }
   }
 }

@@ -26,29 +26,31 @@
         <td>{{user.name}}</td>
         <td>{{user.email}}</td>
         <td class="cmd-action-menu">
-          <div *ngIf=" tokenName !== 'admin' && user.level === '0' ">
-            <button mat-flat-button class="admin-switch" (click)="switchAdminAccount(user.level)">
-              <mat-icon>
-                autorenew
-              </mat-icon>
-            </button>
-          </div>
-          <div *ngIf=" user.level !== '0' ">
-            <button mat-flat-button class="switch" (click)="switchUserAccount(user.id)">
-              <mat-icon>
-                autorenew
-              </mat-icon>
-            </button>
-            <button mat-flat-button color="warn" (click)="delUserInfo(user.id)">
-              <mat-icon>
-                delete_forever
-              </mat-icon>
-            </button>
-            <button mat-flat-button color="primary" routerLink="{{user.id}}">
-              <mat-icon>
-                settings
-              </mat-icon>
-            </button>
+          <div class="cmp-action-control">
+            <div *ngIf=" tokenName !== 'admin' && user.level === '0' " class="admin-switch">
+              <button mat-flat-button (click)="switchAdminAccount(user.level)">
+                <mat-icon>
+                  autorenew
+                </mat-icon>
+              </button>
+            </div>
+            <div *ngIf=" user.level !== '0' " class="cmd-user-action-menu">
+              <button mat-flat-button class="switch" (click)="switchUserAccount(user.id)" *ngIf="tokenName !== user.id">
+                <mat-icon>
+                  autorenew
+                </mat-icon>
+              </button>
+              <button mat-flat-button color="warn" (click)="delUserInfo(user.id)">
+                <mat-icon>
+                  delete_forever
+                </mat-icon>
+              </button>
+              <button mat-flat-button color="primary" routerLink="{{user.id}}">
+                <mat-icon>
+                  settings
+                </mat-icon>
+              </button>
+            </div>
           </div>
         </td>
       </tr>
