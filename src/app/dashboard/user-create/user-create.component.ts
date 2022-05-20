@@ -26,7 +26,7 @@ export class UserCreateComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    if(this.authLevel !== "1"){
+    if(this.authLevel !== "admin"){
       alert("you don't have permission to use this function!!!");
       history.back();
     }

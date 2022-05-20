@@ -27,6 +27,7 @@ export class UsersComponent implements OnInit {
         console.log(err);
       }
     );
+    console.log(this.tokenName)
   }
 
   delUserInfo(id:number) {
@@ -50,7 +51,7 @@ export class UsersComponent implements OnInit {
     if(id = '1'){
       let password = prompt("password");
       if(password == '1234'){
-        localStorage.setItem('token', id);
+        localStorage.setItem('token', 'admin');
         this.tokenName = localStorage.getItem("token");
       } else {
         alert('password incoorect try again');

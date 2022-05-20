@@ -21,7 +21,11 @@ export class ApiService {
   public userLogin(username:string, password:number) {
     return this.httpClient.post<any>(this.baseUrl + '/login.php', { username, password })
       .pipe(map(Users => {
-        this.setToken(Users[0].id);
+        if (Users.level = '0'){
+          this.setToken('admin');
+        } else {
+          this.setToken(Users.id);
+        }
         this.getLoggedInName.emit(true);
         return Users;
     }));
