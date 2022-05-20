@@ -1,7 +1,7 @@
 <div class="mt-5">
   <div class="cmd-add-user" *ngIf=" tokenName === 'admin' ">
     <button
-    routerLink="create"
+    (click)="openDialog()"
     mat-flat-button
     matTooltip="Add user account"
     color="primary">
@@ -27,7 +27,7 @@
         <td>{{user.email}}</td>
         <td class="cmd-action-menu">
           <div *ngIf=" tokenName !== 'admin' && user.level === '0' ">
-            <button mat-flat-button class="admin-switch" (click)="switchAdminAccount(user.id)">
+            <button mat-flat-button class="admin-switch" (click)="switchAdminAccount(user.level)">
               <mat-icon>
                 autorenew
               </mat-icon>

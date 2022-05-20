@@ -1,6 +1,6 @@
 <div class="cmp-create-interface" *ngIf="authLevel === 'admin' ">
-  <h1 class="text-center">Create user</h1>
-  <form [formGroup]="createForm" (ngSubmit)="postdata(createForm)">
+  <h1 mat-dialog-title class="text-center" >Create user</h1>
+  <form mat-dialog-content [formGroup]="createForm" (ngSubmit)="postdata(createForm)">
 
     <div class="cmp-input-field">
       <mat-form-field appearance="outline">
@@ -51,7 +51,7 @@
     mat-flat-button
     type="button"
     color="warn"
-    (click)="onBack()"
+    mat-dialog-close
     >
       <mat-icon>cancel</mat-icon>
       <span>Cancel</span>

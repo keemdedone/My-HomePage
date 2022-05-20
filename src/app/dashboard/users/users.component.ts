@@ -2,6 +2,7 @@ import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/auth/api.service';
+import { UserCreateComponent } from '../user-create/user-create.component';
 
 @Component({
   selector: 'app-users',
@@ -16,7 +17,6 @@ export class UsersComponent implements OnInit {
 
   constructor(
     private dataService: ApiService,
-    private router: Router,
     public dialog: MatDialog,
   ) { }
 
@@ -27,7 +27,6 @@ export class UsersComponent implements OnInit {
         console.log(err);
       }
     );
-    console.log(this.tokenName)
   }
 
   delUserInfo(id:number) {
@@ -47,8 +46,8 @@ export class UsersComponent implements OnInit {
     this.tokenName = localStorage.getItem("token");
   }
 
-  switchAdminAccount(id:any): void{
-    if(id = '1'){
+  switchAdminAccount(lv:any): void{
+    if(lv == '0'){
       let password = prompt("password");
       if(password == '1234'){
         localStorage.setItem('token', 'admin');
@@ -58,6 +57,14 @@ export class UsersComponent implements OnInit {
         return
       }
     }
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(UserCreateComponent, {});
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
   }
 
 }

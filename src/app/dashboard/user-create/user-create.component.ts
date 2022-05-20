@@ -17,6 +17,7 @@ export class UserCreateComponent implements OnInit {
     private fb: FormBuilder,
     private dataService: ApiService,
     private router: Router,
+    public dialog: MatDialog,
   ) {
     this.createForm = this.fb.group({
       email: [null, [Validators.required,Validators.minLength(1), Validators.email]],
@@ -41,10 +42,12 @@ export class UserCreateComponent implements OnInit {
       };
     }): void{
       if (!this.createForm.invalid) {
+        const dialogRef = this.dialog.open(UserCreateComponent,{});
         this.dataService.userRegistration(createForm1.value.name,createForm1.value.email,createForm1.value.password).subscribe(
           data => {
             // this.dialog.open(this.CompleteDialog);
             console.log('complete!!')
+            dialogRef.close();
             this.router.navigate(['dashboard']);
           },
           error => {
@@ -53,9 +56,8 @@ export class UserCreateComponent implements OnInit {
           }
         );
       } else {
-        this.createForm.markAllAsTouched(); //this medtod will wacth all createForm(on the top line 20) in form where null value
-        // this.dialog.open(this.IncompleteDialog);
-        return;
+        this.createForm.markAllAsTouched();
+        return
       }
     }
 
@@ -69,10 +71,6 @@ export class UserCreateComponent implements OnInit {
 
     get createName() {
       return this.createForm.get('name');
-    }
-
-    onBack(): void{
-      return history.back();
     }
 
 }
