@@ -57,9 +57,18 @@ export class ApiService {
     }));
   }
 
+  public userLog(name:any, action:any) {
+    console.log(name + ' ' + action)
+    return this.httpClient.post<any>(this.baseUrl + '/user_log.php', { name, action })
+    .pipe(map(Users => {
+      return Users;
+    }));
+  }
+
   public delUser(id:number) {
     return this.httpClient.delete<any>(this.baseUrl + '/delete.php?id=' + id);
   }
+
 
   //token
   setToken(token: string) {
