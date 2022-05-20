@@ -1,4 +1,4 @@
-<div *ngIf="loginbtn">
+<div *ngIf="loginBtn">
   <mat-toolbar color="primary" class="cmp-homepage">
     <span>My-Homepage</span>
     <nav class="cmd-link-menu">
@@ -11,7 +11,7 @@
 </div>
 
 <!-- homepage part -->
-<ng-container *ngIf="logoutbtn">
+<ng-container *ngIf="logoutBtn">
   <mat-toolbar color="primary">
     <button
     mat-icon-button
@@ -40,7 +40,7 @@
 
     <div class="logout-btn">
       <button
-      *ngIf="logoutbtn"
+      *ngIf="logoutBtn"
       type="button"
       mat-raised-button
       (click)="logout()"

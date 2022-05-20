@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   selector: 'app-test-area-zero-one',
@@ -137,6 +138,11 @@ export class TestAreaZeroOneComponent implements OnInit {
     } else {
       return;
     }
+  }
+
+  onGen(): void{
+    let id = uuidv4();
+    console.log(id);
   }
 
 }

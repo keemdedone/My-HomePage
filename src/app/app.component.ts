@@ -26,8 +26,8 @@ export class AppComponent implements OnInit {
   audioShow: boolean = false;
   darkActive: boolean = true;
   login: boolean = false;
-  loginbtn:boolean;
-  logoutbtn:boolean;
+  loginBtn:boolean;
+  logoutBtn:boolean;
 
   @HostBinding('class') className = '';
   toggleControl = new FormControl(false);
@@ -43,11 +43,11 @@ export class AppComponent implements OnInit {
     dataService.getLoggedInName.subscribe(name => this.changeName(name));
     if(this.dataService.isLoggedIn()){
       console.log("loggedin");
-      this.loginbtn=false;
-      this.logoutbtn=true
+      this.loginBtn=false;
+      this.logoutBtn=true;
     } else {
-      this.loginbtn=true;
-      this.logoutbtn=false
+      this.loginBtn=true;
+      this.logoutBtn=false;
     }
   }
 
@@ -57,22 +57,21 @@ export class AppComponent implements OnInit {
       .pipe(map((result) => result.matches) /* for return boolean */
       );
 
-      this.portal$ = this.sidenavPortalService.portal$;
+    this.portal$ = this.sidenavPortalService.portal$;
 
-      this.toggleControl.valueChanges.subscribe((darkMode) => {
-        const darkClassName = 'darkMode';
-        this.className = darkMode ? darkClassName : '';
-        if (darkMode) {
-          this.overlay.getContainerElement().classList.add(darkClassName);
-        } else {
-          this.overlay.getContainerElement().classList.remove(darkClassName);
-        }
-      });
+    this.toggleControl.valueChanges.subscribe((darkMode) => {
+      const darkClassName = 'darkMode';
+      this.className = darkMode ? darkClassName : '';
+      if (darkMode) {
+        this.overlay.getContainerElement().classList.add(darkClassName);
+      } else {
+        this.overlay.getContainerElement().classList.remove(darkClassName);
+      }
+    });
 
     this.toggleControl.valueChanges.subscribe(val => {
       this.className = val ? 'darkMode' : '';
     });
-
   }
 
   showAudioControl(): void{
@@ -89,8 +88,8 @@ export class AppComponent implements OnInit {
   }
 
   private changeName(name: boolean): void {
-    this.logoutbtn = name;
-    this.loginbtn = !name;
+    this.logoutBtn = name;
+    this.loginBtn = !name;
   }
 
   logout(){
