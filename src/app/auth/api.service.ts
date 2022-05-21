@@ -59,7 +59,8 @@ export class ApiService {
   }
 
   public userLog(name:any, action:any) {
-    return this.httpClient.post<User_log>(this.baseUrl + '/log.php', {name,action})
+    console.log(name,action)
+    return this.httpClient.post<any>(this.baseUrl + '/log.php', { name, action })
   }
 
   public delUser(id:number) {

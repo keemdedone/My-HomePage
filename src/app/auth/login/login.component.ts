@@ -36,20 +36,27 @@ export class LoginComponent implements OnInit {
     data => {
       const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/dashboard';
       this.router.navigate([redirect]);
-      //log PART
-      this.dataService.getUsers().forEach((res:any) => {
-        for (let i = 0 ; i < res.length ; i++){
-          if (res[i].email === angForm1.value.email){
-            this.dataService.userLog(res[i].name,'Login').subscribe()
-          }
-        }
-      })
-      //end log PART
     }, error => {
       this.dialog.open(this.Dialog);
     });
   }
 
+  onLog(): void{
+    if(!this.angForm.invalid){
+      this.dataService.getUsers().forEach((res:any) => {
+        for (let i = 0 ; i < res.length ; i++){
+          if (res[i].email === this.angForm.value.email && res[i].password === this.angForm.value.password){
+            this.dataService.userLog(res[i].name,'Login')
+          }
+        }
+      })
+    } else {
+      console.log('emtry data!!!')
+    }
+  }
+
+
+  // get function
   get email() {
     return this.angForm.get('email');
   }
