@@ -5,7 +5,7 @@
   if(isset($postdata) && !empty($postdata)){
     $pwd = mysqli_real_escape_string($mysqli, trim($request->password));
     $email = mysqli_real_escape_string($mysqli, trim($request->username));
-    $sql = "SELECT * FROM users WHERE email='$email' AND password='$pwd'";
+    $sql = "SELECT * FROM users WHERE email='$email' AND password='$pwd' ";
     if($result = mysqli_query($mysqli,$sql)){
       $rows = array();
       while($row = mysqli_fetch_assoc($result)){

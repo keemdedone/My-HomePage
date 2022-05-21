@@ -22,10 +22,10 @@ export class ApiService {
   public userLogin(username:string, password:number) {
     return this.httpClient.post<any>(this.baseUrl + '/login.php', { username, password })
       .pipe(map(Users => {
-        if (Users.level = '0'){
+        if (Users[0].level === '0'){ //don't know why it's must identify index but if not it's can't return data
           this.setToken('admin');
         } else {
-          this.setToken(Users.id);
+          this.setToken(Users[0].id);
         }
         this.getLoggedInName.emit(true);
         return Users;
