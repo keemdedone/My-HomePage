@@ -3,6 +3,7 @@ import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { v4 as uuidv4 } from 'uuid';
+import { User_log } from './user_log';
 
 
 @Injectable({
@@ -21,28 +22,28 @@ export class ApiService {
 
   public userLogin(username:string, password:number) {
     return this.httpClient.post<any>(this.baseUrl + '/login.php', { username, password })
-      .pipe(map(User => {
-        if (User[0].level === '0'){ //don't know why it's must identify index but if not it's can't return data
-          this.setToken('admin');
-        } else {
-          this.setToken(User[0].id);
-        }
-        this.getLoggedInName.emit(true);
-        return User;
+    .pipe(map(User => {
+      if (User[0].level === '0'){ //don't know why it's must identify index but if not it's can't return data
+        this.setToken('admin');
+      } else {
+        this.setToken(User[0].id);
+      }
+      this.getLoggedInName.emit(true);
+      return User;
     }));
   }
 
   public userRegistration(name:any, email:any, pwd:any) {
     return this.httpClient.post<any>(this.baseUrl + '/register.php', { name, email, pwd })
-      .pipe(map(Users => {
-        return Users
+    .pipe(map(Users => {
+      return Users
     }));
   }
 
   public userEdit(id:any, name:any, email:any, pwd:any) {
     return this.httpClient.put<any>(this.baseUrl + '/edit.php?id=' + id, { name, email, pwd })
-      .pipe(map(Users => {
-        return Users
+    .pipe(map(Users => {
+      return Users
     }));
   }
 
@@ -52,13 +53,13 @@ export class ApiService {
 
   public getUser(id:any): Observable<any> {
     return this.httpClient.get('/dashboard/users/' + id)
-      .pipe(map((res:any) => {
-        return res || {}
+    .pipe(map((res:any) => {
+      return res || {}
     }));
   }
 
   public userLog(name:any, action:any) {
-    this.httpClient.post<any>(this.baseUrl + '/log.php', { name, action })
+    return this.httpClient.post<User_log>(this.baseUrl + '/log.php', {name,action})
   }
 
   public delUser(id:number) {

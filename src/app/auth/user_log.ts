@@ -3,7 +3,7 @@ export class User_log {
   public name: string;
   public action:string;
 
-  constructor(id:number,name: string,action:string) {
+  constructor(id:number,name:string,action:string) {
     this.id = id;
     this.name = name;
     this.action = action;

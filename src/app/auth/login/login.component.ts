@@ -37,10 +37,10 @@ export class LoginComponent implements OnInit {
       const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/dashboard';
       this.router.navigate([redirect]);
       //log PART
-      this.dataService.getUsers().subscribe((res:any) => {
+      this.dataService.getUsers().forEach((res:any) => {
         for (let i = 0 ; i < res.length ; i++){
           if (res[i].email === angForm1.value.email){
-            this.dataService.userLog(res[i].name,'Login')
+            this.dataService.userLog(res[i].name,'Login').subscribe()
           }
         }
       })
