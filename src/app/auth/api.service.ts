@@ -3,7 +3,7 @@ import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { v4 as uuidv4 } from 'uuid';
-import { Users } from './users';
+
 
 @Injectable({
 providedIn: 'root'
@@ -17,32 +17,32 @@ export class ApiService {
 
   constructor(
     private httpClient : HttpClient,
-  ) { }
+  ) {}
 
   public userLogin(username:string, password:number) {
     return this.httpClient.post<any>(this.baseUrl + '/login.php', { username, password })
-      .pipe(map(Users => {
-        if (Users[0].level === '0'){ //don't know why it's must identify index but if not it's can't return data
+      .pipe(map(User => {
+        if (User[0].level === '0'){ //don't know why it's must identify index but if not it's can't return data
           this.setToken('admin');
         } else {
-          this.setToken(Users[0].id);
+          this.setToken(User[0].id);
         }
         this.getLoggedInName.emit(true);
-        return Users;
+        return User;
     }));
   }
 
   public userRegistration(name:any, email:any, pwd:any) {
     return this.httpClient.post<any>(this.baseUrl + '/register.php', { name, email, pwd })
       .pipe(map(Users => {
-        return Users;
+        return Users
     }));
   }
 
   public userEdit(id:any, name:any, email:any, pwd:any) {
     return this.httpClient.put<any>(this.baseUrl + '/edit.php?id=' + id, { name, email, pwd })
       .pipe(map(Users => {
-        return Users;
+        return Users
     }));
   }
 
@@ -58,11 +58,7 @@ export class ApiService {
   }
 
   public userLog(name:any, action:any) {
-    console.log(name + ' ' + action)
-    return this.httpClient.post<any>(this.baseUrl + '/user_log.php', { name, action })
-    .pipe(map(Users => {
-      return Users;
-    }));
+    this.httpClient.post<any>(this.baseUrl + '/log.php', { name, action })
   }
 
   public delUser(id:number) {

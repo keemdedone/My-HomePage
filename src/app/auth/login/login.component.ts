@@ -1,5 +1,5 @@
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, NgForm } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { ApiService } from '../api.service';
@@ -36,6 +36,15 @@ export class LoginComponent implements OnInit {
     data => {
       const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/dashboard';
       this.router.navigate([redirect]);
+      //log PART
+      this.dataService.getUsers().subscribe((res:any) => {
+        for (let i = 0 ; i < res.length ; i++){
+          if (res[i].email === angForm1.value.email){
+            this.dataService.userLog(res[i].name,'Login')
+          }
+        }
+      })
+      //end log PART
     }, error => {
       this.dialog.open(this.Dialog);
     });
