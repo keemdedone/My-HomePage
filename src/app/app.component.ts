@@ -93,6 +93,7 @@ export class AppComponent implements OnInit {
   }
 
   logout(){
+    this.dataService.userLog(localStorage.getItem('token'),'Logout');
     this.dataService.deleteToken();
     window.location.href = window.location.href;
   }

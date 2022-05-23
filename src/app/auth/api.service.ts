@@ -20,8 +20,8 @@ export class ApiService {
     private httpClient : HttpClient,
   ) {}
 
-  public userLogin(username:string, password:number) {
-    return this.httpClient.post<any>(this.baseUrl + '/login.php', { username, password })
+  public userLogin(email:string, password:number) {
+    return this.httpClient.post<any>(this.baseUrl + '/login.php', { email, password })
     .pipe(map(User => {
       if (User[0].level === '0'){ //don't know why it's must identify index but if not it's can't return data
         this.setToken('admin');
@@ -59,8 +59,15 @@ export class ApiService {
   }
 
   public userLog(name:any, action:any) {
-    console.log(name,action)
+    if(name == 'admin'){
+      name == '1' ;
+    }
     return this.httpClient.post<any>(this.baseUrl + '/log.php', { name, action })
+    .subscribe(e => {
+      console.log(e)
+    }, err => {
+      console.log(err)
+    }) //subscribe is required.
   }
 
   public delUser(id:number) {

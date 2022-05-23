@@ -4,6 +4,7 @@ import { first } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { ApiService } from '../api.service';
 import { MatDialog } from '@angular/material/dialog';
+import { debounceTime } from 'rxjs';
 
 @Component({
 selector: 'app-login',
@@ -46,7 +47,7 @@ export class LoginComponent implements OnInit {
       this.dataService.getUsers().forEach((res:any) => {
         for (let i = 0 ; i < res.length ; i++){
           if (res[i].email === this.angForm.value.email && res[i].password === this.angForm.value.password){
-            this.dataService.userLog(res[i].name,'Login')
+            this.dataService.userLog(res[i].id,'Login')
           }
         }
       })
