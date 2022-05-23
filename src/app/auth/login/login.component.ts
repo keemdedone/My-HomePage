@@ -4,7 +4,6 @@ import { first } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { ApiService } from '../api.service';
 import { MatDialog } from '@angular/material/dialog';
-import { debounceTime } from 'rxjs';
 
 @Component({
 selector: 'app-login',
@@ -42,15 +41,16 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  onLog(): void{
+  onLog(action:string): void{
     if(!this.angForm.invalid){
       this.dataService.getUsers().forEach((res:any) => {
         for (let i = 0 ; i < res.length ; i++){
           if (res[i].email === this.angForm.value.email && res[i].password === this.angForm.value.password){
-            this.dataService.userLog(res[i].id,'Login')
+            this.dataService.userLog(res[i].id, action)
           }
         }
       })
+      // must using loop because i get token after this function active and res[i].id will return NULL
     } else {
       console.log('emtry data!!!')
     }

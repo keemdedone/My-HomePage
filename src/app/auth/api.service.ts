@@ -60,7 +60,7 @@ export class ApiService {
 
   public userLog(name:any, action:any) {
     if(name == 'admin'){
-      name == '1' ;
+      name = '1' ;
     }
     return this.httpClient.post<any>(this.baseUrl + '/log.php', { name, action })
     .subscribe(e => {

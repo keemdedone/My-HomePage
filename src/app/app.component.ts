@@ -82,9 +82,8 @@ export class AppComponent implements OnInit {
     this.darkActive = !this.darkActive;
   }
 
-  onLog(event:string): void{
-    let time = new Date()
-    console.log('Click : '+ event + ' [ at ' + time + ' ]');
+  onLog(action:string): void{
+    this.dataService.userLog(localStorage.getItem('token'), action);
   }
 
   private changeName(name: boolean): void {
@@ -92,8 +91,8 @@ export class AppComponent implements OnInit {
     this.loginBtn = !name;
   }
 
-  logout(){
-    this.dataService.userLog(localStorage.getItem('token'),'Logout');
+  logout(action:string){
+    this.dataService.userLog(localStorage.getItem('token'), action);
     this.dataService.deleteToken();
     window.location.href = window.location.href;
   }
