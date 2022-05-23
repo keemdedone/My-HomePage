@@ -43,7 +43,7 @@
               </button>
             </div>
             <div *ngIf=" user.level !== '0' " class="cmd-user-action-menu">
-              <button mat-flat-button class="switch" (click)="switchUserAccount(user.id)" *ngIf="tokenName !== user.id">
+              <button mat-flat-button class="switch" (click)="switchUserAccount(user.id)" *ngIf="tokenName === 'admin'">
                 <mat-icon>
                   autorenew
                 </mat-icon>
@@ -53,7 +53,7 @@
                   delete_forever
                 </mat-icon>
               </button>
-              <button mat-flat-button color="primary" routerLink="{{user.id}}">
+              <button mat-flat-button color="primary" routerLink="{{user.id}}" *ngIf="tokenName === user.id || tokenName === 'admin' ">
                 <mat-icon>
                   settings
                 </mat-icon>

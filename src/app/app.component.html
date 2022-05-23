@@ -2,9 +2,9 @@
   <mat-toolbar color="primary" class="cmp-homepage">
     <span>My-Homepage</span>
     <nav class="cmd-link-menu">
-      <a mat-button routerLink="login">Login</a>
-      <a mat-button routerLink="registration">Registration</a>
-      <a mat-button routerLink="about">About My-Homepage</a>
+      <a mat-button routerLink="login" (click)="onLog('login')">Login</a>
+      <a mat-button routerLink="registration" (click)="onLog('registration')">Registration</a>
+      <a mat-button routerLink="about" (click)="onLog('about')">About My-Homepage</a>
     </nav>
   </mat-toolbar>
   <router-outlet></router-outlet>
@@ -43,7 +43,7 @@
       *ngIf="logoutBtn"
       type="button"
       mat-raised-button
-      (click)="logout('Logout')"
+      (click)="logout('logout')"
       matTooltip="Click to Logout">
         <mat-icon>logout</mat-icon>
       </button>

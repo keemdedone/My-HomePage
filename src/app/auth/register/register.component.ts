@@ -51,12 +51,14 @@ export class RegisterComponent implements OnInit {
           },
           error => {
             this.dialog.open(this.ServerDown);
+            this.dataService.userLog(0,'serverdown, register unsuccessful')
             return;
           }
         );
       } else {
         this.angForm.markAllAsTouched(); //this medtod will wacth all angForm(on the top line 20) in form where null value
         this.dialog.open(this.IncompleteDialog);
+        this.dataService.userLog(0,'register unsuccessful')
         return;
       }
     }

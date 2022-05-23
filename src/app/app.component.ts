@@ -83,7 +83,15 @@ export class AppComponent implements OnInit {
   }
 
   onLog(action:string): void{
-    this.dataService.userLog(localStorage.getItem('token'), action);
+    if (!(localStorage.getItem('token'))){
+      const token = "0"
+      this.dataService.userLog(token,'click: ' + action);
+      return
+    } else {
+      const token = localStorage.getItem('token')
+      this.dataService.userLog(token,'click: ' + action);
+      return
+    }
   }
 
   private changeName(name: boolean): void {
