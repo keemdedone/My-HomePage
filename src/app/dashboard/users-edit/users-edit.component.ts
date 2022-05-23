@@ -44,6 +44,7 @@ export class UsersEditComponent implements OnInit {
       if (!this.updateForm.invalid) {
         this.dataService.userEdit(this.id,updateForm1.value.name,updateForm1.value.email,updateForm1.value.password).subscribe(
           data => {
+            this.dataService.userLog(localStorage.getItem('token'),'update user data')
             this.router.navigate(['dashboard']);
           },
           error => {
@@ -69,6 +70,7 @@ export class UsersEditComponent implements OnInit {
   }
 
   onBack(): void{
+    this.dataService.userLog(localStorage.getItem('token'),'cancel update user data')
     return history.back();
   }
 

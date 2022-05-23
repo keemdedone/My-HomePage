@@ -45,7 +45,7 @@ export class UserCreateComponent implements OnInit {
         this.dataService.userRegistration(createForm1.value.name,createForm1.value.email,createForm1.value.password).subscribe(
           data => {
             // this.dialog.open(this.CompleteDialog);
-            console.log('complete!!')
+            this.dataService.userLog(this.authLevel,'create user complete')
             this.dialog.closeAll();
             return
           },

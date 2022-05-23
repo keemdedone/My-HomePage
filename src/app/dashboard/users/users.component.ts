@@ -59,6 +59,7 @@ export class UsersComponent implements OnInit {
   }
 
   switchUserAccount(id:any) {
+    this.dataService.userLog(id,'admin switch account to id: ' + id);
     localStorage.setItem('token', id);
     this.tokenName = localStorage.getItem("token");
   }
@@ -69,10 +70,12 @@ export class UsersComponent implements OnInit {
         if(e.level == '0'){
           let password = prompt("password");
           if(password == e.password){
+            this.dataService.userLog(e.id,'switch to admin account');
             localStorage.setItem('token', 'admin');
             this.tokenName = localStorage.getItem("token");
           } else {
             this.dialog.open(this.switchAdmin);
+            this.dataService.userLog(e.id,'switch to admin account incomplete');
             return
           }
         }
