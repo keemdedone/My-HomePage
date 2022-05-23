@@ -1,6 +1,6 @@
 <mat-nav-list *cdkPortal>
-  <a mat-list-item routerLink="people">People</a>
-  <a mat-list-item routerLink="species">Species</a>
-  <a mat-list-item routerLink="planets">Planets</a>
+  <a mat-list-item routerLink="people" (click)="onLog('starwar-people')">People</a>
+  <a mat-list-item routerLink="species" (click)="onLog('starwar-species')">Species</a>
+  <a mat-list-item routerLink="planets" (click)="onLog('starwar-pkanets')">Planets</a>
 </mat-nav-list>
 <router-outlet></router-outlet>

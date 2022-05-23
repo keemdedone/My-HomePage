@@ -42,8 +42,6 @@ import { NgxPaginationModule } from 'ngx-pagination';
     FormsModule,
     NgxPaginationModule,
   ],
-  entryComponents: [
-
-  ]
+  entryComponents: []
 })
 export class DashboardModule { }

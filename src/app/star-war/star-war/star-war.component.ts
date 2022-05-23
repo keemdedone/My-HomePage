@@ -1,5 +1,6 @@
 import { CdkPortal, Portal } from '@angular/cdk/portal';
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { ApiService } from 'src/app/auth/api.service';
 import { SidenavService } from 'src/app/service/sidenav.service';
 
 @Component({
@@ -12,6 +13,7 @@ export class StarWarComponent implements OnInit, AfterViewInit {
 
   constructor(
     private readonly sidenavPortalService: SidenavService,
+    private dataService: ApiService,
   ) { }
 
   ngAfterViewInit(): void {
@@ -20,6 +22,10 @@ export class StarWarComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     return
+  }
+
+  onLog(action:string){
+    this.dataService.userLog(localStorage.getItem('token'),'click: '+action)
   }
 
 }

@@ -1,5 +1,5 @@
 <mat-nav-list *cdkPortal>
-    <a mat-list-item routerLink="total">Covid total</a>
-    <a mat-list-item routerLink="day">Covid day</a>
+    <a mat-list-item routerLink="total" (click)="onLog('covid-total')">Covid total</a>
+    <a mat-list-item routerLink="day" (click)="onLog('covid-day')">Covid day</a>
 </mat-nav-list>
 <router-outlet></router-outlet>

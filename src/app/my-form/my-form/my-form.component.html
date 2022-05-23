@@ -1,5 +1,5 @@
 <mat-nav-list *cdkPortal>
-  <a mat-list-item routerLink="form">Form</a>
-  <a mat-list-item routerLink="infomation">Information</a>
+  <a mat-list-item routerLink="form" (click)="onLog('my-form')">Form</a>
+  <a mat-list-item routerLink="infomation" (click)="onLog('my-form-information')">Information</a>
 </mat-nav-list>
 <router-outlet></router-outlet>

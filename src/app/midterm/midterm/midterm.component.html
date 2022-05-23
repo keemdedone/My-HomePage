@@ -1,6 +1,6 @@
 <mat-nav-list *cdkPortal>
-  <a mat-list-item routerLink="bmi">BMI</a>
-  <a mat-list-item routerLink="button">Button</a>
-  <a mat-list-item routerLink="up-down">Up-Down</a>
+  <a mat-list-item routerLink="bmi" (click)="onLog('midterm-bmi')">BMI</a>
+  <a mat-list-item routerLink="button" (click)="onLog('midterm-button')">Button</a>
+  <a mat-list-item routerLink="up-down" (click)="onLog('midterm-up-down')">Up-Down</a>
 </mat-nav-list>
 <router-outlet></router-outlet>
