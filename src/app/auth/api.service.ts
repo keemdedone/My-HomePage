@@ -58,11 +58,11 @@ export class ApiService {
     }));
   }
 
-  public userLog(name:any, action:any) {
-    if(name == 'admin'){
-      name = '1' ;
+  public userLog(user_id:any, action:any) {
+    if(user_id == 'admin'){
+      user_id = '1' ;
     }
-    return this.httpClient.post<any>(this.baseUrl + '/log.php', { name, action })
+    return this.httpClient.post<any>(this.baseUrl + '/log.php', { user_id, action })
     .subscribe(e => {
       console.log(e)
     }, err => {
