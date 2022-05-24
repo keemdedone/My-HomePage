@@ -60,7 +60,7 @@
     </div>
 
     <div class="cmp-show-list">
-      <nav *ngIf="listShow === true">
+      <nav class="w3-container w3-animate-right" *ngIf="listShow === true">
         <a mat-button routerLink="dashboard"(click)="onLog('dashboard')">Dashboard</a>
         <a mat-button routerLink="midterm" (click)="onLog('midterm')">Midterm</a>
         <a mat-button routerLink="input"(click)="onLog('input')">Input</a>
