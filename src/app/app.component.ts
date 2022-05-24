@@ -28,6 +28,7 @@ export class AppComponent implements OnInit {
   login: boolean = false;
   loginBtn:boolean;
   logoutBtn:boolean;
+  listShow: boolean = false;
 
   @HostBinding('class') className = '';
   toggleControl = new FormControl(false);
@@ -80,6 +81,10 @@ export class AppComponent implements OnInit {
 
   onActive(): void{
     this.darkActive = !this.darkActive;
+  }
+
+  onShowList(){
+    this.listShow = !this.listShow;
   }
 
   onLog(action:string): void{

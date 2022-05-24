@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
 :host{ /* :host = 'app-root' */
   display: flex;
   flex-direction: column;
@@ -17,19 +19,22 @@
     &>button:hover{
       cursor: pointer;
     }
-    &>nav{
-      margin-left: auto;
-      &>a{
-        margin-right: 15px;
-        font-family: 'Courier New', Courier, monospace;
-        font-size: 20px;
-        text-decoration: none;
-        border: 1px solid white;
-        color:white;
-      }
-    }
     &>.logout-btn{
       margin-left: 20px;
+    }
+    &>.cmp-show-list{
+      margin-left: auto;
+      &>nav{
+        margin-left: auto;
+        &>a{
+          margin-right: 15px;
+          font-family: 'Courier New', Courier, monospace;
+          font-size: 20px;
+          text-decoration: none;
+          border: 1px solid white;
+          color:white;
+        }
+      }
     }
   }
 }
@@ -109,3 +114,37 @@ audio{
   }
 }
 
+.cmd-show-list{
+  &>button{
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 50px;
+    .front{
+      transform-origin: center 50%;
+      animation: rotationFront 0.05s linear;
+    }
+    .back{
+      transform-origin: center 50%;
+      animation: rotationBack 0.05s linear;
+    }
+  }
+}
+
+@keyframes rotationBack {
+  from {
+    transform: rotateY(-180deg);
+  }
+  to {
+    transform: rotateY(0deg);
+  }
+}
+
+@keyframes rotationFront {
+  from {
+    transform: rotateY(-180deg);
+  }
+  to {
+    transform: rotateY(0deg);
+  }
+}
