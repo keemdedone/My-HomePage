@@ -59,3 +59,59 @@
 
   </form>
 </div>
+
+<ng-template #CompleteDialog>
+  <div class="cmp-complete-alert-box">
+    <h1 matDialogTitle>Register Complete!!!</h1>
+    <img src="./assets/illustration/Dance-duck.gif" width="200" height="200">
+    <mat-dialog-actions align="center">
+      <button
+      color="primary"
+      mat-flat-button
+      (click)="onDialogClose()"
+      matDialogClose>OK</button>
+    </mat-dialog-actions>
+  </div>
+</ng-template>
+
+<ng-template #IncompleteDialog>
+  <div class="cmp-incomplete-alert-box">
+    <h1 matDialogTitle>Register incomplete , check your data again </h1>
+    <img src="./assets/illustration/Cat-dead-chat.gif" width="200" height="200">
+    <mat-dialog-actions align="center">
+      <button
+      color="warn"
+      mat-flat-button
+      (click)="onDialogClose()"
+      matDialogClose>Back</button>
+    </mat-dialog-actions>
+  </div>
+</ng-template>
+
+<ng-template #ServerDown>
+  <div class="cmp-serverDown-alert-box">
+    <h1 matDialogTitle>Sorry, Server down OR forget to start Server</h1>
+    <img src="./assets/illustration/Bongo-cat.gif" width="200" height="200">
+    <mat-dialog-actions align="center">
+      <button
+      color="warn"
+      mat-flat-button
+      (click)="onDialogClose()"
+      matDialogClose>Back</button>
+    </mat-dialog-actions>
+  </div>
+</ng-template>
+
+<ng-template #SameName>
+  <div class="cmp-sameName-alert-box">
+    <h1 matDialogTitle>this name or email is already use</h1>
+    <img src="./assets/illustration/Kennen-slap-teemo.gif" width="200" height="200">
+    <mat-dialog-actions align="center">
+      <button
+      color="warn"
+      mat-flat-button
+      (click)="onDialogClose()"
+      matDialogClose>Back</button>
+    </mat-dialog-actions>
+  </div>
+</ng-template>
