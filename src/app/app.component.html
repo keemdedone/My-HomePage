@@ -32,10 +32,10 @@
     </div>
 
     <div *ngIf="audioShow">
-        <audio controls>
-          <source src="../assets/music/15-OnOurway.m4a" type="audio/ogg">
-          <source src="../assets/music/15-OnOurway.m4a" type="audio/mpeg">
-        </audio>
+      <audio controls class="audiplay">
+        <source src="../assets/music/15-OnOurway.m4a" type="audio/ogg">
+        <source src="../assets/music/15-OnOurway.m4a" type="audio/mpeg">
+      </audio>
     </div>
 
     <div class="logout-btn">
@@ -55,8 +55,8 @@
       matTooltip="Darkmode"
       [formControl]="toggleControl"
       (click)="onActive()"></mat-slide-toggle>
-      <mat-icon *ngIf="darkActive === true">light_mode</mat-icon>
-      <mat-icon *ngIf="darkActive === false">bedtime</mat-icon>
+      <mat-icon *ngIf="darkActive === false">light_mode</mat-icon>
+      <mat-icon *ngIf="darkActive === true">bedtime</mat-icon>
     </div>
 
     <div class="cmp-show-list">
@@ -67,6 +67,7 @@
         <a mat-button routerLink="my-form" (click)="onLog('my-form')">My-Form</a>
         <a mat-button routerLink="star-war" (click)="onLog('star-war')">StarWar</a>
         <a mat-button routerLink="covid"(click)="onLog('covid')">Covid19</a>
+        <a mat-button routerLink="music"(click)="onLog('music')">Music</a>
       </nav>
     </div>
     <div class="cmd-show-list">

@@ -58,6 +58,11 @@ const routes: Routes = [
     canActivate: [AuthguardGuard],
     loadChildren: () => import('./dashboard/dashboard.module').then((d) => d.DashboardModule)
   },
+  {
+    path: 'music',
+    canActivate: [AuthguardGuard],
+    loadChildren: () => import('./music/music.module').then((m) => m.MusicModule)
+  },
 ];
 
 @NgModule({
