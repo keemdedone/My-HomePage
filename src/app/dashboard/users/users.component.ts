@@ -17,7 +17,7 @@ export class UsersComponent implements OnInit {
   users: any;
   idCheck: any;
   name: any;
-  p: number = 1;
+  p: number = 1; //for page pagination
 
   formGroup!: FormGroup;
 

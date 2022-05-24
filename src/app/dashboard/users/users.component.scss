@@ -63,9 +63,15 @@ table{
 }
 
 .search{
+  text-align: center;
   margin: auto;
   margin-top: 10px;
-  text-align: center;
+  &>mat-form-field{
+    text-align: center;
+    mat-icon:hover{
+      cursor: pointer;
+    }
+  }
 }
 
 .cmp-user-deleted-alert{
