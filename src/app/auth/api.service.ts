@@ -41,6 +41,9 @@ export class ApiService {
   }
 
   public userEdit(id:any, name:any, email:any, pwd:any, lv:any) {
+    if(lv === null){
+      lv = '2'
+    }
     return this.httpClient.put<any>(this.baseUrl + '/edit.php?id=' + id, { name, email, pwd, lv })
     .pipe(map(Users => {
       return Users

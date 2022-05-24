@@ -24,7 +24,7 @@ export class UsersEditComponent implements OnInit {
       name: [null, Validators.required],
       email: [null, [Validators.required,Validators.minLength(1), Validators.email]],
       password: [null, Validators.required],
-      level: [null, Validators.required],
+      level: [null],
     });
 
     this.id = this.activateRoute.snapshot.paramMap.get('id');
