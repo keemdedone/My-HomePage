@@ -9,6 +9,7 @@
     flex: 1 1 0;
   }
   &>mat-toolbar{
+    overflow: hidden;
     height: 56px;
     &>button{
       border: none;
@@ -49,7 +50,7 @@ mat-sidenav{
 }
 
 mat-sidenav-content{
-  overflow: scroll;
+  overflow-x: hidden;
 }
 
 mat-toolbar{
