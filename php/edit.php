@@ -10,7 +10,8 @@
   	$name = mysqli_real_escape_string($mysqli, trim($request['name']));
     $pwd = mysqli_real_escape_string($mysqli, (int)$request['pwd']);
   	$email = mysqli_real_escape_string($mysqli, trim($request['email']));
-  	$sql = " UPDATE users SET name ='$name', password = '$pwd' ,email ='$email' WHERE id = $id ";
+    $lv = mysqli_real_escape_string($mysqli, (int)$request['lv']);
+  	$sql = " UPDATE users SET name='$name', password='$pwd' ,email='$email' ,level='$lv' WHERE id = $id ";
   	if($mysqli->query($sql)){
   		http_response_code(204);
   	} else {

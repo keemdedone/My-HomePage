@@ -10,6 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class UsersEditComponent implements OnInit {
 
+  authLevel = localStorage.getItem('token');
   id: any;
   updateForm: FormGroup;
 
@@ -23,6 +24,7 @@ export class UsersEditComponent implements OnInit {
       name: [null, Validators.required],
       email: [null, [Validators.required,Validators.minLength(1), Validators.email]],
       password: [null, Validators.required],
+      level: [null, Validators.required],
     });
 
     this.id = this.activateRoute.snapshot.paramMap.get('id');
@@ -39,10 +41,11 @@ export class UsersEditComponent implements OnInit {
         name: string,
         email: string,
         password: number,
+        level: number,
       };
     }): void {
       if (!this.updateForm.invalid) {
-        this.dataService.userEdit(this.id,updateForm1.value.name,updateForm1.value.email,updateForm1.value.password).subscribe(
+        this.dataService.userEdit(this.id,updateForm1.value.name,updateForm1.value.email,updateForm1.value.password,updateForm1.value.level).subscribe(
           data => {
             this.dataService.userLog(localStorage.getItem('token'),'update user data')
             this.router.navigate(['dashboard']);

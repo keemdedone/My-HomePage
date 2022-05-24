@@ -40,8 +40,8 @@ export class ApiService {
     }));
   }
 
-  public userEdit(id:any, name:any, email:any, pwd:any) {
-    return this.httpClient.put<any>(this.baseUrl + '/edit.php?id=' + id, { name, email, pwd })
+  public userEdit(id:any, name:any, email:any, pwd:any, lv:any) {
+    return this.httpClient.put<any>(this.baseUrl + '/edit.php?id=' + id, { name, email, pwd, lv })
     .pipe(map(Users => {
       return Users
     }));
