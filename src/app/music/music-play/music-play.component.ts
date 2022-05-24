@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit  } from '@angular/core';
 
 @Component({
   selector: 'app-music-play',
@@ -7,6 +7,8 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 })
 export class MusicPlayComponent implements OnInit {
 
+  audio = new Audio();
+
   constructor() { }
 
   ngOnInit(): void {
@@ -14,7 +16,13 @@ export class MusicPlayComponent implements OnInit {
   }
 
   onPlay(){
-    
+    this.audio.src = "../assets/music/15-OnOurway.m4a";
+    this.audio.load();
+    this.audio.play();
+  }
+
+  onPause(){
+    this.audio.pause();
   }
 
 }

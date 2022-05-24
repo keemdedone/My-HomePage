@@ -1,0 +1,12 @@
+.cmd-music{
+  display: flex;
+  .cmd-music-playPause, .cmd-music-stop, .cmd-music-previous, .cmd-music-next{
+    padding-right: 40px;
+    mat-icon{
+      font-size: 50px;
+    }
+  }
+  .cmd-music-playPause, .cmd-music-stop, .cmd-music-previous, .cmd-music-next :hover{
+    cursor: pointer;
+  }
+}
