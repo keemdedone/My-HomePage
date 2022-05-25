@@ -1,19 +1,19 @@
-<div class="audio-container">
-  <div class="audioTitle">
-    <span>Audio Name</span>
-  </div>
-  <div class="cmd-music">
-    <div class="cmd-music-previous">
-      <mat-icon>arrow_back_ios_new</mat-icon>
-    </div>
-    <div class="cmd-music-playPause">
-      <mat-icon (click)="onPlay()">play_circle</mat-icon>
-    </div>
-    <div class="cmd-music-stop">
-      <mat-icon (click)="onPause()">pause_circle</mat-icon>
-    </div>
-    <div class="cmd-music-next">
-      <mat-icon>arrow_forward_ios_new</mat-icon>
+<div class="music-container">
+  <img src="./assets/background-image/Music.jpg">
+  <div class="music-control">
+    <div class="music-menu">
+      <button mat-icon-button color="primary" type="button" (click)="onPrevious()">
+        <mat-icon>navigate_before</mat-icon>
+      </button>
+      <button mat-fab color="primary" type="button" (click)="onPlay()" *ngIf="play === true">
+        <mat-icon>play_arrow</mat-icon>
+      </button>
+      <button mat-fab color="primary" type="button" (click)="onPause()" *ngIf="play === false">
+        <mat-icon>pause</mat-icon>
+      </button>
+      <button mat-icon-button color="primary" type="button" (click)="onNext()">
+        <mat-icon>navigate_next</mat-icon>
+      </button>
     </div>
   </div>
 </div>

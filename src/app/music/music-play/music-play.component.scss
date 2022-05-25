@@ -1,12 +1,13 @@
-.cmd-music{
-  display: flex;
-  .cmd-music-playPause, .cmd-music-stop, .cmd-music-previous, .cmd-music-next{
-    padding-right: 40px;
-    mat-icon{
-      font-size: 50px;
+.music-container{
+  margin: auto;
+  margin-top: 100px;
+  width: 360px;
+  .music-control{
+    height: 150px;
+    background-color: white;
+    .music-menu{
+      text-align: center;
+      padding-top: 60px;
     }
-  }
-  .cmd-music-playPause, .cmd-music-stop, .cmd-music-previous, .cmd-music-next :hover{
-    cursor: pointer;
   }
 }

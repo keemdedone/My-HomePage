@@ -219,7 +219,7 @@
     "symbol-observable" "4.0.0"
     "uuid" "8.3.2"
 
-"@angular/common@^13.0.0", "@angular/common@^13.0.0 || ^14.0.0-0", "@angular/common@>=13.0.0", "@angular/common@>=5.0.0", "@angular/common@~13.3.6", "@angular/common@13.3.6":
+"@angular/common@^11.0.4", "@angular/common@^13.0.0", "@angular/common@^13.0.0 || ^14.0.0-0", "@angular/common@>=13.0.0", "@angular/common@>=5.0.0", "@angular/common@~13.3.6", "@angular/common@13.3.6":
   "integrity" "sha512-IHWzyNzrvzdE23P7KX3qDgmT+xGpmXKaMLDEM9s8l2opKcMerjdullrYXwLfjFQr9pybnn+uE9fzj9dp0DCmzg=="
   "resolved" "https://registry.npmjs.org/@angular/common/-/common-13.3.6.tgz"
   "version" "13.3.6"
@@ -249,7 +249,7 @@
   dependencies:
     "tslib" "^2.3.0"
 
-"@angular/core@^13.0.0", "@angular/core@^13.0.0 || ^14.0.0-0", "@angular/core@>=13.0.0", "@angular/core@>=5.0.0", "@angular/core@~13.3.6", "@angular/core@13.3.6":
+"@angular/core@^11.0.4", "@angular/core@^13.0.0", "@angular/core@^13.0.0 || ^14.0.0-0", "@angular/core@>=13.0.0", "@angular/core@>=5.0.0", "@angular/core@~13.3.6", "@angular/core@13.3.6":
   "integrity" "sha512-Le9kWVny8jT8UXoWUFFF641howw8h//PK+juDHDU2M6DpR24zxnBKdTwVvjjtCyfMBMiC50JY5YRnYfpaEC27w=="
   "resolved" "https://registry.npmjs.org/@angular/core/-/core-13.3.6.tgz"
   "version" "13.3.6"
@@ -1563,6 +1563,11 @@
     "@angular-devkit/schematics" "13.3.5"
     "jsonc-parser" "3.0.0"
 
+"@stencil/core@2.5.2":
+  "integrity" "sha512-bgjPXkSzzg1WnTgVUm6m5ZzpKt602WmA/QljODAW1xVN40OHJdbGblzF/F6MFzqv2c5Cy30CB41arc8qADIdcQ=="
+  "resolved" "https://registry.npmjs.org/@stencil/core/-/core-2.5.2.tgz"
+  "version" "2.5.2"
+
 "@tootallnate/once@1":
   "integrity" "sha512-RbzJvlNzmRq5c3O09UipeuXno4tA1FE6ikOjxZK0tuxVv3412l64l5t1W5pj4+rJq9vpkm/kwiR07aZXnsKPxw=="
   "resolved" "https://registry.npmjs.org/@tootallnate/once/-/once-1.1.2.tgz"
@@ -1662,6 +1667,11 @@
     "@types/express-serve-static-core" "^4.17.18"
     "@types/qs" "*"
     "@types/serve-static" "*"
+
+"@types/fscreen@^1.0.1":
+  "integrity" "sha512-hV2d0BreihMGtrg+EdAFOIl/O2EL5vhAheHJUztGE/lPFZIN8ZCpGFL8hCbtyi1CfhKjDRCf47sHjP+FwJ4q0Q=="
+  "resolved" "https://registry.npmjs.org/@types/fscreen/-/fscreen-1.0.1.tgz"
+  "version" "1.0.1"
 
 "@types/http-proxy@^1.17.5":
   "integrity" "sha512-5kPLG5BKpWYkw/LVOGWpiq3nEVqxiN32rTgI53Sk12/xHFQ2rG3ehI9IO+O3W2QoKeyB92dJkoka8SUm6BX1pA=="
@@ -1876,6 +1886,24 @@
   dependencies:
     "@typescript-eslint/types" "5.3.0"
     "eslint-visitor-keys" "^3.0.0"
+
+"@vime/angular@^5.3.1":
+  "integrity" "sha512-a139A3qrz2sjnFJ/ZbJIN1hGuWhBnU0qguDuEMQx50wFr7hli+Y+t2UiQmLWKZxuiFSY3qFMxXIXdsvOWgpNFg=="
+  "resolved" "https://registry.npmjs.org/@vime/angular/-/angular-5.3.1.tgz"
+  "version" "5.3.1"
+  dependencies:
+    "tslib" "^2.0.0"
+
+"@vime/core@^5.0.0", "@vime/core@^5.3.1":
+  "integrity" "sha512-FbBla3WhQ72rWZUBR93XVpNAJwOMdQeWx8ZbRffYL5PXq0PzqSnjrYcE1KIsnmDt6v2jsOxh4hT264Rts5jBKQ=="
+  "resolved" "https://registry.npmjs.org/@vime/core/-/core-5.3.1.tgz"
+  "version" "5.3.1"
+  dependencies:
+    "@stencil/core" "2.5.2"
+    "@types/fscreen" "^1.0.1"
+    "fscreen" "^1.2.0"
+    "mitt" "^3.0.0"
+    "stencil-wormhole" "^3.4.1"
 
 "@webassemblyjs/ast@1.11.1":
   "integrity" "sha512-ukBh14qFLjxTQNTXocdyksN5QdM28S1CxHt2rdskFyL+xFV7VremuBLVbmCePj+URalXBENx/9Lm7lnhihtCSw=="
@@ -3812,6 +3840,11 @@
   "resolved" "https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz"
   "version" "1.0.0"
 
+"fscreen@^1.2.0":
+  "integrity" "sha512-hlq4+BU0hlPmwsFjwGGzZ+OZ9N/wq9Ljg/sq3pX+2CD7hrJsX9tJgWWK/wiNTFM212CLHWhicOoqwXyZGGetJg=="
+  "resolved" "https://registry.npmjs.org/fscreen/-/fscreen-1.2.0.tgz"
+  "version" "1.2.0"
+
 "function-bind@^1.1.1":
   "integrity" "sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A=="
   "resolved" "https://registry.npmjs.org/function-bind/-/function-bind-1.1.1.tgz"
@@ -5085,6 +5118,11 @@
     "minipass" "^3.0.0"
     "yallist" "^4.0.0"
 
+"mitt@^3.0.0":
+  "integrity" "sha512-7dX2/10ITVyqh4aOSVI9gdape+t9l2/8QxHrFmUXu4EEUpdlxl6RudZUPZoc+zuY2hk1j7XxVroIVIan/pD/SQ=="
+  "resolved" "https://registry.npmjs.org/mitt/-/mitt-3.0.0.tgz"
+  "version" "3.0.0"
+
 "mkdirp@^0.5.5":
   "integrity" "sha512-NKmAlESf6jMGym1++R0Ra7wvhV+wFW63FaSOFPwRahvea0gMUcGUhVeAg/0BC0wiv9ih5NYPB1Wn1UEI1/L+xQ=="
   "resolved" "https://registry.npmjs.org/mkdirp/-/mkdirp-0.5.5.tgz"
@@ -6241,7 +6279,7 @@
   dependencies:
     "tslib" "^1.9.0"
 
-"rxjs@^6.5.3 || ^7.4.0", "rxjs@^7.2.0", "rxjs@~7.4.0":
+"rxjs@^6.5.3 || ^7.4.0", "rxjs@^6.6.2", "rxjs@^7.2.0", "rxjs@~7.4.0":
   "integrity" "sha512-7SQDi7xeTMCJpqViXh8gL/lebcwlp3d831F05+9B44A4B0WfsEwUQHR64gsH1kvJ+Ep/J9K2+n1hVl1CsGN23w=="
   "resolved" "https://registry.npmjs.org/rxjs/-/rxjs-7.4.0.tgz"
   "version" "7.4.0"
@@ -6661,6 +6699,11 @@
   "integrity" "sha1-Fhx9rBd2Wf2YEfQ3cfqZOBR4Yow="
   "resolved" "https://registry.npmjs.org/statuses/-/statuses-1.5.0.tgz"
   "version" "1.5.0"
+
+"stencil-wormhole@^3.4.1":
+  "integrity" "sha512-ppYTcWTJnIl4ZAKwF39LTA9f/ypHfbVefsHdN2hpMQGrR57wt1TieZo9tlCM/r1Y4SFiZ5yz/cjho564C921Xw=="
+  "resolved" "https://registry.npmjs.org/stencil-wormhole/-/stencil-wormhole-3.4.1.tgz"
+  "version" "3.4.1"
 
 "streamroller@^2.2.4":
   "integrity" "sha512-OG79qm3AujAM9ImoqgWEY1xG4HX+Lw+yY6qZj9R1K2mhF5bEmQ849wvrb+4vt4jLMLzwXttJlQbOdPOQVRv7DQ=="
