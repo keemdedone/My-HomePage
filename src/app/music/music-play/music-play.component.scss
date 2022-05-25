@@ -1,7 +1,9 @@
 .music-container{
+  border: 0.5px solid black;
   margin: auto;
   margin-top: 100px;
   width: 360px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   .music-control{
     background-color: white;
     .music-menu{
@@ -11,24 +13,26 @@
     }
     .music-list{
       color: black;
+      font-size: 20px;
+      padding: 15px;
+      text-align: center;
+      mat-icon{
+        text-align: right;
+        color: green;
+        vertical-align: -6px;
+      }
+    }
+    .music-list:hover{
+      background-color: silver;
+      cursor: pointer;
     }
     .music-wrapper{
-      max-width: 360px;
-      padding-top: 50px;
-      text-align: right;
+      padding-top: 30px;
+      text-align: center;
       .music-name {
         color: black;
-        font-size: 22px;
-        white-space: nowrap;
-        animation: slider 8s infinite linear;
+        font-size: 30px;
       }
     }
   }
-}
-
-
-
-@keyframes slider {
-  0%   {margin-right:100%;}
-  100%  {margin-left:100%;}
 }
