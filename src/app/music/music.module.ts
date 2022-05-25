@@ -13,12 +13,17 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MusicPlayComponent } from './music-play/music-play.component'
 import { MatSliderModule } from '@angular/material/slider';
+import { MusicAddComponent } from './music-add/music-add.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 
 @NgModule({
   declarations: [
     MusicComponent,
     MusicPlayComponent,
+    MusicAddComponent,
   ],
   imports: [
     CommonModule,
@@ -33,6 +38,9 @@ import { MatSliderModule } from '@angular/material/slider';
     MatCardModule,
     MatSliderModule,
     MatButtonModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
   ]
 })
 export class MusicModule { }

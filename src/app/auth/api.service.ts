@@ -2,8 +2,6 @@ import { Injectable, Output, EventEmitter} from '@angular/core';
 import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { v4 as uuidv4 } from 'uuid';
-import { User_log } from './user_log';
 
 
 @Injectable({

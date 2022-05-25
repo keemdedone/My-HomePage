@@ -1,4 +1,7 @@
 <div class="music-container">
+  <button class="music-add" (click)="openCreateDialog()">
+    <mat-icon>add</mat-icon>
+  </button>
   <img src="./assets/background-image/Music.jpg">
   <div class="music-control">
     <div class="music-wrapper">
@@ -20,9 +23,7 @@
     </div>
     <div *ngFor="let item of path;let i = index">
       <div class="music-list" (click)="onChange(item.id)">
-        <span>
-          {{item.name}}
-        </span>
+        <span>{{item.name}}</span>
         <mat-icon *ngIf="item.id === select_num + 1">done</mat-icon>
       </div>
     </div>
