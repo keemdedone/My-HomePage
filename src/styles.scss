@@ -21,6 +21,7 @@ $my-homepage-theme: mat.define-light-theme((
 
 html{
   font-family: 'Courier New', Courier, monospace !important;
+  overflow: hidden;
 }
 
 input[type="number"]{

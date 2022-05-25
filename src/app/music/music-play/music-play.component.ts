@@ -64,6 +64,9 @@ export class MusicPlayComponent implements OnInit {
   }
 
   onChange(id:number){
+    this.audio.pause();
+    this.audio.currentTime = 0;
+    this.play = true;
     this.select_num = id - 1;
   }
 
