@@ -3,11 +3,32 @@
   margin-top: 100px;
   width: 360px;
   .music-control{
-    height: 150px;
     background-color: white;
     .music-menu{
       text-align: center;
-      padding-top: 60px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+    .music-list{
+      color: black;
+    }
+    .music-wrapper{
+      max-width: 360px;
+      padding-top: 50px;
+      text-align: right;
+      .music-name {
+        color: black;
+        font-size: 22px;
+        white-space: nowrap;
+        animation: slider 8s infinite linear;
+      }
     }
   }
+}
+
+
+
+@keyframes slider {
+  0%   {margin-right:100%;}
+  100%  {margin-left:100%;}
 }
