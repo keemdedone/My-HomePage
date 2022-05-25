@@ -18,8 +18,13 @@
         <mat-icon>navigate_next</mat-icon>
       </button>
     </div>
-    <div class="music-list" *ngFor="let item of path;let i = index">
-      {{item.name}}
+    <div *ngFor="let item of path;let i = index">
+      <div class="music-list" (click)="onChange(item.id)">
+        <span>
+          {{item.name}}
+        </span>
+        <mat-icon *ngIf="item.id === select_num + 1">done</mat-icon>
+      </div>
     </div>
   </div>
 </div>

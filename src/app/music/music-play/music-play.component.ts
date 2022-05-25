@@ -17,22 +17,16 @@ export class MusicPlayComponent implements OnInit {
 
   play: boolean = true;
   select_num: number = 0;
+  music_num = localStorage.getItem('music') || 0;
 
   constructor() { }
 
   ngOnInit(): void {
-    // const arr: Array<{id: number, text: string}> = [
-    //   {id: 1, text: 'Sentence 1'},
-    //   {id: 2, text: 'Sentence 2'},
-    //   {id: 3, text: 'Sentence 3'},
-    //   {id: 4, text: 'Sentenc4 '},
-    // ];
-    // console.log(arr.length)
     return
   }
 
   onPlay(){
-    this.audio.src = this.path[this.select_num-1].url;
+    this.audio.src = this.path[this.select_num].url;
     localStorage.setItem('music',this.select_num.toString());
     this.audio.load();
     this.audio.play();
@@ -64,6 +58,10 @@ export class MusicPlayComponent implements OnInit {
     } else {
       this.select_num = 0;
     }
+  }
+
+  onChange(id:number){
+    this.select_num = id - 1;
   }
 
 }
