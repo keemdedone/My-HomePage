@@ -208,10 +208,3 @@ $angular-dark-theme: mat.define-light-theme(
   background-repeat: no-repeat;
   background-size: cover;
 }
-
-//vime
-/* Default theme. ~960B */
-@import '~@vime/core/themes/default.css';
-
-/* Optional light theme (extends default). ~400B */
-@import '~@vime/core/themes/light.css';

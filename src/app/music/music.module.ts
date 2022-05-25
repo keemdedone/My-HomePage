@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { VimeModule } from '@vime/angular';
 
 import { MusicRoutingModule } from './music-routing.module';
 import { MusicComponent } from './music/music.component';
@@ -29,7 +28,6 @@ import { MatInputModule } from '@angular/material/input';
     CommonModule,
     MusicRoutingModule,
     PortalModule,
-    VimeModule,
     MatButtonModule,
     MatListModule,
     MatSlideToggleModule,
