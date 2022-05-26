@@ -34,3 +34,18 @@
     vertical-align:middle;
   }
 }
+
+mat-form-field{
+  mat-label{
+    color: grey;
+  }
+  mat-hint{
+    color: black;
+  }
+}
+
+::ng-deep .mat-form-field-appearance-outline {
+  .mat-form-field-outline {
+    color: #009688;
+  }
+}
