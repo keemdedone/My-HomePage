@@ -13,6 +13,7 @@ export class MusicAddComponent implements OnInit {
   musicForm: FormGroup;
 
   authLevel = localStorage.getItem("token");
+  test_txt = "../assets/music/AerithTheme.m4a" ;
 
   constructor(
     public dialog: MatDialog,
@@ -30,6 +31,9 @@ export class MusicAddComponent implements OnInit {
       alert("you don't have permission to use this function!!!");
       this.dialog.closeAll();
     }
+    
+    // let txt_spilt = ((this.test_txt.split("../assets/music/"))[1]).split(".m4a");
+    // console.log(txt_spilt[0])
   }
 
   postdata(musicForm1:
