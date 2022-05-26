@@ -1,18 +1,6 @@
 <h1 mat-dialog-title class="music-add-container" >New music</h1>
 <form mat-dialog-content [formGroup]="musicForm" (ngSubmit)="postdata(musicForm)">
   <div class="input-field">
-    <!-- <mat-form-field appearance="outline">
-      <mat-label>Music id</mat-label>
-      <mat-icon matPrefix>pin</mat-icon>
-      <input type="text"
-        matInput name="id"
-        formControlName="id"
-        autocomplete="doNotAutoComplete"
-        placeholder="music id">
-      <mat-hint>Music id</mat-hint>
-      <mat-error *ngIf="musicForm.get('id')?.errors?.['required']">Required</mat-error>
-    </mat-form-field>
-    <br/> -->
     <mat-form-field appearance="outline">
       <mat-label>Music name</mat-label>
       <mat-icon matPrefix>music_note</mat-icon>
@@ -21,7 +9,6 @@
         formControlName="name"
         autocomplete="doNotAutoComplete"
         placeholder="music name">
-      <mat-hint>Music name</mat-hint>
       <mat-error *ngIf="musicForm.get('name')?.errors?.['required']">Required</mat-error>
     </mat-form-field>
     <br/>
@@ -33,7 +20,6 @@
         formControlName="url"
         autocomplete="doNotAutoComplete"
         placeholder="music url">
-      <mat-hint>Music url</mat-hint>
       <mat-error *ngIf="musicForm.get('url')?.errors?.['required']">Required</mat-error>
     </mat-form-field>
   </div>

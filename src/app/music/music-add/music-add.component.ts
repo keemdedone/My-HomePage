@@ -28,10 +28,8 @@ export class MusicAddComponent implements OnInit {
   ngOnInit(): void {
     if(this.authLevel !== "admin"){
       alert("you don't have permission to use this function!!!");
-      history.back();
+      this.dialog.closeAll();
     }
-
-    
   }
 
   postdata(musicForm1:
