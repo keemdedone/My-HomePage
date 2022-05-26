@@ -9,6 +9,7 @@ import { MusicAddComponent } from '../music-add/music-add.component';
 })
 export class MusicPlayComponent implements OnInit {
 
+  music_num: any = parseInt(localStorage.getItem('music') || "0".toString());
   audio = new Audio();
 
   path: Array<{id: number,name: string, url: string}> = [
@@ -29,8 +30,8 @@ export class MusicPlayComponent implements OnInit {
   }
 
   onPlay(){
-    this.audio.src = this.path[this.select_num].url;
-    localStorage.setItem('music',this.select_num.toString());
+    this.audio.src = this.path[this.music_num].url;
+    localStorage.setItem('music',this.music_num.toString());
     this.audio.load();
     this.audio.play();
     this.play = false;
@@ -45,10 +46,10 @@ export class MusicPlayComponent implements OnInit {
     this.audio.pause();
     this.audio.currentTime = 0;
     this.play = true;
-    if(this.select_num == this.path.length - 1){
-      this.select_num = this.path.length - 1
+    if(this.music_num == this.path.length - 1){
+      this.music_num = this.path.length - 1
     } else {
-      this.select_num += 1;
+      this.music_num += 1;
     }
   }
 
@@ -56,10 +57,10 @@ export class MusicPlayComponent implements OnInit {
     this.audio.pause();
     this.audio.currentTime = 0;
     this.play = true;
-    if(this.select_num > 0){
-      this.select_num -= 1;
+    if(this.music_num > 0){
+      this.music_num -= 1;
     } else {
-      this.select_num = 0;
+      this.music_num = 0;
     }
   }
 
@@ -67,7 +68,7 @@ export class MusicPlayComponent implements OnInit {
     this.audio.pause();
     this.audio.currentTime = 0;
     this.play = true;
-    this.select_num = id - 1;
+    this.music_num = id - 1;
   }
 
   openCreateDialog(): void {

@@ -5,7 +5,7 @@
   <img src="./assets/background-image/Music.jpg">
   <div class="music-control">
     <div class="music-wrapper">
-      <span class="music-name">{{path[select_num].name}}</span>
+      <span class="music-name">{{path[music_num].name}}</span>
     </div>
     <div class="music-menu">
       <button mat-icon-button color="primary" type="button" (click)="onPrevious()">
@@ -24,7 +24,7 @@
     <div *ngFor="let item of path;let i = index">
       <div class="music-list" (click)="onChange(item.id)">
         <span>{{item.name}}</span>
-        <mat-icon *ngIf="item.id === select_num + 1">done</mat-icon>
+        <mat-icon *ngIf="item.id === music_num + 1">done</mat-icon>
       </div>
     </div>
   </div>
