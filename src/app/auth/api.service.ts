@@ -11,6 +11,7 @@ providedIn: 'root'
 export class ApiService {
   redirectUrl: string | undefined;
   baseUrl: string = "http://localhost/my-homepage/php";
+  musicUrl: string = "http://localhost/my-homepage/php_music";
 
   @Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
 
@@ -71,8 +72,19 @@ export class ApiService {
     }) //subscribe is required.
   }
 
+  public getMusic(){
+    return this.httpClient.post<any>(this.musicUrl + '/select.php', {});
+  }
+
   public delUser(id:number) {
     return this.httpClient.delete<any>(this.baseUrl + '/delete.php?id=' + id);
+  }
+
+  public musicCreate(name:string, path:string){
+    return this.httpClient.post<any>(this.musicUrl + '/create.php', { name, path })
+    .pipe(map(s => {
+      return s
+    }));
   }
 
 

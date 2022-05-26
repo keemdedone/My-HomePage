@@ -16,6 +16,7 @@ import { MusicAddComponent } from './music-add/music-add.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { MatInputModule } from '@angular/material/input';
     CommonModule,
     MusicRoutingModule,
     PortalModule,
+    ReactiveFormsModule,
     MatButtonModule,
     MatListModule,
     MatSlideToggleModule,
