@@ -82,4 +82,10 @@ export class MusicPlayComponent implements OnInit {
     this.dialog.open(MusicDropComponent, {});
   }
 
+  vol(ev: any) {
+    console.log(ev);
+    let vol = ev.target.ariaValueNow/100;
+    this.audio.volume = vol ;
+  }
+
 }

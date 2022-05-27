@@ -1,4 +1,14 @@
 <div class="music-container">
+  <mat-slider
+  class="music-vol"
+  (click)="vol($event)"
+  thumbLabel 
+  tickInterval="1000"
+  value="100"
+  step="1"
+  min="0"
+  max="100"
+  aria-label="units"></mat-slider>
   <button class="music-add" (click)="openCreateDialog()" matTooltip="add new music">
     <mat-icon>add</mat-icon>
   </button>
