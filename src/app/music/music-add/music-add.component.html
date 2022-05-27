@@ -1,3 +1,8 @@
+<div class="cancel">
+  <button mat-icon-button color="warn" type="button" (click)="onClose()">
+    <mat-icon>close</mat-icon>
+  </button>
+</div>
 <h1 mat-dialog-title class="music-add-container" >New music</h1>
 <form mat-dialog-content [formGroup]="musicForm" (ngSubmit)="postdata(musicForm)" class="music-input-form">
   <div class="input-field">

@@ -60,4 +60,8 @@ export class MusicAddComponent implements OnInit {
     this.musicForm.reset();
   }
 
+  onClose(): void{
+    this.dialog.closeAll();
+  }
+
 }
