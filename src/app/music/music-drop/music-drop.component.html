@@ -1,8 +1,8 @@
 <div class="cmp-music">
     <h1 mat-dialog-title>Remove music</h1>
-    <div mat-dialog-content class="cmp-music-list" *ngFor="let item of music_list">
+    <div mat-dialog-content class="cmp-music-list" *ngFor="let item of music_list ; let i = index">
         <div class="music-item">
-            <button mat-raised-button class="cmd-music-del">
+            <button mat-raised-button class="cmd-music-del" (click)="onDel(i)">
                 <mat-icon>delete_forever</mat-icon>
             </button>
             <span>{{item.name}}</span>

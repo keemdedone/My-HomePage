@@ -87,6 +87,10 @@ export class ApiService {
     }));
   }
 
+  public delMusic(id:number){
+    return this.httpClient.delete<any>(this.musicUrl + '/delete.php?id=' + id);
+  }
+
 
   //token
   setToken(token: string) {

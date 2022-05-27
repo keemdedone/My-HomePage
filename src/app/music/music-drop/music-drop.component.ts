@@ -22,7 +22,24 @@ export class MusicDropComponent implements OnInit {
   ngOnInit(): void {
     this.dataService.getMusic().subscribe((res:any) => {
       this.music_list = res ;
+    }, (err) => {
+      console.log(err);
     })
+  }
+
+  onDel(index:number){
+    if (confirm('Are you sure you want to delete this music into the database?')) {
+      this.dataService.delMusic(index+1).subscribe(()=>{
+        console.log('This music deleted.')
+        this.dataService.getMusic().subscribe((res:any) => {
+          this.music_list = res ;
+        }, (err) => {
+          console.log(err);
+        })
+      })
+    } else {
+      console.log('Admin cancel delete.');
+    }
   }
 
 }
