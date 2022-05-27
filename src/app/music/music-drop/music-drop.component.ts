@@ -10,6 +10,7 @@ import { ApiService } from 'src/app/auth/api.service';
 })
 export class MusicDropComponent implements OnInit {
 
+  authLevel = localStorage.getItem('token');
   music_list: any[] | null = null;
   music_name_list!: FormGroup;
 
@@ -25,6 +26,11 @@ export class MusicDropComponent implements OnInit {
     }, (err) => {
       console.log(err);
     })
+
+    if(this.authLevel !== "admin"){
+      alert("you don't have permission to use this function!!!");
+      this.dialog.closeAll();
+    }
   }
 
   onDel(index:number){
