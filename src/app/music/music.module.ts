@@ -18,6 +18,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MusicDropComponent } from './music-drop/music-drop.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import { MusicDropComponent } from './music-drop/music-drop.component';
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
+    MatTooltipModule,
   ]
 })
 export class MusicModule { }
