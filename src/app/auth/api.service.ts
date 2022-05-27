@@ -10,7 +10,7 @@ providedIn: 'root'
 
 export class ApiService {
   redirectUrl: string | undefined;
-  baseUrl: string = "http://localhost/my-homepage/php";
+  baseUrl: string = "http://localhost/my-homepage/php_user";
   musicUrl: string = "http://localhost/my-homepage/php_music";
 
   @Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
