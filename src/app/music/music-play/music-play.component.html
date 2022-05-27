@@ -4,7 +4,7 @@
   </button>
   <img src="./assets/background-image/Music.jpg">
   <div class="music-control">
-    <div class="music-wrapper">
+    <div class="music-wrapper" *ngIf="music_list && music_list.length > 0">
       <span class="music-name">{{music_list[music_num].name}}</span>
     </div>
     <div class="music-menu">
