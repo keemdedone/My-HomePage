@@ -31,9 +31,6 @@ export class MusicAddComponent implements OnInit {
       alert("you don't have permission to use this function!!!");
       this.dialog.closeAll();
     }
-    
-    // let txt_spilt = ((this.test_txt.split("../assets/music/"))[1]).split(".m4a");
-    // console.log(txt_spilt[0])
   }
 
   postdata(musicForm1:
@@ -44,13 +41,21 @@ export class MusicAddComponent implements OnInit {
       };
     }): void{
       if (!this.musicForm.invalid) {
-        this.dataService.musicCreate(musicForm1.value.name,'../assets/music/' + musicForm1.value.url + '.m4a').subscribe(
-          (data:any) => {
-            console.log(data);
-          },(err:any) => {
-            console.log(err);
+        this.dataService.getMusic().subscribe((res:any) => {
+          for (let i = 0 ; i < res.length ; i++){
+            if(res[i].name === musicForm1.value.name){
+              alert('This music name alerady have')
+              return
+            }
           }
-        )
+          this.dataService.musicCreate(musicForm1.value.name,'../assets/music/' + musicForm1.value.url + '.m4a').subscribe(
+            (data:any) => {
+              console.log(data);
+            },(err:any) => {
+              console.log(err);
+            }
+          )
+        })
       } else {
         return
       }
