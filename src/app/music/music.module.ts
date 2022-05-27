@@ -17,6 +17,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MusicDropComponent } from './music-drop/music-drop.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MusicComponent,
     MusicPlayComponent,
     MusicAddComponent,
+    MusicDropComponent,
   ],
   imports: [
     CommonModule,

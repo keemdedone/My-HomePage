@@ -2,6 +2,7 @@ import { Component, OnInit  } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ApiService } from 'src/app/auth/api.service';
 import { MusicAddComponent } from '../music-add/music-add.component';
+import { MusicDropComponent } from '../music-drop/music-drop.component';
 
 @Component({
   selector: 'app-music-play',
@@ -75,6 +76,10 @@ export class MusicPlayComponent implements OnInit {
 
   openCreateDialog(): void {
     this.dialog.open(MusicAddComponent, {});
+  }
+
+  openDropDialog(): void{
+    this.dialog.open(MusicDropComponent, {});
   }
 
 }

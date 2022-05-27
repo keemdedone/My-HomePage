@@ -2,6 +2,9 @@
   <button class="music-add" (click)="openCreateDialog()">
     <mat-icon>add</mat-icon>
   </button>
+  <button class="music-drop" (click)="openDropDialog()">
+    <mat-icon>delete</mat-icon>
+  </button>
   <img src="./assets/background-image/Music.jpg" width="380px">
   <div class="music-control">
     <div class="music-wrapper" *ngIf="music_list && music_list.length > 0">
