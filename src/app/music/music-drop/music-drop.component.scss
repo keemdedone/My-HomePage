@@ -1,0 +1,27 @@
+.cmp-music{
+    width: 450px;
+    height: 450px;
+    h1{
+        font-size: 30px;
+        text-align: center;
+    }
+    .music-item{
+        padding-top: 20px;
+        padding-bottom: 20px;
+        &>span{
+            font-size: 19px;
+            padding-left: 15px;
+        }
+        mat-icon{
+            vertical-align: -5px;
+            color: red;
+        }
+        .cmd-music-del{
+            border: 1px solid red;
+            background-color: honeydew;
+        }
+        .cmd-music-del:hover{
+            background-color: darkgray;
+        }
+    }
+}
