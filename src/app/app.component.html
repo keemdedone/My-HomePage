@@ -59,20 +59,20 @@
     </div>
 
     <div class="cmp-show-list">
-      <nav class="w3-animate-right" *ngIf="listShow === true">
-        <a mat-button routerLink="dashboard"(click)="onLog('dashboard')">Dashboard</a>
+      <nav class="w3-animate-left" *ngIf="listShow === true">
+        <a mat-button routerLink="dashboard" (click)="onLog('dashboard')">Dashboard</a>
         <a mat-button routerLink="midterm" (click)="onLog('midterm')">Midterm</a>
-        <a mat-button routerLink="input"(click)="onLog('input')">Input</a>
+        <a mat-button routerLink="input" (click)="onLog('input')">Input</a>
         <a mat-button routerLink="my-form" (click)="onLog('my-form')">My-Form</a>
         <a mat-button routerLink="star-war" (click)="onLog('star-war')">StarWar</a>
-        <a mat-button routerLink="covid"(click)="onLog('covid')">Covid19</a>
-        <a mat-button routerLink="music"(click)="onLog('music')">Music</a>
+        <a mat-button routerLink="covid" (click)="onLog('covid')">Covid19</a>
+        <a mat-button routerLink="music" (click)="onLog('music')">Music</a>
       </nav>
     </div>
     <div class="cmd-show-list">
       <button type="button" (click)="onShowList()" *ngIf="true">
-        <mat-icon *ngIf="listShow === true" class="front">arrow_back_ios</mat-icon>
-        <mat-icon *ngIf="listShow === false" class="back">arrow_forward_ios</mat-icon>
+        <mat-icon *ngIf="listShow === true" class="front">arrow_left</mat-icon>
+        <mat-icon *ngIf="listShow === false" class="back">arrow_drop_down</mat-icon>
       </button>
     </div>
   </mat-toolbar>

@@ -123,29 +123,9 @@ audio{
     font-size: 50px;
     .front{
       transform-origin: center 50%;
-      animation: rotationFront 0.25s linear;
     }
     .back{
       transform-origin: center 50%;
-      animation: rotationBack 0.25s linear;
     }
-  }
-}
-
-@keyframes rotationBack {
-  from {
-    transform: rotateY(-180deg);
-  }
-  to {
-    transform: rotateY(45deg);
-  }
-}
-
-@keyframes rotationFront {
-  from {
-    transform: rotateY(-180deg);
-  }
-  to {
-    transform: rotateY(45deg);
   }
 }
