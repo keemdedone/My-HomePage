@@ -1,8 +1,23 @@
-form{
-    .save{
+h1{
+    text-align: center;
+}
+
+.music-input-form{
+    width: 350px;
+    margin: auto;
+    text-align: center;
+    .reset{
         margin-left: 10px;
     }
-    .reset{
-        margin-left: 30px;
+}
+
+.music-upload-form{
+    width: 350px;
+    margin: auto;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    .cmd-music-send{
+        margin-top: 15px;
     }
 }

@@ -1,5 +1,5 @@
 <h1 mat-dialog-title class="music-add-container" >New music</h1>
-<form mat-dialog-content [formGroup]="musicForm" (ngSubmit)="postdata(musicForm)">
+<form mat-dialog-content [formGroup]="musicForm" (ngSubmit)="postdata(musicForm)" class="music-input-form">
   <div class="input-field">
     <mat-form-field appearance="outline">
       <mat-label>Music name</mat-label>
@@ -30,7 +30,7 @@
   type="submit"
   class="save">
     <mat-icon>save</mat-icon>
-    Save
+    Comfirm data
   </button> 
     
   <button
@@ -40,13 +40,16 @@
   (click)="onReset()"
   class="reset">
     <mat-icon>refresh</mat-icon>
-    Reset
   </button>
 
 </form>
 
-<form action="http://localhost/my-homepage/php_music/upload.php" method="post" enctype="multipart/form-data">
-  <input type="file" name="files">
-  <br/>
-  <input type="submit" name ="upload">
-</form>
+<div class="music-upload-form">
+  <form action="http://localhost/my-homepage/php_music/upload.php" method="post" enctype="multipart/form-data">
+    <input type="file" name="files">
+    <br />
+    <button mat-flat-button color="primary" type="submit" name ="upload" class="cmd-music-send">
+      <mat-icon>send</mat-icon>
+    </button>
+  </form>
+</div>
