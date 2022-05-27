@@ -13,12 +13,6 @@ export class MusicPlayComponent implements OnInit {
   music_num: any = parseInt(localStorage.getItem('music') || '0');
   audio = new Audio();
 
-  // path: Array<{id: number,name: string, url: string}> = [
-  //   {id: 1,name: 'On Ourway', url: "../assets/music/OnOurway.m4a"},
-  //   {id: 2,name: 'The Cetra', url: "../assets/music/AerithTheme.m4a"},
-  //   {id: 3,name: 'Somnus', url: "../assets/music/Somnus.m4a"},
-  // ];
-
   play: boolean = true;
   music_list: any;
 
@@ -51,9 +45,9 @@ export class MusicPlayComponent implements OnInit {
   }
 
   onNext(){
+    this.play = true;
     this.audio.pause();
     this.audio.currentTime = 0;
-    this.play = true;
     if(this.music_num == this.music_list.length - 1){
       this.music_num = this.music_list.length - 1
     } else {

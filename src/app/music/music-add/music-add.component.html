@@ -31,8 +31,8 @@
   class="save">
     <mat-icon>save</mat-icon>
     Save
-  </button>
-
+  </button> 
+    
   <button
   mat-flat-button
   color="warn"
@@ -43,4 +43,10 @@
     Reset
   </button>
 
+</form>
+
+<form action="http://localhost/my-homepage/php_music/upload.php" method="post" enctype="multipart/form-data">
+  <input type="file" name="files">
+  <br/>
+  <input type="submit" name ="upload">
 </form>
