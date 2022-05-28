@@ -82,8 +82,8 @@ export class ApiService {
 
   public musicCreate(name:string, path:string){
     return this.httpClient.post<any>(this.musicUrl + '/create.php', { name, path })
-    .pipe(map(s => {
-      return s
+    .pipe(map(data => {
+      return data
     }));
   }
 
