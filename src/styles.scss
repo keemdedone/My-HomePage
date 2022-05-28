@@ -113,7 +113,7 @@ body { margin: 0;}
   height: 50px;
 
   &>.path {
-    stroke: blue;
+    stroke: #303f9f;
     stroke-linecap: round;
     animation: dash 1.5s ease-in-out infinite;
   }

@@ -33,9 +33,9 @@ export class MusicDropComponent implements OnInit {
     }
   }
 
-  onDel(index:number){
+  onDel(id:number){
     if (confirm('Are you sure you want to delete this music into the database?')) {
-      this.dataService.delMusic(index+1).subscribe(()=>{
+      this.dataService.delMusic(id).subscribe(()=>{
         console.log('This music deleted.')
         this.dataService.getMusic().subscribe((res:any) => {
           this.music_list = res ;

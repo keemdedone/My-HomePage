@@ -20,51 +20,54 @@
     </mat-form-field>
   </form>
 
-  <table class="table text-center">
-    <thead class="thead">
-      <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody class="tbody">
-      <tr *ngFor="let user of users | paginate:{itemsPerPage:5, currentPage:p}; ">
-        <td>{{user.id}}</td>
-        <td>{{user.name}}</td>
-        <td>{{user.email}}</td>
-        <td class="cmd-action-menu">
-          <div class="cmp-action-control">
-            <div *ngIf=" tokenName !== 'admin' && user.level === '0' " class="admin-switch">
-              <button mat-flat-button (click)="switchAdminAccount(user.level)">
-                <mat-icon>
-                  autorenew
-                </mat-icon>
-              </button>
+  <div class="cmp-users-table" *ngIf="users ; else loading">
+    <table class="table text-center">
+      <thead class="thead">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody class="tbody">
+        <tr *ngFor="let user of users | paginate:{itemsPerPage:5, currentPage:p}; ">
+          <td>{{user.id}}</td>
+          <td>{{user.name}}</td>
+          <td>{{user.email}}</td>
+          <td class="cmd-action-menu">
+            <div class="cmp-action-control">
+              <div *ngIf=" tokenName !== 'admin' && user.level === '0' " class="admin-switch">
+                <button mat-flat-button (click)="switchAdminAccount(user.level)">
+                  <mat-icon>
+                    autorenew
+                  </mat-icon>
+                </button>
+              </div>
+              <div *ngIf=" user.level !== '0' " class="cmd-user-action-menu">
+                <button mat-flat-button class="switch" (click)="switchUserAccount(user.id)" *ngIf="tokenName === 'admin'">
+                  <mat-icon>
+                    autorenew
+                  </mat-icon>
+                </button>
+                <button mat-flat-button color="warn" (click)="delUserInfo(user.id)" *ngIf="tokenName === 'admin' ">
+                  <mat-icon>
+                    delete_forever
+                  </mat-icon>
+                </button>
+                <button mat-flat-button color="primary" routerLink="{{user.id}}" *ngIf="tokenName === user.id || tokenName === 'admin' ">
+                  <mat-icon>
+                    settings
+                  </mat-icon>
+                </button>
+              </div>
             </div>
-            <div *ngIf=" user.level !== '0' " class="cmd-user-action-menu">
-              <button mat-flat-button class="switch" (click)="switchUserAccount(user.id)" *ngIf="tokenName === 'admin'">
-                <mat-icon>
-                  autorenew
-                </mat-icon>
-              </button>
-              <button mat-flat-button color="warn" (click)="delUserInfo(user.id)" *ngIf="tokenName === 'admin' ">
-                <mat-icon>
-                  delete_forever
-                </mat-icon>
-              </button>
-              <button mat-flat-button color="primary" routerLink="{{user.id}}" *ngIf="tokenName === user.id || tokenName === 'admin' ">
-                <mat-icon>
-                  settings
-                </mat-icon>
-              </button>
-            </div>
-          </div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
   <div class="cmd-pagination">
     <pagination-controls
     class="my-pagination"
@@ -98,4 +101,10 @@
       matDialogClose>OK</button>
     </mat-dialog-actions>
   </div>
+</ng-template>
+
+<ng-template #loading>
+  <svg class="loading-spinner" viewBox="0 0 50 50">
+    <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="7.5"></circle>
+  </svg>
 </ng-template>

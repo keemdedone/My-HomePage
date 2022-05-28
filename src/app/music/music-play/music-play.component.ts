@@ -24,6 +24,10 @@ export class MusicPlayComponent implements OnInit {
 
   ngOnInit(): void {
     this.dataService.getMusic().subscribe((res:any) => {
+      if (this.music_num > res.length - 1 ){
+        localStorage.setItem('music','0');
+        location.reload();
+      }
       this.music_list = res ;
     }, (err) => {
       console.log(err);

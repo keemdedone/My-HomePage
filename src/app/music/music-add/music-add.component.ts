@@ -14,6 +14,7 @@ export class MusicAddComponent implements OnInit {
 
   authLevel = localStorage.getItem("token");
   test_txt = "../assets/music/AerithTheme.m4a" ;
+  send_botton: boolean = true;
 
   constructor(
     public dialog: MatDialog,
@@ -48,6 +49,7 @@ export class MusicAddComponent implements OnInit {
               return
             }
           }
+          this.send_botton = false;
           this.dataService.musicCreate(musicForm1.value.name,'../assets/music/' + musicForm1.value.url + '.m4a').subscribe(
             (data:any) => {
               console.log(data);

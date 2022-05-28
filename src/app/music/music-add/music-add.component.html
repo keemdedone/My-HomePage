@@ -53,7 +53,13 @@
   <form action="http://localhost/my-homepage/php_music/upload.php" method="post" enctype="multipart/form-data">
     <input type="file" name="files">
     <br />
-    <button mat-flat-button color="primary" type="submit" name ="upload" class="cmd-music-send">
+    <button
+    [disabled]="send_botton"
+    mat-flat-button 
+    color="primary" 
+    type="submit" 
+    name ="upload" 
+    class="cmd-music-send">
       <mat-icon>send</mat-icon>
     </button>
   </form>
