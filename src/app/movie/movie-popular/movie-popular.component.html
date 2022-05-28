@@ -1,0 +1,10 @@
+<div *ngIf="data; else loading">
+    <div *ngFor="let item of data.results">
+        {{item.original_title}}
+    </div>
+</div>
+
+<ng-template #loading>
+    <div class="spinner-border text-dark mt-3" role="status"></div>
+    <span class="sr-only">Data Loading...</span>
+</ng-template>
