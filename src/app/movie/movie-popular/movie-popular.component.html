@@ -1,6 +1,19 @@
 <div *ngIf="data; else loading">
     <div *ngFor="let item of data.results">
-        {{item.original_title}}
+        <div class="movie-container">
+            <img src="{{IMG_BASE_PATH + item.poster_path}}" alt="{{item.title}}" width="400px">
+            <div class="movie-details">
+                <span class="movie-title">{{item.title}}</span>
+                <br />
+                <span class="movie-language">{{item.original_language}}</span>
+                <br />
+                <span class="movie-release-date">{{item.release_date}}</span>
+                <br />
+                <span class="movie-vote-average">{{item.vote_average}}</span>
+                <br />
+                <span class="movie-overview">{{item.overview}}</span>
+            </div>
+        </div>
     </div>
 </div>
 
