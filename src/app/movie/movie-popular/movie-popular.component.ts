@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Popular, SearchData } from 'src/app/model/movie';
-import { MovieService } from '../movie.service';
 
 @Component({
   selector: 'app-movie-popular',
@@ -17,16 +16,11 @@ export class MoviePopularComponent implements OnInit {
   formGroup!: FormGroup;
 
   constructor(
-    private readonly service: MovieService,
     private readonly fb: FormBuilder,
   ) { }
 
   ngOnInit(): void {
-    this.formGroup = this.fb.group(
-      {
-        search: [this.search.search || null],
-      });
-    this.emit();
+    return
   }
 
   pageIndex(i:any): void{
@@ -45,7 +39,6 @@ export class MoviePopularComponent implements OnInit {
   emit(): void{
     const searchData: SearchData = {};
     const formValue = this.formGroup.value;
-    if(formValue.search) searchData.search = formValue.search;
     if(formValue.page) searchData.page = formValue.page;
     this.searchChange.emit(this.formGroup.value);
   }

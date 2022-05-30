@@ -3,7 +3,6 @@
     <mat-paginator
     [length]="data.total_results"
     [pageSize]="10"
-    [pageSizeOptions]="[10,50]"
     (page)="pageIndex($event)"
     aria-label="Select page"></mat-paginator>
 
@@ -23,6 +22,7 @@
             </div>
         </div>
     </div>
+    
 </div>
 
 <ng-template #loading>
