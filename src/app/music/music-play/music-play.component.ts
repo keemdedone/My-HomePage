@@ -35,16 +35,22 @@ export class MusicPlayComponent implements OnInit {
   }
 
   onPlay(){
-    this.dataService.getMusic().subscribe((res:any) => {
-      this.audio.src = res[this.music_num].path;
-      localStorage.setItem('music',this.music_num.toString());
-      this.audio.load();
+    if(this.audio.currentTime != 0){
       this.audio.play();
       this.play = false;
-    })
+    } else {
+      this.dataService.getMusic().subscribe((res:any) => {
+        this.audio.src = res[this.music_num].path;
+        localStorage.setItem('music',this.music_num.toString());
+        // this.audio.load();
+        this.audio.play();
+        this.play = false;
+      })
+    }
   }
 
   onPause(){
+    // this.audio.currentTime = this.audio.duration
     this.audio.pause();
     this.play = true;
   }
@@ -87,7 +93,6 @@ export class MusicPlayComponent implements OnInit {
   }
 
   vol(ev: any) {
-    console.log(ev);
     let vol = ev.target.ariaValueNow/100;
     this.audio.volume = vol ;
   }
