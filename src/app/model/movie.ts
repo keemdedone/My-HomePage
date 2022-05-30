@@ -28,10 +28,9 @@ export type Result = {
 }
 
 export function parsePopularList(data: any): Popular{
-    return {
-        page: data.page,
-        results: data.results,
-        total_pages: data.total_pages,
-        total_results: data.total_results,
-    };
+    return {...data};
+}
+
+export function parseMovieList(data: any): Popular{
+    return {...data};
 }

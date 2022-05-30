@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { MovieListPageComponent } from './display/movie-list-page/movie-list-page.component';
 import { MoviePopularPageComponent } from './display/movie-popular-page/movie-popular-page.component';
 import { MovieComponent } from './movie/movie.component';
 
@@ -10,12 +11,16 @@ const routes: Routes = [
     children: [
       {
         path:'',
-        redirectTo:'movie-popelar',
+        redirectTo:'movie-popular',
         pathMatch:'full',
       },
       {
-        path:'movie-popelar',
+        path:'movie-popular',
         component: MoviePopularPageComponent,
+      },
+      {
+        path:'movie-list',
+        component: MovieListPageComponent,
       }
     ]
   }

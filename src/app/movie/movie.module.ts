@@ -14,13 +14,17 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MovieListComponent } from './movie-list/movie-list.component';
+import { MovieListPageComponent } from './display/movie-list-page/movie-list-page.component';
 
 
 @NgModule({
   declarations: [
     MovieComponent,
     MoviePopularComponent,
-    MoviePopularPageComponent
+    MoviePopularPageComponent,
+    MovieListComponent,
+    MovieListPageComponent
   ],
   imports: [
     CommonModule,

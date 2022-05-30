@@ -1,0 +1,7 @@
+<mat-toolbar color="primary">
+    Movie List
+</mat-toolbar>
+<app-movie-list
+[data]="data$ | async"
+[search]="search"
+(searchChange)="onSearch($event)"></app-movie-list>

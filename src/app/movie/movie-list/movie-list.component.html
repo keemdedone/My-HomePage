@@ -1,0 +1,40 @@
+<div *ngIf="data ; else loading">
+
+    <mat-paginator
+    [length]="data.total_results"
+    [pageSize]="10"
+    (page)="pageIndex($event)"
+    aria-label="Select page"></mat-paginator>
+
+    <form [formGroup]="formGroup" (ngSubmit)="onSearch()" class="">
+      <mat-form-field appearance="outline">
+        <mat-label>Search</mat-label>
+        <mat-icon (click)="onSearch()" matSuffix>search</mat-icon>
+        <input matInput type="search" formControlName="search">
+      </mat-form-field>
+    </form>
+
+    <div *ngFor="let item of data.results">
+        <div class="movie-container">
+            <img src="{{IMG_BASE_PATH + item.poster_path}}" alt="{{item.title}}" height="700" width="400px">
+            <div class="movie-details">
+                <span class="movie-title">{{item.title}}</span>
+                <br />
+                <span class="movie-language">{{item.original_language}}</span>
+                <br />
+                <span class="movie-release-date">{{item.release_date}}</span>
+                <br />
+                <span class="movie-vote-average">{{item.vote_average}}</span>
+                <br />
+                <span class="movie-overview">{{item.overview}}</span>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<ng-template #loading>
+  <svg class="loading-spinner" viewBox="0 0 50 50">
+    <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="7.5"></circle>
+  </svg>
+</ng-template>

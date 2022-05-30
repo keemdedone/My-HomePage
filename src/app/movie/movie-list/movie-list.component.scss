@@ -1,0 +1,54 @@
+.movie-container{
+    margin-left: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 1500px;
+    border-radius: 50px;
+    display: grid;
+    grid-template-columns: 400px auto;
+    background-color: gray;
+    padding: 30px;
+    img{
+        margin: auto;
+    }
+    .movie-details{
+        margin: auto;
+        height: 750px;
+        width: 850px;
+        line-height: 50px;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 30px;
+        margin-left: 30px;
+        .movie-title::before{
+            font-weight: 800;
+            content: "Name :: ";
+        }
+        .movie-language{
+            text-transform: uppercase;
+        }
+        .movie-language::before{
+            font-weight: 800;
+            text-transform: none;
+            content: "Language :: ";
+        }
+        .movie-release-date::before{
+            font-weight: 800;
+            content: "Release date :: ";
+        }
+        .movie-vote-average::before{
+            font-weight: 800;
+            content: "Vote point :: "
+        }
+        .movie-vote-average::after{
+            content: "/10";
+        }
+        .movie-overview{
+            font-size: 24px;
+        }
+        .movie-overview::before{
+            font-weight: 800;
+            font-size: 30px;
+            content: "Overview :: ";
+        }
+    }
+}
