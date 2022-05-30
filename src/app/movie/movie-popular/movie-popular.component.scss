@@ -8,9 +8,12 @@
     grid-template-columns: 400px auto;
     background-color: gray;
     padding: 30px;
-
+    img{
+        margin: auto;
+    }
     .movie-details{
-        height: 600px;
+        margin: auto;
+        height: 750px;
         width: 850px;
         line-height: 50px;
         font-family: 'Courier New', Courier, monospace;

@@ -1,6 +1,13 @@
+export type SearchData = {
+    search?: string,
+    page?: string,
+}
+
 export type Popular = {
     page: number,
     results: Result[],
+    total_pages: number,
+    total_results: number,
 }
 
 export type Result = {
@@ -21,9 +28,10 @@ export type Result = {
 }
 
 export function parsePopularList(data: any): Popular{
-    console.log(data)
     return {
         page: data.page,
         results: data.results,
+        total_pages: data.total_pages,
+        total_results: data.total_results,
     };
 }
