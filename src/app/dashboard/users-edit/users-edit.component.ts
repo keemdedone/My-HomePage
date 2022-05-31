@@ -11,6 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class UsersEditComponent implements OnInit {
 
   authLevel = localStorage.getItem('token');
+  userForm: any;
   id: any;
   updateForm: FormGroup;
 
@@ -20,18 +21,24 @@ export class UsersEditComponent implements OnInit {
     private dataService: ApiService,
     private activateRoute: ActivatedRoute,
   ) {
+    let textData = localStorage.getItem('edit'); // localStorage can get STR only
+    if(textData){
+      this.userForm = JSON.parse(textData); // change fson file to obj file
+    } else {
+      this.userForm = {};
+    }
     this.updateForm = this.fb.group({
-      name: [null, Validators.required],
-      email: [null, [Validators.required,Validators.minLength(1), Validators.email]],
-      password: [null, Validators.required],
-      level: [null],
+      name: [this.userForm.name, Validators.required],
+      email: [this.userForm.email, [Validators.required,Validators.minLength(1), Validators.email]],
+      password: [this.userForm.password, Validators.required],
+      level: [this.userForm.level],
     });
 
     this.id = this.activateRoute.snapshot.paramMap.get('id');
   }
 
   ngOnInit(): void {
-    return;
+    return
   }
 
   postdata(updateForm1:

@@ -31,7 +31,7 @@
         </tr>
       </thead>
       <tbody class="tbody">
-        <tr *ngFor="let user of users | paginate: { itemsPerPage: 5, currentPage: p }; ">
+        <tr *ngFor="let user of users | paginate: { itemsPerPage: 5, currentPage: p }; let i = index ">
           <td>{{user.id}}</td>
           <td>{{user.name}}</td>
           <td>{{user.email}}</td>
@@ -55,7 +55,7 @@
                     delete_forever
                   </mat-icon>
                 </button>
-                <button mat-flat-button color="primary" routerLink="{{user.id}}" *ngIf="tokenName === user.id || tokenName === 'admin' ">
+                <button mat-flat-button color="primary" (click)="onEdit(i)" routerLink="{{user.id}}" *ngIf="tokenName === user.id || tokenName === 'admin' ">
                   <mat-icon>
                     settings
                   </mat-icon>

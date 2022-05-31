@@ -94,4 +94,8 @@ export class UsersComponent implements OnInit {
     }
   }
 
+  onEdit(i:number): void{
+    localStorage.setItem('edit',JSON.stringify(this.users[i]));
+  }
+
 }
