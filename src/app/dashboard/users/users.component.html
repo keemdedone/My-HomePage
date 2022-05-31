@@ -16,7 +16,7 @@
     <mat-form-field appearance="outline">
       <mat-label>Search</mat-label>
       <mat-icon (click)="onSearch()" matSuffix>search</mat-icon>
-      <input matInput type="search" name="name" [(ngModel)]="name" (ngModelChange)="onSearch()" >
+      <input matInput type="search" name="name" [(ngModel)]="name" autocomplete="donotautocomplete" (ngModelChange)="onSearch()" >
     </mat-form-field>
   </form>
 
@@ -31,7 +31,7 @@
         </tr>
       </thead>
       <tbody class="tbody">
-        <tr *ngFor="let user of users | paginate:{itemsPerPage:5, currentPage:p}; ">
+        <tr *ngFor="let user of users | paginate: { itemsPerPage: 5, currentPage: p }; ">
           <td>{{user.id}}</td>
           <td>{{user.name}}</td>
           <td>{{user.email}}</td>
@@ -71,10 +71,11 @@
   <div class="cmd-pagination">
     <pagination-controls
     class="my-pagination"
-    (pageChange)="p = $event"
     previousLabel=""
-    nextLabel=""></pagination-controls>
+    nextLabel=""
+    (pageChange)="p = $event"></pagination-controls>
   </div>
+  
 </div>
 
 

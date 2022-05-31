@@ -19,7 +19,7 @@ export class MovieListComponent implements OnInit {
     private readonly fb: FormBuilder,
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void{
     //defult value
     this.formGroup = this.fb.group({
       search: 'A',
