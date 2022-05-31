@@ -80,12 +80,17 @@
 
 <ng-template #switchAdmin>
   <div class="cmp-password-promt-box" mat-dialog-content>
-    <h1 matDialogTitle>Your don't have permission to use this function</h1>
+    <h1 matDialogTitle>You don't have permission to use this function</h1>
+    <span matDialogContent>
+      ( your input is wrong try again. )
+    </span>
     <mat-dialog-actions align="center">
       <button
       color="warn"
       mat-flat-button
-      matDialogClose>Back</button>
+      matDialogClose>
+      <mat-icon>keyboard_return</mat-icon>
+    </button>
     </mat-dialog-actions>
   </div>
 </ng-template>
