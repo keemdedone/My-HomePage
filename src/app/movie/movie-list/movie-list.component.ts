@@ -20,9 +20,10 @@ export class MovieListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    //defult value
     this.formGroup = this.fb.group({
-      search: [this.search.search || 'a'],
-      page: [this.search.page || 1],
+      search: 'A',
+      page: 1,
       });
     this.emit();
   }
@@ -47,7 +48,6 @@ export class MovieListComponent implements OnInit {
     const formValue = this.formGroup.value;
     if(formValue.search) searchData.search = formValue.search;
     if(formValue.page) searchData.page = formValue.page;
-    console.log(this.formGroup.value)
     this.searchChange.emit(this.formGroup.value);
   }
 

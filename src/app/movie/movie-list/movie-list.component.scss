@@ -4,6 +4,9 @@
     mat-form-field{
         margin-top: 50px;
         width: 650px;
+        mat-icon:hover{
+            cursor: pointer;
+        }
     }
 }
 
