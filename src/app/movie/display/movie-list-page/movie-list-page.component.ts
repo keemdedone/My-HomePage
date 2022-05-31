@@ -30,10 +30,11 @@ export class MovieListPageComponent implements OnInit {
   }
 
   onSearch(search:SearchData): void{
+    console.log(search.search,search.page)
     this.router.navigate([], {
       relativeTo: this.route,
-      queryParams: search,
-      replaceUrl: true,
+      queryParams: { query: search.search, page: search.page },
+      replaceUrl: false,
     })
   }
 

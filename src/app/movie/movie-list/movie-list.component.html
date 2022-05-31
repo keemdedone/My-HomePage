@@ -6,7 +6,7 @@
     (page)="pageIndex($event)"
     aria-label="Select page"></mat-paginator>
 
-    <form [formGroup]="formGroup" (ngSubmit)="onSearch()" class="">
+    <form [formGroup]="formGroup" (ngSubmit)="onSearch()" class="movie-search-box">
       <mat-form-field appearance="outline">
         <mat-label>Search</mat-label>
         <mat-icon (click)="onSearch()" matSuffix>search</mat-icon>

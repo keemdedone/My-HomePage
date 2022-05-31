@@ -23,17 +23,10 @@ export class MovieService {
   }
 
   getMovieList(params?: SearchData): Observable<Popular>{
-    if(params?.search === undefined){
-      return this.http.get(POPULAR_API,{
-        params: params,
-        }).pipe(map((data) => parsePopularList(data)),
-      )
-    } else {
-      return this.http.get(SEARCH_API,{
-        params: params,
+    return this.http.get(SEARCH_API,{
+      params: params,
       }).pipe(map((data) => parseMovieList(data)),
-      )
-    }
+    )
   }
 
 }
