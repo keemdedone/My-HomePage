@@ -9,7 +9,8 @@ providedIn: 'root'
 export class AuthguardGuard implements CanActivate {
   constructor(
     private dataService: ApiService,
-    private router: Router, ) {}
+    private router: Router
+  ) {}
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     const routeurl: string = state.url;
@@ -20,8 +21,8 @@ export class AuthguardGuard implements CanActivate {
     if (this.dataService.isLoggedIn()) {
       return true;
     } else {
-      this.dataService.redirectUrl = routeurl;
-      this.router.navigate(['/login'], {queryParams: { returnUrl: routeurl }} );
+      this.dataService.redirectUrl = '/dashboard';
+      this.router.navigate(['/login'], {queryParams: { returnUrl: '/dashboard' }} );
       return false
     }
   }
