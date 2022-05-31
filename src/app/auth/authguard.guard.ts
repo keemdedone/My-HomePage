@@ -19,10 +19,10 @@ export class AuthguardGuard implements CanActivate {
 
   isLogin(routeurl: string) {
     if (this.dataService.isLoggedIn()) {
-      return true;
+      return true
     } else {
-      this.dataService.redirectUrl = '/dashboard';
-      this.router.navigate(['/login'], {queryParams: { returnUrl: '/dashboard' }} );
+      this.dataService.redirectUrl = routeurl;
+      this.router.navigate(['/login'], {queryParams: { returnUrl: routeurl }});
       return false
     }
   }
