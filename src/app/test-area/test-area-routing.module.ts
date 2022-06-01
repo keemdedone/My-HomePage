@@ -10,11 +10,11 @@ const routes: Routes = [
     children: [
       {
         path:'',
-        redirectTo:'test-area-01',
+        redirectTo:'test-area-zero-one',
         pathMatch:'full',
       },
       {
-        path:'test-area-01',
+        path:'test-area-zero-one',
         component:TestAreaZeroOneComponent,
       }
     ]
