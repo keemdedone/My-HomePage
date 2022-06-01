@@ -68,6 +68,11 @@ const routes: Routes = [
     canActivate: [AuthguardGuard],
     loadChildren: () => import('./movie/movie.module').then((m) => m.MovieModule)    
   },
+  {
+    path: 'game',
+    canActivate: [AuthguardGuard],
+    loadChildren: () => import('./game/game.module').then((g) => g.GameModule)    
+  },
 ];
 
 @NgModule({

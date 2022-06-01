@@ -1,0 +1,8 @@
+<mat-toolbar color="primary">
+    Game List
+</mat-toolbar>
+<app-game-list
+[data]="data$ | async"
+[search]="search"
+(searchChange)="onSearch($event)"
+></app-game-list>
