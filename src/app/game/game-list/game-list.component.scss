@@ -1,0 +1,59 @@
+
+.game-main-container{
+    width: 1500px;
+    margin: auto;
+    .game-container{
+        margin-left: 50px;
+        margin-top: 50px;
+        display: inline-block;
+        .details{
+            display: inline-block;
+            position: relative;
+            cursor: pointer;
+            .details-content{
+                visibility: hidden;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                width: 100%;
+                height: 150px;
+                background-color: aliceblue;
+                color: black;
+                font-size: 17px;
+                line-height: 18px;            
+            }
+        }
+        .details:hover{
+            cursor: pointer;
+            .details-content{
+                visibility: visible;
+                position: absolute;
+                cursor: pointer;            
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+                background-color: aliceblue;
+                color: black;
+                font-size: 17px;
+                line-height: 18px;
+                animation-name: downTop;
+                animation-duration: 1s;
+                opacity: 0.9;
+                .ratings-container{
+                    border: 1px solid red;
+                    text-align: left;
+                    right: 0;
+                    top: 0;
+                    position: absolute;
+                    width: 30%;
+                }
+            }
+        }
+    }
+}
+
+@keyframes downTop {
+    0%   { bottom: 0; height: 0%;}
+    100% { bottom: 0; height: 100%;}
+  }
