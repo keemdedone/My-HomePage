@@ -7,13 +7,33 @@
                     <div class="name">Name : {{item.name}}</div>
                     <div class="released">Released date : {{item.released}}</div>
                     <div class="ratings-container">
-                        <div class="ratings" *ngFor="let rate of item.ratings">
+                        <div class="ratings" *ngFor="let iv of item.ratings">
                             <div class="rating-box">
-                                {{rate.title}} : {{rate.percent}} %
+                                {{iv.percent}}
                             </div>
                         </div>
                     </div>
-                    <div>x</div>
+                    <div class="updated">{{item.updated}}</div>
+                    <div class="platforms-container">
+                        <div class="platforms" *ngFor="let v of item.platforms">
+                            <div class="platform-name">{{v.platform.name}}</div>
+                        </div>
+                    </div>
+                    <div class="genres-container">
+                        <div class="genres" *ngFor="let vi of item.genres">
+                            <div class="genres-name">{{vi.name}}</div>
+                        </div>
+                    </div>
+                    <div class="stores-container">
+                        <div class="stores" *ngFor="let vii of item.stores">
+                            <div class="stores-store">{{vii.store.name}}</div>
+                        </div>
+                    </div>
+                    <div class="tags-container">
+                        <div class="tags" *ngFor="let viii of item.tags">
+                            <div class="tags-name">{{viii.name}}</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

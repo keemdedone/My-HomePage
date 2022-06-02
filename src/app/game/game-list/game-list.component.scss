@@ -48,6 +48,16 @@
                     position: absolute;
                     width: 30%;
                 }
+                .name,.released,.updated,.platforms-container,.genres-container,.stores-container,.tags-container{
+                    width: 70%;
+                    border: 1px solid red;
+                }
+                .name{
+                    
+                }
+                .released{
+                                       
+                }
             }
         }
     }

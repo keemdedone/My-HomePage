@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, TemplateRef, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { List } from 'src/app/model/covid';
 import { Game, SearchData } from 'src/app/model/game';
@@ -9,6 +9,8 @@ import { Game, SearchData } from 'src/app/model/game';
   styleUrls: ['./game-list.component.scss']
 })
 export class GameListComponent implements OnInit {
+  @ViewChild('rating') rating!: TemplateRef<any>;
+
   @Input() data: List<Game> | null = null ;
   @Input() search: SearchData = {};
   @Output() searchChange = new EventEmitter<SearchData>();
