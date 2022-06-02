@@ -2,10 +2,16 @@
     <div class="game-main-container">
         <div class="game-container" *ngFor="let item of data.results">
             <div class="details">
-                <img src="{{item.background_image}}" alt="{{item.name}}" width="700" height="600">
+                <img src="{{item.background_image}}" alt="{{item.name}}" width="750" height="600">
                 <div class="details-content">
-                    <div class="name">Name : {{item.name}}</div>
-                    <div class="released">Released date : {{item.released}}</div>
+                    <div class="name">
+                        <div class="title">Name</div>
+                        <li>{{item.name}}</li>
+                    </div>
+                    <div class="released">
+                        <div class="title">Released</div>
+                        <li>{{item.released}}</li>
+                    </div>
                     <div class="ratings-container">
                         <div class="ratings-title">
                             RATINGS
@@ -56,26 +62,37 @@
                             </div>
                         </div>
                     </div>
-                    <div class="updated">{{item.updated}}</div>
                     <div class="platforms-container">
-                        <div class="platforms" *ngFor="let v of item.platforms">
-                            <div class="platform-name">{{v.platform.name}}</div>
-                        </div>
+                        <div class="title">Platforms</div>
+                        <li>
+                            <div class="platforms" *ngFor="let v of item.platforms">
+                                <div class="platform-name">{{v.platform.name + ' ,'}}&nbsp;</div> 
+                            </div>
+                        </li>
                     </div>
                     <div class="genres-container">
-                        <div class="genres" *ngFor="let vi of item.genres">
-                            <div class="genres-name">{{vi.name}}</div>
-                        </div>
+                        <div class="title">Genres</div>
+                        <li>
+                            <div class="genres" *ngFor="let vi of item.genres">
+                                <div class="genres-name">{{vi.name + ' ,'}}&nbsp;</div> 
+                            </div>
+                        </li>
                     </div>
                     <div class="stores-container">
-                        <div class="stores" *ngFor="let vii of item.stores">
-                            <div class="stores-store">{{vii.store.name}}</div>
-                        </div>
+                        <div class="title">Stores</div>
+                        <li>
+                            <div class="stores" *ngFor="let vii of item.stores">
+                                <div class="stores-store">{{vii.store.name + ' ,'}}&nbsp;</div> 
+                            </div>
+                        </li>
                     </div>
                     <div class="tags-container">
-                        <div class="tags" *ngFor="let viii of item.tags">
-                            <div class="tags-name">{{viii.name}}</div>
-                        </div>
+                        <div class="title">Tags</div>
+                        <li>
+                            <div class="tags" *ngFor="let viii of item.tags">
+                                <div class="tags-name">{{viii.name + ' ,'}}&nbsp;</div> 
+                            </div>
+                        </li>
                     </div>
                 </div>
             </div>
