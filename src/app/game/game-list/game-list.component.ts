@@ -9,7 +9,6 @@ import { Game, SearchData } from 'src/app/model/game';
   styleUrls: ['./game-list.component.scss']
 })
 export class GameListComponent implements OnInit {
-  @ViewChild('rating') rating!: TemplateRef<any>;
 
   @Input() data: List<Game> | null = null ;
   @Input() search: SearchData = {};

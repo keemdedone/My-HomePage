@@ -41,12 +41,38 @@
                 animation-duration: 1s;
                 opacity: 0.9;
                 .ratings-container{
-                    border: 1px solid red;
+                    border: 0.5px black solid;
                     text-align: left;
                     right: 0;
                     top: 0;
                     position: absolute;
-                    width: 30%;
+                    width: 29%;
+                    margin-top: 5px;
+                    margin-right: 5px;
+                    .ratings-title{
+                        text-align: center;
+                        mat-icon{
+                            color: rgb(0, 114, 228);
+                            vertical-align: -5px;
+                        }
+                    }
+                    .ratings{
+                        .rating-exceptional,.rating-recommended,.rating-meh,.rating-skip{
+                            // border: 1px black thin;
+                        }
+                        .rating-exceptional{
+                            background-color: pink;
+                        }
+                        .rating-recommended{
+                            background-color: yellowgreen;
+                        }
+                        .rating-meh{
+                            background-color: cyan;
+                        }
+                        .rating-skip{
+                            background-color: red;
+                        }
+                    }
                 }
                 .name,.released,.updated,.platforms-container,.genres-container,.stores-container,.tags-container{
                     width: 70%;

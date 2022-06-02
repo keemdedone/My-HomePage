@@ -7,9 +7,22 @@
                     <div class="name">Name : {{item.name}}</div>
                     <div class="released">Released date : {{item.released}}</div>
                     <div class="ratings-container">
+                        <div class="ratings-title">
+                            RATINGS
+                            <mat-icon>thumb_up</mat-icon>
+                        </div>
                         <div class="ratings" *ngFor="let iv of item.ratings">
-                            <div class="rating-box">
-                                {{iv.percent}}
+                            <div class="rating-exceptional" *ngIf="iv.title === 'exceptional' " [ngStyle]="{'width': iv.percent + '%'}">
+                                <br />
+                            </div>
+                            <div class="rating-recommended" *ngIf="iv.title === 'recommended' " [ngStyle]="{'width': iv.percent + '%'}">
+                                <br />
+                            </div>
+                            <div class="rating-meh" *ngIf="iv.title === 'meh' " [ngStyle]="{'width': iv.percent + '%'}">
+                                <br />
+                            </div>
+                            <div class="rating-skip" *ngIf="iv.title === 'skip' " [ngStyle]="{'width': iv.percent + '%'}">
+                                <br />
                             </div>
                         </div>
                     </div>
