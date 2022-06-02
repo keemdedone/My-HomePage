@@ -12,17 +12,47 @@
                             <mat-icon>thumb_up</mat-icon>
                         </div>
                         <div class="ratings" *ngFor="let iv of item.ratings">
-                            <div class="rating-exceptional" *ngIf="iv.title === 'exceptional' " [ngStyle]="{'width': iv.percent + '%'}">
+                            <div class="rating-exceptional" 
+                            *ngIf="iv.title === 'exceptional' " 
+                            [ngStyle]="{'width': iv.percent + '%'}" 
+                            >
                                 <br />
                             </div>
-                            <div class="rating-recommended" *ngIf="iv.title === 'recommended' " [ngStyle]="{'width': iv.percent + '%'}">
+                            <div class="rating-recommended" 
+                            *ngIf="iv.title === 'recommended' " 
+                            [ngStyle]="{'width': iv.percent + '%'}"
+                            >
                                 <br />
                             </div>
-                            <div class="rating-meh" *ngIf="iv.title === 'meh' " [ngStyle]="{'width': iv.percent + '%'}">
+                            <div class="rating-meh" 
+                            *ngIf="iv.title === 'meh' " 
+                            [ngStyle]="{'width': iv.percent + '%'}"
+                            >
                                 <br />
                             </div>
-                            <div class="rating-skip" *ngIf="iv.title === 'skip' " [ngStyle]="{'width': iv.percent + '%'}">
+                            <div class="rating-skip" 
+                            *ngIf="iv.title === 'skip' " 
+                            [ngStyle]="{'width': iv.percent + '%'}"
+                            >
                                 <br />
+                            </div>
+                        </div>
+                        <div class="rating-description">
+                            <div class="rating-description-Exceptional">
+                                <span>&#9703;</span> 
+                                Exceptional
+                            </div>
+                            <div class="rating-description-Recommended">
+                                <span>&#9703;</span> 
+                                Recommended
+                            </div>
+                            <div class="rating-description-Meh">
+                                <span>&#9703;</span> 
+                                Meh
+                            </div>
+                            <div class="rating-description-Skip">
+                                <span>&#9703;</span> 
+                                Skip
                             </div>
                         </div>
                     </div>
