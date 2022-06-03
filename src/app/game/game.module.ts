@@ -13,6 +13,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
@@ -25,6 +26,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     GameRoutingModule,
     PortalModule,
+    ReactiveFormsModule,
     MatToolbarModule,
     MatListModule,
     MatButtonModule,
@@ -32,7 +34,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatPaginatorModule,
     MatFormFieldModule,
     MatInputModule,
-    ReactiveFormsModule,
+    MatProgressSpinnerModule,
   ]
 })
 export class GameModule { }

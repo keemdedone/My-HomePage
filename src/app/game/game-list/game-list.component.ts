@@ -8,7 +8,6 @@ import { Game, List, SearchData } from 'src/app/model/game';
   styleUrls: ['./game-list.component.scss']
 })
 export class GameListComponent implements OnInit {
-
   @Input() data: List<Game> | null = null ;
   @Input() search: SearchData = {};
   @Output() searchChange = new EventEmitter<SearchData>();
@@ -17,23 +16,24 @@ export class GameListComponent implements OnInit {
 
   constructor(
     private readonly fb: FormBuilder,
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.formGroup = this.fb.group({
-        search: [this.search.search || null],
-      });
+      search: [this.search.search || null],
+    });
     this.emit();
   }
-
+  
   pageIndex(i:any): void{
     this.formGroup = this.fb.group({
-        page: [i.pageIndex + 1|| null],
-      });
+      page: [i.pageIndex + 1|| null],
+    });
     this.emit();
   }
 
   onSearch(): void{
+    localStorage.setItem('loadSet','start')
     this.formGroup.get('page')?.setValue(null);
     this.emit();
   }

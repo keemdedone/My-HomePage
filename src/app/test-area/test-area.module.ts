@@ -8,6 +8,7 @@ import { PortalModule } from '@angular/cdk/portal';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { TestAreaZeroOneComponent } from './test-area-zero-one/test-area-zero-one.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { TestAreaZeroOneComponent } from './test-area-zero-one/test-area-zero-on
     PortalModule,
     MatSidenavModule,
     MatListModule,
+    MatProgressSpinnerModule,
   ]
 })
 export class TestAreaModule { }
