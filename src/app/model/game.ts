@@ -118,7 +118,7 @@ export type store = {
 export function parseGameList(data: any): List<Game>{
     console.log(data)
     return {
-        ...data,
+        ...data
         // results: (data.results || []).map((data : any) => console.log(data)),
     };
 }

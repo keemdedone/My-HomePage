@@ -1,15 +1,38 @@
 
+.game-search-box{
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    margin-top: 25px;
+    mat-form-field{
+        width: 500px;
+    }
+}
 .game-main-container{
     width: 1600px;
     margin: auto;
     .game-container{
         margin-left: 50px;
-        margin-top: 50px;
+        margin-top: 25px;
         display: inline-block;
         .details{
             display: inline-block;
             position: relative;
             cursor: pointer;
+            .logo-name{
+                position: absolute;
+                color: black;
+                background-color: aliceblue;
+                width: 100%;
+                bottom: 0px;
+                left: 0px;
+                text-align: center;
+                font-size: 24px;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                font-family: 'Kdam Thmor Pro', sans-serif;
+                text-decoration: underline;
+            }
             .details-content{
                 visibility: hidden;
                 position: absolute;
@@ -26,6 +49,9 @@
         }
         .details:hover{
             cursor: pointer;
+            .logo-name{
+                visibility: hidden;
+            }
             .details-content{
                 visibility: visible;
                 position: absolute;
@@ -148,6 +174,6 @@
 }
 
 @keyframes downTop {
-  0%   { bottom: 0; height: 0%;}
+  0%   { bottom: 0; height: 20%;}
   100% { bottom: 0; height: 100%;}
 }

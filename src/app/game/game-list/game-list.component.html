@@ -1,8 +1,28 @@
 <div class="data-check" *ngIf="data ; else loading">
+
+    <mat-paginator
+    [length]="data.count"
+    [pageSize]="data.results.length"
+    (page)="pageIndex($event)"
+    aria-label="Select page"></mat-paginator>
+
+    <form [formGroup]="formGroup" (ngSubmit)="onSearch()" class="game-search-box">
+        <mat-form-field appearance="outline">
+          <mat-label>Search</mat-label>
+          <mat-icon (click)="onSearch()" matSuffix>search</mat-icon>
+          <input 
+          matInput 
+          autocomplete="doNotAutoComplete" 
+          type="search" 
+          formControlName="search">
+        </mat-form-field>
+      </form>
+
     <div class="game-main-container">
         <div class="game-container" *ngFor="let item of data.results">
             <div class="details">
                 <img src="{{item.background_image}}" alt="{{item.name}}" width="750" height="600">
+                <div class="logo-name">{{item.name}}</div>
                 <div class="details-content">
                     <div class="name">
                         <div class="title">Name</div>

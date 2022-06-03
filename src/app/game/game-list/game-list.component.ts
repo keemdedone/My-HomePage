@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output, TemplateRef, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { List } from 'src/app/model/covid';
-import { Game, SearchData } from 'src/app/model/game';
+import { Game, List, SearchData } from 'src/app/model/game';
 
 @Component({
   selector: 'app-game-list',
@@ -21,13 +20,15 @@ export class GameListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    return
+    this.formGroup = this.fb.group({
+        search: [this.search.search || null],
+      });
+    this.emit();
   }
 
   pageIndex(i:any): void{
-    this.formGroup = this.fb.group(
-      {
-        page: [i.pageIndex|| null],
+    this.formGroup = this.fb.group({
+        page: [i.pageIndex + 1|| null],
       });
     this.emit();
   }

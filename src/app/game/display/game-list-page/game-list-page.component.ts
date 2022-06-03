@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, switchMap } from 'rxjs';
-import { List } from 'src/app/model/covid';
-import { Game, SearchData } from 'src/app/model/game';
+
+import { Game, List, SearchData } from 'src/app/model/game';
 import { GameService } from '../../game.service';
 
 @Component({
