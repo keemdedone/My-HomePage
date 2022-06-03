@@ -21,13 +21,15 @@ export class GameListComponent implements OnInit {
   ngOnInit(): void {
     this.formGroup = this.fb.group({
       search: [this.search.search || null],
+      page: [1],
     });
     this.emit();
   }
   
   pageIndex(i:any): void{
     this.formGroup = this.fb.group({
-      page: [i.pageIndex + 1|| null],
+      search: [this.search.search || null],
+      page: [i.pageIndex + 1|| 1],
     });
     this.emit();
   }
@@ -41,6 +43,7 @@ export class GameListComponent implements OnInit {
   emit(): void{
     const searchData: SearchData = {};
     const formValue = this.formGroup.value;
+    if(formValue.search) searchData.search = formValue.search;
     if(formValue.page) searchData.page = formValue.page;
     this.searchChange.emit(this.formGroup.value);
   }

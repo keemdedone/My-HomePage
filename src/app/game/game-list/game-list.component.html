@@ -8,13 +8,13 @@
 
     <form [formGroup]="formGroup" (ngSubmit)="onSearch()" class="game-search-box">
         <mat-form-field appearance="outline">
-          <mat-label>Search</mat-label>
-          <mat-icon (click)="onSearch()" matSuffix>search</mat-icon>
-          <input 
-          matInput 
-          autocomplete="doNotAutoComplete" 
-          type="search" 
-          formControlName="search">
+            <mat-label>Search</mat-label>
+            <mat-icon (click)="onSearch()" matSuffix>search</mat-icon>
+            <input 
+            matInput 
+            autocomplete="doNotAutoComplete" 
+            type="search" 
+            formControlName="search">
         </mat-form-field>
     </form>
 

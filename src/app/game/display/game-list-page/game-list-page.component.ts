@@ -33,7 +33,7 @@ export class GameListPageComponent implements OnInit {
   onSearch(search:SearchData): void{
     this.router.navigate([], {
       relativeTo: this.route,
-      queryParams: search,
+      queryParams: { search: search.search, page: search.page },
       replaceUrl: true,
     })
   }
