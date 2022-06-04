@@ -1,3 +1,4 @@
+
 export type SearchData = {
     search?: string,
     page?: string,
@@ -117,7 +118,8 @@ export type store = {
 
 export function parseGameList(data: any): List<Game>{
     if(data){
-        localStorage.setItem('loadSet','stop')
+        console.log(data)
+        localStorage.setItem('loadSet','stop');
     }
     return {...data};
 }

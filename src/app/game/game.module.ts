@@ -14,7 +14,11 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { NetworkInterceptor } from '../interceptor/network.interceptor';
 
 @NgModule({
   declarations: [
@@ -27,6 +31,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     GameRoutingModule,
     PortalModule,
     ReactiveFormsModule,
+    HttpClientModule,
     MatToolbarModule,
     MatListModule,
     MatButtonModule,
@@ -35,6 +40,12 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatInputModule,
     MatProgressSpinnerModule,
-  ]
+    MatProgressBarModule,
+  ],
+  // providers: [{
+  //   provide: HTTP_INTERCEPTORS,
+  //   useClass: NetworkInterceptor,
+  //   multi: true,
+  // }]
 })
 export class GameModule { }

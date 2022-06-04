@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable } from 'rxjs';
+import { BehaviorSubject, map, Observable } from 'rxjs';
 import { Game, List, parseGameList, SearchData } from '../model/game';
 
 const GAME_API = 'https://api.rawg.io/api/games?key=8005458929174100beea6dbdb8edf82c';
@@ -9,6 +9,8 @@ const GAME_API = 'https://api.rawg.io/api/games?key=8005458929174100beea6dbdb8ed
   providedIn: 'root'
 })
 export class GameService {
+  // private _loading = new BehaviorSubject<boolean>(false);
+  // public readonly loading$ = this._loading.asObservable();
 
   constructor(
     private readonly http: HttpClient,
@@ -18,7 +20,15 @@ export class GameService {
     return this.http.get(GAME_API,{
       params: params,
       }).pipe(map((data) => parseGameList(data)),
-    );
+    )
   }
+
+  // show() {
+  //   this._loading.next(true);
+  // }
+
+  // hide() {
+  //   this._loading.next(false);
+  // }
   
 }

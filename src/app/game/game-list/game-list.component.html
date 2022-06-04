@@ -19,7 +19,7 @@
         </mat-form-field>
     </form>
 
-    <div class="game-main-container">
+    <div class="game-main-container" *ngIf="searchLoad === false ; else loading">
         <div class="game-container" *ngFor="let item of data.results">
             <div class="details">
                 <img src="{{item.background_image}}" alt="{{item.name}}" width="750" height="600">
@@ -120,7 +120,7 @@
         </div>
     </div>
 
-</div>
+</div> 
 
 <ng-template #loading>
     <mat-progress-spinner [mode]="'indeterminate'"></mat-progress-spinner>
