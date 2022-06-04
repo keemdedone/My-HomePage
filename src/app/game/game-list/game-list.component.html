@@ -1,6 +1,7 @@
 <div class="data-check" *ngIf="data ; else loading">
 
     <mat-paginator
+    #paginator
     [length]="data.count"
     [pageSize]="data.results.length"
     (page)="pageIndex($event)"
