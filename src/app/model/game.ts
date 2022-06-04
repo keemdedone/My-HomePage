@@ -118,7 +118,6 @@ export type store = {
 
 export function parseGameList(data: any): List<Game>{
     if(data){
-        console.log(data)
         localStorage.setItem('loadSet','stop');
     }
     return {...data};
