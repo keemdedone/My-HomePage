@@ -14,12 +14,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { WeatherReportComponent } from './weather-report/weather-report.component';
 
 
 @NgModule({
   declarations: [
     WeatherComponent,
-    WeatherPageComponent
+    WeatherPageComponent,
+    WeatherReportComponent
   ],
   imports: [
     CommonModule,

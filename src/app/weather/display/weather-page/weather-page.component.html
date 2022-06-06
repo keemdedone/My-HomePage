@@ -1,1 +1,7 @@
-<p>weather-page works!</p>
+<mat-toolbar color="primary">
+    Weather City
+</mat-toolbar>
+<app-weather-report
+[data]="data$ | async"
+[search]="search"
+(searchChange)="onSearch($event)"></app-weather-report>

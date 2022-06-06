@@ -10,11 +10,11 @@ const routes: Routes = [
     children: [
       {
         path:'',
-        redirectTo:'weather-page',
+        redirectTo:'weather-report',
         pathMatch:'full',
       },
       {
-        path:'weather-page',
+        path:'weather-report',
         component:WeatherPageComponent,
       }
     ]
