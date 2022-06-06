@@ -73,6 +73,11 @@ const routes: Routes = [
     canActivate: [AuthguardGuard],
     loadChildren: () => import('./game/game.module').then((g) => g.GameModule)    
   },
+  {
+    path: 'weather',
+    canActivate: [AuthguardGuard],
+    loadChildren: () => import('./weather/weather.module').then((w) => w.WeatherModule)
+  },
 ];
 
 @NgModule({
